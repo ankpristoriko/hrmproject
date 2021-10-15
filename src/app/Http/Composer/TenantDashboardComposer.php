@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Http\Composer;
-
 
 use App\Helpers\Settings\SettingParser;
 use App\Http\Composer\Helper\AdministrationPermissions;
