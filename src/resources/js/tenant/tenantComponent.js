@@ -222,3 +222,6 @@ Vue.component('app-event-type-create-edit', require('./Components/View/Recruitme
 // Stage
 Vue.component('app-stages', require('./Components/View/Recruitment/Stage/Stages').default);
 Vue.component('app-stage-create-edit', require('./Components/View/Recruitment/Components/StageCreateEditModal').default);
+
+Vue.component('application-form-setting', require('./Components/View/Recruitment/ApplyForm/ApplyForm').default);
+Vue.component('apply-form-settings', require('./Components/View/Recruitment/Components/ApplyForm').default);

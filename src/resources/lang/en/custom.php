@@ -86,4 +86,10 @@ return [
     'add_stage' => 'Add Stage',
 
     'application_form' => 'Application Form',
+    'save_changes' => 'Save changes',
+    'basic_information' => 'Basic Information',
+    'add_more_section' => 'Add more section',
+    'enter_section_name' => 'Enter section name',
+    'add_new_question' => 'Add new question',
+    'choose_question_type' => 'Choose question type',
 ];

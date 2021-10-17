@@ -9,8 +9,8 @@
 
 <script>
 
-import CoreLibrary from "../../../../../../core/helpers/CoreLibrary";
-import {GLOBAL_APPLICATION_FORM} from "../../../../../Config/ApiUrl";
+import CoreLibrary from "../../../../../core/helpers/CoreLibrary";
+import {GLOBAL_APPLICATION_FORM} from "../../../../Config/ApiUrl";
 
 export default {
     name: 'ApplicationFormSetting',

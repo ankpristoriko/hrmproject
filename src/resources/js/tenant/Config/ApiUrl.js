@@ -111,3 +111,4 @@ export const TRAINING_TYPES = `${TENANT_BASE_URL}app/training-types`;
 export const JOB_TYPES = `${TENANT_BASE_URL}app/job-types`;
 export const EVENT_TYPES = `${TENANT_BASE_URL}app/event-types`;
 export const STAGES = `${TENANT_BASE_URL}app/stages`;
+export const GLOBAL_APPLICATION_FORM = `${TENANT_BASE_URL}app/global/application-form`;
