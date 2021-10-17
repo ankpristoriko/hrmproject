@@ -155,6 +155,9 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('settings/import', [NavigationController::class, 'import'])
         ->name('settings.import');
 
+    $router->get('recruitments/job-settings', [NavigationController::class, 'jobSettings'])
+        ->name('recruitments.job');
+    
     $router->get('employee/payroll', [NavigationController::class, 'payroll'])
         ->name('employee.payroll');
 

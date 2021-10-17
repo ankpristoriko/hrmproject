@@ -62,6 +62,14 @@ class NavigationController extends Controller
         throw new GeneralException(trans('default.action_not_allowed'));
     }
 
+    public function jobSettings()
+    {
+        if (authorize_any(['view_promotions'])) {
+            return view('tenant.recruitment.job_settings');
+        }
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+    
     public function masterSettings()
     {
         if (authorize_any(['view_master_settings'])) {

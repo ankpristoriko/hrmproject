@@ -207,3 +207,18 @@ Vue.component('app-training-type-create-edit', require('./Components/View/Master
 // Education Level
 Vue.component('app-education-levels', require('./Components/View/Master/EducationLevel/EducationLevels').default);
 Vue.component('app-education-level-create-edit', require('./Components/View/Master/Components/EducationLevelCreateEditModal').default);
+
+// Job Setting Layout
+Vue.component('app-job-settings-layout', require('./Components/View/Recruitment/JobSettingLayout').default);
+
+// Job Type
+Vue.component('app-job-types', require('./Components/View/Recruitment/JobType/JobTypes').default);
+Vue.component('app-job-type-create-edit', require('./Components/View/Recruitment/Components/JobTypeCreateEditModal').default);
+
+// Event Type
+Vue.component('app-event-types', require('./Components/View/Recruitment/EventType/EventTypes').default);
+Vue.component('app-event-type-create-edit', require('./Components/View/Recruitment/Components/EventTypeCreateEditModal').default);
+
+// Stage
+Vue.component('app-stages', require('./Components/View/Recruitment/Stage/Stages').default);
+Vue.component('app-stage-create-edit', require('./Components/View/Recruitment/Components/StageCreateEditModal').default);

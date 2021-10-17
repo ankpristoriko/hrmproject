@@ -11,6 +11,7 @@ use App\Http\Composer\Helper\LeavePermissions;
 use App\Http\Composer\Helper\LogoIcon;
 use App\Http\Composer\Helper\PayrollPermissions;
 use App\Http\Composer\Helper\SettingPermissions;
+use App\Http\Composer\Helper\RecruitmentPermissions;
 use App\Models\Tenant\WorkingShift\WorkingShift;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
@@ -69,6 +70,13 @@ class TenantDashboardComposer
                     'id' => 'attendance_menu',
                     'permission' => AttendancePermissions::new(true)->canVisit(),
                     'subMenu' => AttendancePermissions::new(true)->permissions(),
+                ],
+                [
+                    'name' => __t('recruitment'),
+                    'icon' => 'user-check',
+                    'id' => 'recruitment_menu',
+                    'permission' => RecruitmentPermissions::new(true)->canVisit(),
+                    'subMenu' => RecruitmentPermissions::new(true)->permissions(),
                 ],
                 [
                     'name' => __t('core_hr'),

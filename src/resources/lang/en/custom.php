@@ -57,6 +57,8 @@ return [
     'view_expense_types' => 'Can view expense types',
     'view_training_types' => 'Can view training types',
     'view_education_levels' => 'Can view education levels',
+    'view_job_types' => 'Can view job types',
+    'view_event_types' => 'Can view event types',
 
     'can_not_delete_used_document_type' => 'Can not delete! Document type is in use.',
     'can_not_delete_used_warning_type' => 'Can not delete! Warning type is in use.',
@@ -67,4 +69,21 @@ return [
     'you_cant_update_expense_type_if_the_type_already_has_expense_applied' => 'You cant update expense type if the type already has expense applied',
     'you_cant_update_training_type_if_the_type_already_has_training_applied' => 'You cant update training type if the type already has training applied',
     'you_cant_update_education_level_if_the_type_already_has_education_applied' => 'You cant update education level if the type already has education applied',
+    'you_cant_update_job_type_if_the_type_already_has_job_applied' => 'You cant update job type if the type already has job applied',
+    'you_cant_update_event_type_if_the_type_already_has_event_applied' => 'You cant update event type if the type already has event applied',
+
+    'recruitment' => 'Recruitment',
+    'job_settings' => 'Job Settings',
+
+    'job_type' => 'Job Type',
+    'brief' => 'Brief',
+    'add_job_type' => 'Add Job Type',
+
+    'event_type' => 'Event Type',
+    'add_event_type' => 'Add Event Type',
+
+    'stage' => 'Hiring Stage',
+    'add_stage' => 'Add Stage',
+
+    'application_form' => 'Application Form',
 ];
