@@ -59091,6 +59091,10 @@ svg.size-100 {
   --time-picker-bg: #272b35;
 }
 
+.bg-off-light {
+  background-color: var(--vertical-tab-header-bg);
+}
+
 .list-bullet::before {
   content: "";
   display: inline-block;

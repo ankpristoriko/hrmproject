@@ -224,4 +224,9 @@ Vue.component('app-stages', require('./Components/View/Recruitment/Stage/Stages'
 Vue.component('app-stage-create-edit', require('./Components/View/Recruitment/Components/StageCreateEditModal').default);
 
 Vue.component('application-form-setting', require('./Components/View/Recruitment/ApplyForm/ApplyForm').default);
+Vue.component('personal-info-modal', require('./Components/View/Recruitment/Components/PersonalInfoModal').default);
+Vue.component('question-add-edit-modal', require('./Components/View/Recruitment/Components/QuestionAddEditModal').default);
+Vue.component('assignment-add-edit-modal', require('./Components/View/Recruitment/Components/AssignmentAddEditModal').default);
+
+Vue.component('modal-app-form', require('./Components/Helper/Modal').default)
 Vue.component('apply-form-settings', require('./Components/View/Recruitment/Components/ApplyForm').default);

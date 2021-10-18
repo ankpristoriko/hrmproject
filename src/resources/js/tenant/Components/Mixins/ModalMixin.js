@@ -9,9 +9,13 @@ export const ModalMixin = {
             preloader: false,
         }
     },
+    created() {
+        if (this.selectedUrl) this.preloader = true;
+    },
     methods: {
         closeModal() {
-            this.$emit('close-modal');
+            if (this.modalId) $(`#${this.modalId}`).modal('hide');
+            this.$emit('closeModal');
         },
         beforeSubmit() {
             this.preloader = true;

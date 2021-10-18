@@ -1,6 +1,10 @@
 @import "core/variables";
 @import "core/theme-colors";
 
+.bg-off-light {
+  background-color: var(--vertical-tab-header-bg);
+}
+
 .list-bullet::before {
   content: "";
   display: inline-block;

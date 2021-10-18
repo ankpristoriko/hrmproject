@@ -92,4 +92,11 @@ return [
     'enter_section_name' => 'Enter section name',
     'add_new_question' => 'Add new question',
     'choose_question_type' => 'Choose question type',
+
+    'fields' => 'Fields',
+    'require_an_answer' => 'Require an answer',
+    'add_more_fields' => 'Add more fields',
+    'view_only_you_can_not_modify_basic_information_setting' => 'View only: You can not modify basic information setting.',
+    'select_what_should_be_included_or_required_in_the_apply_form' => 'Select what should be included or required in the apply form.',
+
 ];
