@@ -99,4 +99,21 @@ return [
     'view_only_you_can_not_modify_basic_information_setting' => 'View only: You can not modify basic information setting.',
     'select_what_should_be_included_or_required_in_the_apply_form' => 'Select what should be included or required in the apply form.',
 
+    // Add and all labels
+    'field_label' => '{subject} {key}',
+    'all_feature_name' => 'All {name}',
+    'add_feature_name' => 'Add {name}',
+    'create_feature_name' => 'Create {name}',
+    'edit_feature_name' => 'Edit {name}',
+    'copy_feature_name' => 'Copy {name}',
+    'choose_feature_name' => 'Choose {name}',
+    'field_title' => '{subject} {infix} {title}',
+    'place_holder' => 'Enter {subject} {type}',
+    'answer_type' => 'Answer type',
+    'visible_in_apply_form' => 'Visible in apply form',
+    'question' => 'Question',
+    'write_your_question' => 'Write your question',
+    'assignment_input_hint' => 'Applicant can upload one file',
+    'required' => 'Required',
+    'assignment' => 'Assignment',
 ];

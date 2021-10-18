@@ -1,3 +1,4 @@
+import './Translator';
 import Vue from 'vue'
 import Collection from "./Collection";
 import Permission from "./Permission";

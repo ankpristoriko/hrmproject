@@ -228,5 +228,6 @@ Vue.component('personal-info-modal', require('./Components/View/Recruitment/Comp
 Vue.component('question-add-edit-modal', require('./Components/View/Recruitment/Components/QuestionAddEditModal').default);
 Vue.component('assignment-add-edit-modal', require('./Components/View/Recruitment/Components/AssignmentAddEditModal').default);
 
-Vue.component('modal-app-form', require('./Components/Helper/Modal').default)
+Vue.component('modal-app-form', require('./Components/Helper/Modal/Modal').default);
+Vue.component('app-custom-field-modal', require('./Components/Helper/Modal/CustomFieldModal').default);
 Vue.component('apply-form-settings', require('./Components/View/Recruitment/Components/ApplyForm').default);

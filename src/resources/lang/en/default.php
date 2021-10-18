@@ -66,6 +66,7 @@ return array_merge([
     'radio_button' => 'Radio Button',
     'select' => 'Select',
     'multi_select' => 'Multi Select',
+    'tel_input' => 'Telephone',
     'radio' => 'Radio',
     'did_not_match_anything' => "Didn't match anything",
     'enter_to_add_new' => 'Enter to add new',

@@ -1,5 +1,5 @@
 <template>
-    <modal
+    <modal-app-form
         :modal-id="modalId"
         title="Add/Edit Question"
         :preloader="preloader"
@@ -109,7 +109,7 @@
                 </div>
             </form>
         </template>
-    </modal>
+    </modal-app-form>
 </template>
 
 <script>
