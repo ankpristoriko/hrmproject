@@ -112,3 +112,20 @@ export const JOB_TYPES = `${TENANT_BASE_URL}app/job-types`;
 export const EVENT_TYPES = `${TENANT_BASE_URL}app/event-types`;
 export const STAGES = `${TENANT_BASE_URL}app/stages`;
 export const GLOBAL_APPLICATION_FORM = `${TENANT_BASE_URL}app/global/application-form`;
+export const RECRUITMENT_DASHBOARD = `${TENANT_BASE_URL}app/recruitment-dashboard`;
+
+// Candidate or Applicant - Global
+export const CANDIDATE = `${TENANT_BASE_URL}app/applicant`;
+export const VERIFY_EMAIL = `${TENANT_BASE_URL}app/applicant/check-email`;
+
+export const CAREER_PAGE = `${TENANT_BASE_URL}app/career-page`;
+
+export const EVENT = `${TENANT_BASE_URL}app/event`;
+
+// Job Applicant - Applicant after applied job
+export const JOB_APPLICANT = `${TENANT_BASE_URL}app/job-applicant`;
+
+// Public Url
+export const PUBLIC_JOB_POST = `${TENANT_BASE_URL}public/job-post`;
+export const PUBLIC_VERIFY_EMAIL = `${TENANT_BASE_URL}public/candidate/check-email`;
+export const PUBLIC_CAREER_PAGE = `${TENANT_BASE_URL}public/career`;

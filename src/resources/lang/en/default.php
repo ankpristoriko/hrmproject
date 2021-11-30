@@ -187,6 +187,8 @@ return array_merge([
     'view_as_manager' => 'View As Manager',
     'change_password' => 'Change Password',
 
+    'main_menu' => 'Main Menu',
+
     // Settings
     'app_name' => 'App Name',
     'brand_name' => 'Brand Name',
@@ -659,6 +661,7 @@ return array_merge([
     'attendance' => 'Attendance',
     'attendance_request' => 'Attendance Request',
     'summery' => 'Summary',
+    'summery_dashboard' => 'Summary Dashboard',
     'calendar' => 'Calendar',
     'leave' => 'Leave',
     'employee' => 'Employee',

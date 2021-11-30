@@ -134,6 +134,9 @@ Route::group(['prefix' => ''], function (Router $router) {
         ->middleware('can:invite_user')
         ->name('users.invite');
 
+    $router->get('administration/dashboard', [NavigationController::class, 'administrationDashboard'])
+        ->name('administration.dashboard');
+
     $router->get('administration/departments', [NavigationController::class, 'departments'])
         ->name('employee.departments');
 
@@ -143,6 +146,9 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('administration/work-shifts', [NavigationController::class, 'shifts'])
         ->name('employee.work_shifts');
 
+    $router->get('settings/dashboard', [NavigationController::class, 'settingDashboard'])
+        ->name('settings.dashboard');
+    
     $router->get('settings/leave-settings', [NavigationController::class, 'leaveSettings'])
         ->name('settings.leave');
 
@@ -157,9 +163,19 @@ Route::group(['prefix' => ''], function (Router $router) {
 
     $router->get('recruitments/job-settings', [NavigationController::class, 'jobSettings'])
         ->name('recruitments.job');
+
+    $router->get('recruitments/dashboard', [NavigationController::class, 'recruitmentDashboard'])
+        ->name('recruitments.dashboard');
+
+    $router->get('recruitments/career-page', [NavigationController::class, 'recruitmentCareerPage'])
+        ->name('recruitments.career-page');
     
     $router->get('employee/payroll', [NavigationController::class, 'payroll'])
         ->name('employee.payroll');
+
+    $router->get('attendance/dashboard', [NavigationController::class, 'attendanceDashboard'])
+        ->name('attendances.dashboard')
+        ->middleware('check_behavior');
 
     $router->get('attendances/lists', [NavigationController::class, 'attendances'])
         ->name('attendances.lists');
@@ -172,6 +188,10 @@ Route::group(['prefix' => ''], function (Router $router) {
 
     $router->get('attendances/summaries', [NavigationController::class, 'attendancesSummaries'])
         ->name('attendances.summaries')
+        ->middleware('check_behavior');
+    
+    $router->get('leave/dashboard', [NavigationController::class, 'leaveDashboard'])
+        ->name('leave.dashboard')
         ->middleware('check_behavior');
 
     $router->get('leave/lists', [NavigationController::class, 'leaves'])
@@ -197,6 +217,9 @@ Route::group(['prefix' => ''], function (Router $router) {
 
     $router->get('leave/types', [NavigationController::class, 'leaveTypes'])
         ->name('leave.types');
+
+    $router->get('employee/dashboard', [NavigationController::class, 'employeeDashboard'])
+        ->name('employee.dashboard');
 
     $router->get('employee/lists', [NavigationController::class, 'employees'])
         ->name('employee.lists');
@@ -334,6 +357,9 @@ Route::group(['prefix' => ''], function (Router $router) {
             ->middleware('can:update_employee_leave_amount');
     });
 
+    $router->get('payroll/dashboard', [NavigationController::class, 'payrollDashboard'])
+        ->name('payroll.dashboard');
+    
     $router->get('payroll/beneficiary-badges', [NavigationController::class, 'beneficiaryBadges'])
         ->name('payroll.beneficiary-badges');
 

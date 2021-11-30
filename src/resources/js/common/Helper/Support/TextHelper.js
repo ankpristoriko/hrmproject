@@ -59,4 +59,22 @@ export const objectToQueryString = (obj) => {
     }, '').replace(/&+$/, '');
 }
 
+// New Helper
 
+export const ordinal = (n) => {
+    let s = ["th", "st", "nd", "rd"],
+        v = n%100;
+    return n + (s[(v-20)%10] || s[v] || s[0]);
+}
+
+export const shortTitle = (str) => {
+    str = str.replace(/(^\s*)|(\s*$)/gi, "");
+    str = str.replace(/[ ]{2,}/gi, " ");
+    str = str.replace(/\n /, "\n");
+    let titleArray = str.split(' ');
+    if (titleArray.length > 1) {
+        return (titleArray[0][0] + titleArray[1][0]).toUpperCase();
+    } else {
+        return titleArray[0].substring(0, 2).toUpperCase();
+    }
+}

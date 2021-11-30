@@ -9,6 +9,9 @@ Route::group(['middleware' => ['auth', 'authorize']], function (Router $router) 
     $router->get('dashboard', [NavigationController::class, 'dashboard'])
         ->name('dashboard');
 
+    $router->get('/', [NavigationController::class, 'menu'])
+        ->name('menu');
+
     $router->get('permissions', [PermissionController::class, 'index'])
         ->name('permissions')
         ->middleware('can:create_roles');

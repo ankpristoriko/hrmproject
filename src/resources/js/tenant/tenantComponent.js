@@ -208,8 +208,9 @@ Vue.component('app-training-type-create-edit', require('./Components/View/Master
 Vue.component('app-education-levels', require('./Components/View/Master/EducationLevel/EducationLevels').default);
 Vue.component('app-education-level-create-edit', require('./Components/View/Master/Components/EducationLevelCreateEditModal').default);
 
-// Job Setting Layout
+// Recruitment
 Vue.component('app-job-settings-layout', require('./Components/View/Recruitment/JobSettingLayout').default);
+Vue.component('app-recruitment-dashboard', require('./Components/View/Recruitment/Dashboard/Index').default);
 
 // Job Type
 Vue.component('app-job-types', require('./Components/View/Recruitment/JobType/JobTypes').default);
@@ -231,3 +232,16 @@ Vue.component('assignment-add-edit-modal', require('./Components/View/Recruitmen
 Vue.component('modal-app-form', require('./Components/Helper/Modal/Modal').default);
 Vue.component('app-custom-field-modal', require('./Components/Helper/Modal/CustomFieldModal').default);
 Vue.component('apply-form-settings', require('./Components/View/Recruitment/Components/ApplyForm').default);
+
+// Candidate App Module
+Vue.component('candidates', require('./Components/View/Recruitment/Candidates/Index').default);
+Vue.component('candidate-jobs-expandable-view', require('./Components/View/Recruitment/Candidates/Helpers/CandidateJobsExpandableView').default);
+Vue.component('candidate-table-star-review', require('./Components/View/Recruitment/Candidates/Helpers/StarReview').default);
+Vue.component('candidate-details-modal', require('./Components/View/Recruitment/Candidates/CandidateDetailsModal').default);
+Vue.component('candidate-assign-job-modal', require('./Components/View/Recruitment/Candidates/CandidateActionsModal/AssignJobModal').default);
+Vue.component('candidate-add-edit-modal', require('./Components/View/Recruitment/Candidates/CandidateActionsModal/CandidateAddEditModal').default);
+Vue.component('candidate-disqualify-modal', require('./Components/View/Recruitment/Candidates/CandidateActionsModal/DisqualifyModal').default);
+Vue.component('candidate-mailing-modal', require('./Components/View/Recruitment/Candidates/CandidateActionsModal/MailingModal').default);
+Vue.component('candidate-event-modal', require('./Components/View/Recruitment/Candidates/CandidateActionsModal/EventAddEditModal').default);
+Vue.component('career-page', require('./Components/View/Recruitment/CareerPage/Index').default);
+Vue.component('candidate-status', require('./Components/View/Recruitment/Candidates/Helpers/CandidateStatus').default);

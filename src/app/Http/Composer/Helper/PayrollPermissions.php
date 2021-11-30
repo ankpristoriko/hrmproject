@@ -23,11 +23,11 @@ class PayrollPermissions
                 'url' => route('support.payroll.payslip',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
                 'permission' => authorize_any(['view_payslips'])
             ],
-            [
-                'name' => __t('summery'),
-                'url' => route('support.payroll.summery',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
-                'permission' => authorize_any(['view_payroll_summery'])
-            ],
+            // [
+            //     'name' => __t('summery'),
+            //     'url' => route('support.payroll.summery',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+            //     'permission' => authorize_any(['view_payroll_summery'])
+            // ],
             [
                 'name' => __t('beneficiary_badge'),
                 'url' => route('support.payroll.beneficiary-badges',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),

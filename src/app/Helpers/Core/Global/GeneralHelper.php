@@ -10,7 +10,7 @@ if (! function_exists('home_route')) {
     {
         if (auth()->check()) {
             return [
-                'route_name' => 'tenant.dashboard',
+                'route_name' => 'tenant.menu',
                 'route_params' => null
             ];
         }

@@ -55,6 +55,7 @@ Vue.component("app-tag-manager", require('./components/tag/TagManager').default)
 
 //Sidebar
 Vue.component('sidebar', require('./components/layouts/Sidebar').default);
+Vue.component('main-menu', require('./components/layouts/MainMenu').default);
 
 /**
  * v-calder

@@ -2,7 +2,7 @@
     <div :class="!fromEmployeeDetails ? 'content-wrapper':''">
         <template v-if="!fromEmployeeDetails">
             <app-page-top-section
-                :title="$t('summery')">
+                :title="$t('summery_dashboard')">
             </app-page-top-section>
 
             <app-filter-with-search

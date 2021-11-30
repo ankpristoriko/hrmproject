@@ -67,7 +67,7 @@ class TenantDashboardComposer
                 [
                     'name' => __t('attendance'),
                     'icon' => 'calendar',
-                    'id' => 'attendance_menu',
+                    'id' => 'attendance',
                     'permission' => AttendancePermissions::new(true)->canVisit(),
                     'subMenu' => AttendancePermissions::new(true)->permissions(),
                 ],
@@ -88,7 +88,7 @@ class TenantDashboardComposer
                 [
                     'name' => __t('payroll'),
                     'icon' => 'credit-card',
-                    'id' => 'payroll_menu',
+                    'id' => 'payroll',
                     'permission' => PayrollPermissions::new(true)->canVisit(),
                     'subMenu' => PayrollPermissions::new(true)->permissions(),
                 ],
@@ -108,7 +108,7 @@ class TenantDashboardComposer
                     ],
                 [
                     'name' => __t('settings'),
-                    'id' => 'tenant-settings',
+                    'id' => 'settings',
                     'icon' => 'settings',
                     'subMenu' => SettingPermissions::new(true)->permissions(),
                     'permission' => SettingPermissions::new(true)->canVisit()

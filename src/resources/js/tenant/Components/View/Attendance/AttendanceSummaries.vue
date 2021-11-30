@@ -1,6 +1,6 @@
 <template>
     <div :class="!fromEmployeeDetails?'content-wrapper':''">
-        <app-page-top-section v-if="!fromEmployeeDetails" :title="$t('summery')">
+        <app-page-top-section v-if="!fromEmployeeDetails" :title="$t('summery_dashboard')">
             <app-attendance-top-buttons :specific-id="specificId" :tableId="tableId"/>
         </app-page-top-section>
 

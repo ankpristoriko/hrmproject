@@ -28,11 +28,11 @@ class AttendancePermissions
                 'url' => $this->detailsUrl(),
                 'permission' => authorize_any(['view_attendances_details'])
             ],
-            [
-                'name' => __t('summery'),
-                'url' => $this->summaryUrl(),
-                'permission' => authorize_any(['view_attendance_summary'])
-            ]
+            // [
+            //     'name' => __t('summery'),
+            //     'url' => $this->summaryUrl(),
+            //     'permission' => authorize_any(['view_attendance_summary'])
+            // ]
         ];
     }
 

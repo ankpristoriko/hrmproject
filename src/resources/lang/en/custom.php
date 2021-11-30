@@ -116,4 +116,8 @@ return [
     'assignment_input_hint' => 'Applicant can upload one file',
     'required' => 'Required',
     'assignment' => 'Assignment',
+
+    'recruitment_dashboard' => 'Dashboard',
+    'recruitment_dashboard_title' => 'Recruitment Dashboard',
+    'recruitment_career_page' => 'Career Page',
 ];

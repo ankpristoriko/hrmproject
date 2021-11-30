@@ -28,11 +28,11 @@ class LeavePermissions
                 'url' => route('support.leave.calendar',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
                 'permission' => authorize_any(['view_leave_calendar'])
             ],
-            [
-                'name' => __t('summery'),
-                'url' => route('support.leave.summaries',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
-                'permission' => authorize_any(['view_leave_summaries'])
-            ],
+            // [
+            //     'name' => __t('summery'),
+            //     'url' => route('support.leave.summaries',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+            //     'permission' => authorize_any(['view_leave_summaries'])
+            // ],
         ];
     }
 

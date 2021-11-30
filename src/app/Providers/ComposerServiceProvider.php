@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Composer\TenantDashboardComposer;
+use App\Http\Composer\TenantMainMenuComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +17,8 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('layout.tenant', TenantDashboardComposer::class);
+        View::composer('layout.tenant', TenantMainMenuComposer::class);
+        View::composer('tenant.main_menu', TenantDashboardComposer::class);
     }
 
     /**

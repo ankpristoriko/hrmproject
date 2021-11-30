@@ -15,6 +15,11 @@ class NavigationController extends Controller
         return view('tenant.dashboard');
     }
 
+    public function menu()
+    {
+        return view('tenant.main_menu');
+    }
+
     public function settings()
     {
         $permission = [
@@ -64,8 +69,16 @@ class NavigationController extends Controller
 
     public function jobSettings()
     {
-        if (authorize_any(['view_promotions'])) {
+        if (authorize_any(['view_job_settings'])) {
             return view('tenant.recruitment.job_settings');
+        }
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function recruitmentCareerPage()
+    {
+        if (authorize_any(['view_career_page'])) {
+            return view('tenant.recruitment.career_page');
         }
         throw new GeneralException(trans('default.action_not_allowed'));
     }
@@ -187,6 +200,35 @@ class NavigationController extends Controller
         throw new GeneralException(trans('default.action_not_allowed'));
     }
 
+    public function leaveDashboard()
+    {
+        $manager_dept = [];
+
+        if (request()->get('access_behavior') == 'own_departments') {
+            $manager_dept = resolve(DepartmentRepository::class)->getDepartments(auth()->id());
+        }
+
+        if (authorize_any(['view_leave_summaries'])) {
+            return view('tenant.leave.dashboard', [
+                'user' => resolve(EmployeeRepository::class)->getFirstEmployee(),
+                'manager_dept' => $manager_dept
+            ]);
+        }
+
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function attendanceDashboard()
+    {
+        if (authorize_any(['view_attendance_summary'])) {
+            return view('tenant.attendance.dashboard', [
+                'user' => resolve(EmployeeRepository::class)->getFirstEmployee()
+            ]);
+        }
+
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
     public function leaves()
     {
         if (authorize_any(['view_leaves'])) {
@@ -279,6 +321,21 @@ class NavigationController extends Controller
         return view('tenant.employee.index');
     }
 
+    public function administrationDashboard()
+    {
+        return view('tenant.administration.dashboard');
+    }
+
+    public function employeeDashboard()
+    {
+        return view('tenant.employee.dashboard');
+    }
+
+    public function settingDashboard()
+    {
+        return view('tenant.settings.dashboard');
+    }
+
     public function designations()
     {
         if (authorize_any(['view_designations'])) {
@@ -353,6 +410,17 @@ class NavigationController extends Controller
     {
         if (authorize_any(['view_payslips'])) {
             return view('tenant.payroll.payslip');
+        }
+
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function payrollDashboard()
+    {
+        if (authorize_any(['view_payroll_summery'])) {
+            return view('tenant.payroll.dashboard',[
+            'user' => resolve(EmployeeRepository::class)->getFirstEmployee(),
+            ]);
         }
 
         throw new GeneralException(trans('default.action_not_allowed'));
