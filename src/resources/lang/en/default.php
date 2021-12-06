@@ -795,6 +795,7 @@ return array_merge([
     'employee_details' => 'Employee Details',
     'personal_details' => 'Personal Details',
     'address_details' => 'Address Details',
+    'documents' => 'Document',
     'permanent_address' => 'Permanent address',
     'current_address' => 'Current address',
     'emergency_contacts' => 'Emergency Contacts',
@@ -1456,5 +1457,12 @@ return array_merge([
     'payslip_address' => 'Payslip address',
     'includes_off_day' => 'Includes {count} off day',
     'includes_off_days' => 'Includes {count} off days',
+
+    'document_no' => 'Document No',
+    'valid_from' => 'Valid From',
+    'valid_to' => 'Valid To',
+    'ktp' => 'KTP',
+    'npwp' => 'NPWP',
+    'note' => 'Note',
 
 ], include 'custom.php');

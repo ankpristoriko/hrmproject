@@ -18,6 +18,7 @@ use App\Models\Tenant\Employee\DesignationUser;
 use App\Models\Tenant\Employee\EmploymentStatus;
 use App\Models\Tenant\Employee\Profile;
 use App\Models\Tenant\Employee\UserContact;
+use App\Models\Tenant\Employee\UserDocument;
 use App\Models\Tenant\Leave\Leave;
 use App\Models\Tenant\Leave\UserLeave;
 use App\Models\Tenant\Payroll\BeneficiaryValue;
@@ -178,6 +179,11 @@ trait UserRelationship
     {
         return $this->hasMany(UserContact::class)
             ->whereIn('key', config('settings.supported_social_links'));
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(UserDocument::class)->whereIn('key', ['ktp', 'npwp']);
     }
 
     public function attendances()

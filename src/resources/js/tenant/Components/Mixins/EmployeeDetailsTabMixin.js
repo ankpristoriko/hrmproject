@@ -61,6 +61,14 @@ export default {
                     }
                 },
                 {
+                    'name': this.$t('documents'),
+                    'title': this.$t('documents'),
+                    'component': 'app-employee-document',
+                    'props': {
+                        id: this.employeeId
+                    }
+                },
+                {
                     'name': this.$t('address_details'),
                     'title': this.$t('address_details'),
                     'component': 'app-employee-address-details',

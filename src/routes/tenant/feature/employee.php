@@ -4,6 +4,7 @@ use App\Http\Controllers\Tenant\Employee\DepartmentController;
 use App\Http\Controllers\Tenant\Employee\DepartmentEmployeeController;
 use App\Http\Controllers\Tenant\Employee\DepartmentStatusController;
 use App\Http\Controllers\Tenant\Employee\EmployeeAddressController;
+use App\Http\Controllers\Tenant\Employee\EmployeeDocumentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeContactController;
 use App\Http\Controllers\Tenant\Employee\EmployeeController;
 use App\Http\Controllers\Tenant\Employee\EmployeeInviteController;
@@ -63,6 +64,12 @@ Route::group(['prefix' => 'app'], function (Router $router) {
 
         $router->delete('addresses/{type}', [EmployeeAddressController::class, 'delete'])
             ->name('employee-address.delete');
+
+        $router->patch('documents', [EmployeeDocumentController::class, 'update'])
+            ->name('employee-documents.update');
+
+        $router->delete('documents/{type}', [EmployeeDocumentController::class, 'delete'])
+            ->name('employee-documents.delete');
 
         $router->get('job-history', [EmployeeJobHistoryController::class, 'index'])
             ->name('job-history.index');

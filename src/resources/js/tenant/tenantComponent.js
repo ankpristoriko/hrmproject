@@ -79,6 +79,8 @@ Vue.component('app-employee-job-history',require('./Components/View/Employee/Com
 Vue.component('app-employee-salary-reviews',require('./Components/View/Employee/Components/SalaryReviews/SalaryReviews').default);
 Vue.component('app-employee-attendance',require('./Components/View/Employee/Components/Attendance/Attendance').default);
 Vue.component('app-employee-leave',require('./Components/View/Employee/Components/Leave/Leave').default);
+Vue.component('app-employee-document',require('./Components/View/Employee/Components/Documents/Documents').default);
+Vue.component('app-employee-document-modal',require('./Components/View/Employee/Components/Documents/DocumentsEditModal').default);
 Vue.component('app-employee-address-details-model',require('./Components/View/Employee/Components/AddressDetails/AddressDetailsEditModal').default);
 Vue.component('app-employment-status-modal',require('./Components/View/Employee/EmploymentStatusModal').default);
 Vue.component('app-employee-emergency-contact-model',require('./Components/View/Employee/Components/EmergencyContact/EmergencyContactEditModal').default);
