@@ -9,6 +9,11 @@
                 <document-value :value="document.value" identifier="document_no"/>
                 <div class="d-flex align-items-center">
                     <p class="mb-0">
+                        Valid Date : {{ document.value.valid_from }} - {{ document.value.valid_to }}
+                    </p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <p class="mb-0">
                         {{ documentDetails }}
                     </p>
                 </div>
@@ -61,8 +66,8 @@ export default {
     components: {DocumentTitle, DocumentValue},
     computed: {
         documentDetails() {
-            const {document_id, valid_from, valid_to, note} = this.document.value
-            const documents = [document_id, valid_from, valid_to, note]
+            const {note} = this.document.value
+            const documents = [note]
             let stringDocuments = '';
             documents.map(document => {
                 stringDocuments += document ? `${document}, ` : '';

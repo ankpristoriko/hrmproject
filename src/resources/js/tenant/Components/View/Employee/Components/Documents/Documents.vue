@@ -15,6 +15,20 @@
                             @edit="openModal"
                             @delete="getConfirmations"
             />
+
+            <single-document :document="employeeDocument.bpjs_ketenagakerjaan"
+                            type="bpjs_ketenagakerjaan"
+                            @add="openModal"
+                            @edit="openModal"
+                            @delete="getConfirmations"
+            />
+
+            <single-document :document="employeeDocument.bpjs_kesehatan"
+                            type="bpjs_kesehatan"
+                            @add="openModal"
+                            @edit="openModal"
+                            @delete="getConfirmations"
+            />
         </template>
 
         <app-employee-document-modal
@@ -96,6 +110,8 @@ export default {
             return  {
                 ktp: this.getDocument('ktp'),
                 npwp: this.getDocument('npwp'),
+                bpjs_ketenagakerjaan: this.getDocument('bpjs_ketenagakerjaan'),
+                bpjs_kesehatan: this.getDocument('bpjs_kesehatan'),
             };
         },
         url() {

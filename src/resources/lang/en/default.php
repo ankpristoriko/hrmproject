@@ -1463,6 +1463,8 @@ return array_merge([
     'valid_to' => 'Valid To',
     'ktp' => 'KTP',
     'npwp' => 'NPWP',
+    'bpjs_ketenagakerjaan' => 'BPJS Ketenagakerjaan',
+    'bpjs_kesehatan' => 'BPJS Kesehatan',
     'note' => 'Note',
 
 ], include 'custom.php');
