@@ -795,7 +795,7 @@ return array_merge([
     'employee_details' => 'Employee Details',
     'personal_details' => 'Personal Details',
     'address_details' => 'Address Details',
-    'documents' => 'Document',
+    'documents' => 'Documents',
     'permanent_address' => 'Permanent address',
     'current_address' => 'Current address',
     'emergency_contacts' => 'Emergency Contacts',
