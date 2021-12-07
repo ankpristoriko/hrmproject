@@ -19,7 +19,7 @@ class UserDocument extends Model
 
     public function getValueAttribute()
     {
-        if (in_array($this->key, ['ktp', 'npwp'])) {
+        if (in_array($this->key, ['ktp', 'npwp', 'bpjs_kesehatan', 'bpjs_ketenagakerjaan'])) {
             return json_decode($this->attributes['value']);
         }
 

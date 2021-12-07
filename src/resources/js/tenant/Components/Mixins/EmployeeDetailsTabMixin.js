@@ -77,6 +77,14 @@ export default {
                     }
                 },
                 {
+                    'name': this.$t('dependents'),
+                    'title': this.$t('dependents'),
+                    'component': 'app-employee-dependent',
+                    'props': {
+                        id: this.employeeId
+                    }
+                },
+                {
                     'name': this.$t('emergency_contacts'),
                     'title': this.$t('emergency_contacts'),
                     'component': 'app-employee-emergency-contact',

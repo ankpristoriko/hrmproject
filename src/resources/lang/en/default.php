@@ -796,6 +796,7 @@ return array_merge([
     'personal_details' => 'Personal Details',
     'address_details' => 'Address Details',
     'documents' => 'Documents',
+    'dependents' => 'Dependents',
     'permanent_address' => 'Permanent address',
     'current_address' => 'Current address',
     'emergency_contacts' => 'Emergency Contacts',
@@ -1466,5 +1467,8 @@ return array_merge([
     'bpjs_ketenagakerjaan' => 'BPJS Ketenagakerjaan',
     'bpjs_kesehatan' => 'BPJS Kesehatan',
     'note' => 'Note',
+
+    'you_can_add_multiple_dependents' => 'You can add multiple dependents',
+    'dependent' => 'Dependent',
 
 ], include 'custom.php');

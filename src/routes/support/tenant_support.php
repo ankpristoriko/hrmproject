@@ -15,6 +15,7 @@ use App\Http\Controllers\Tenant\Employee\DepartmentController;
 use App\Http\Controllers\Tenant\Employee\DesignationAPIController;
 use App\Http\Controllers\Tenant\Employee\EmployeeAddressController;
 use App\Http\Controllers\Tenant\Employee\EmployeeDocumentController;
+use App\Http\Controllers\Tenant\Employee\EmployeeDependentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeContactController;
 use App\Http\Controllers\Tenant\Employee\EmployeeController;
 use App\Http\Controllers\Tenant\Employee\EmployeeEmploymentStatusController;
@@ -326,6 +327,10 @@ Route::group(['prefix' => ''], function (Router $router) {
 
             $router->get('documents', [EmployeeDocumentController::class, 'show'])
                 ->name('employee-document.index')
+                ->middleware('employee_access');
+
+            $router->get('dependents', [EmployeeDependentController::class, 'index'])
+                ->name('employee-dependent.index')
                 ->middleware('employee_access');
 
             $router->get('emergency-contacts', [EmployeeContactController::class, 'index'])

@@ -5,6 +5,7 @@ use App\Http\Controllers\Tenant\Employee\DepartmentEmployeeController;
 use App\Http\Controllers\Tenant\Employee\DepartmentStatusController;
 use App\Http\Controllers\Tenant\Employee\EmployeeAddressController;
 use App\Http\Controllers\Tenant\Employee\EmployeeDocumentController;
+use App\Http\Controllers\Tenant\Employee\EmployeeDependentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeContactController;
 use App\Http\Controllers\Tenant\Employee\EmployeeController;
 use App\Http\Controllers\Tenant\Employee\EmployeeInviteController;
@@ -88,6 +89,15 @@ Route::group(['prefix' => 'app'], function (Router $router) {
 
         $router->post('payrun-setting/update-beneficiary', [EmployeePayrunController::class, 'updateBeneficiary'])
             ->name('employee-beneficiary.update');
+
+        $router->apiResource('dependents', EmployeeDependentController::class, [
+                'names' => [
+                    'store' => 'employee-dependents.store',
+                    'destroy' => 'employee-dependents.destroy',
+                    'update' => 'employee-dependents.update',
+                    'show' => 'employee-dependents.show'
+                ]
+        ])->except('index');
 
         $router->apiResource('emergency-contacts', EmployeeContactController::class, [
             'names' => [

@@ -81,6 +81,8 @@ Vue.component('app-employee-attendance',require('./Components/View/Employee/Comp
 Vue.component('app-employee-leave',require('./Components/View/Employee/Components/Leave/Leave').default);
 Vue.component('app-employee-document',require('./Components/View/Employee/Components/Documents/Documents').default);
 Vue.component('app-employee-document-modal',require('./Components/View/Employee/Components/Documents/DocumentsEditModal').default);
+Vue.component('app-employee-dependent',require('./Components/View/Employee/Components/Dependents/Dependents').default);
+Vue.component('app-employee-dependent-modal',require('./Components/View/Employee/Components/Dependents/DependentsEditModal').default);
 Vue.component('app-employee-address-details-model',require('./Components/View/Employee/Components/AddressDetails/AddressDetailsEditModal').default);
 Vue.component('app-employment-status-modal',require('./Components/View/Employee/EmploymentStatusModal').default);
 Vue.component('app-employee-emergency-contact-model',require('./Components/View/Employee/Components/EmergencyContact/EmergencyContactEditModal').default);

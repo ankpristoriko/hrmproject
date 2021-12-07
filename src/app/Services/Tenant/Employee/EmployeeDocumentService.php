@@ -18,7 +18,7 @@ class EmployeeDocumentService extends TenantService
             'document_no' => 'required',
             'valid_from' => 'required',
             'valid_to' => 'required',
-            'type' => 'required|in:ktp,npwp'
+            'type' => 'required|in:ktp,npwp,bpjs_ketenagakerjaan,bpjs_kesehatan'
         ])->validate();
 
         return $this;
