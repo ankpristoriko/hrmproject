@@ -106,6 +106,7 @@ export const TERMINATION_TYPES = `${TENANT_BASE_URL}app/termination-types`;
 export const EXPENSE_TYPES = `${TENANT_BASE_URL}app/expense-types`;
 export const EDUCATION_LEVELS = `${TENANT_BASE_URL}app/education-levels`;
 export const TRAINING_TYPES = `${TENANT_BASE_URL}app/training-types`;
+export const RELATIONSHIPS = `${TENANT_BASE_URL}app/relationships`;
 
 // Recruitment
 export const JOB_TYPES = `${TENANT_BASE_URL}app/job-types`;

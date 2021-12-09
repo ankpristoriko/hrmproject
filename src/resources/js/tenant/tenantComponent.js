@@ -204,13 +204,17 @@ Vue.component('app-termination-type-create-edit', require('./Components/View/Mas
 Vue.component('app-expense-types', require('./Components/View/Master/ExpenseType/ExpenseTypes').default);
 Vue.component('app-expense-type-create-edit', require('./Components/View/Master/Components/ExpenseTypeCreateEditModal').default);
 
-// Expense Type
+// Training Type
 Vue.component('app-training-types', require('./Components/View/Master/TrainingType/TrainingTypes').default);
 Vue.component('app-training-type-create-edit', require('./Components/View/Master/Components/TrainingTypeCreateEditModal').default);
 
 // Education Level
 Vue.component('app-education-levels', require('./Components/View/Master/EducationLevel/EducationLevels').default);
 Vue.component('app-education-level-create-edit', require('./Components/View/Master/Components/EducationLevelCreateEditModal').default);
+
+// Relationship
+Vue.component('app-relationships', require('./Components/View/Master/Relationship/Relationships').default);
+Vue.component('app-relationship-create-edit', require('./Components/View/Master/Components/RelationshipCreateEditModal').default);
 
 // Recruitment
 Vue.component('app-job-settings-layout', require('./Components/View/Recruitment/JobSettingLayout').default);

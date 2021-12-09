@@ -7,6 +7,7 @@ use App\Http\Controllers\Tenant\Master\TerminationTypeController;
 use App\Http\Controllers\Tenant\Master\ExpenseTypeController;
 use App\Http\Controllers\Tenant\Master\TrainingTypeController;
 use App\Http\Controllers\Tenant\Master\EducationLevelController;
+use App\Http\Controllers\Tenant\Master\RelationshipController;
 use Illuminate\Routing\Router;
 
 Route::group(['prefix' => 'app'], function (Router $router) {
@@ -17,5 +18,6 @@ Route::group(['prefix' => 'app'], function (Router $router) {
     $router->apiResource('expense-types', ExpenseTypeController::class);
     $router->apiResource('training-types', TrainingTypeController::class);
     $router->apiResource('education-levels', EducationLevelController::class);
+    $router->apiResource('relationships', RelationshipController::class);
 
 });

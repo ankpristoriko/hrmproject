@@ -126,6 +126,16 @@
                             class: 'btn btn-primary'
                         }
                     },
+                    {
+                        name: this.$t('relationship'),
+                        title: this.$t('relationship'),
+                        component: "app-relationships",
+                        permission: this.$can('view_relationships'),
+                        headerButton: {
+                            label: this.$t('add_relationship'),
+                            class: 'btn btn-primary'
+                        }
+                    },
                     // {
                     //     "name": this.$t('country'),
                     //     "title": this.$t('country'),

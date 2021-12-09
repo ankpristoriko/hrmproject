@@ -1060,7 +1060,15 @@ return array_merge([
     'is_enabled' => 'Is enabled',
     'enabled' => 'Enabled',
     'is_earning_enabled' => 'Allow monthly earning',
-    'you_cant_update_leave_type_if_the_type_already_has_leave_applied' => 'You cant update leave type if the type already has leave_applied',
+    'you_cant_update_leave_type_if_the_type_already_has_leave_applied' => 'You cant update leave type if the type already has leave applied',
+    'you_cant_update_education_level_if_the_type_already_has_education_applied' => 'You cant update education if the type already has education applied',
+    'you_cant_update_relationship_if_the_type_already_has_relationship_applied' => 'You cant update relationship if the type already has relationship applied',
+    'you_cant_update_expense_type_if_the_type_already_has_expense_applied' => 'You cant update expense type if the type already has expense applied',
+    'you_cant_update_document_type_if_the_type_already_has_document_applied' => 'You cant update document type if the type already has document applied',
+    'you_cant_update_award_type_if_the_type_already_has_award_applied' => 'You cant update award type if the type already has award applied',
+    'you_cant_update_termination_type_if_the_type_already_has_termination_applied' => 'You cant update termination type if the type already has termination applied',
+    'you_cant_update_training_type_if_the_type_already_has_training_applied' => 'You cant update training type if the type already has training applied',
+    'you_cant_update_warning_type_if_the_type_already_has_warning_applied' => 'You cant update warning type if the type already has warning applied',
     'leave_label' => 'Leave',
     'leave_availability' => 'Leave availability',
     'assign_leave' => 'Assign leave',
@@ -1470,5 +1478,7 @@ return array_merge([
 
     'you_can_add_multiple_dependents' => 'You can add multiple dependents',
     'dependent' => 'Dependent',
+
+    'add_relationship' => 'Add Relationship',
 
 ], include 'custom.php');
