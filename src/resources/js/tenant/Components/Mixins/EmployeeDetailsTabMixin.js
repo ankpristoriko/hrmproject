@@ -3,6 +3,14 @@ export default {
         return{
             jobDeskTabs: [
                 {
+                    'name': this.$t('personal_info'),
+                    'title': this.$t('personal_info'),
+                    'component': 'app-employee-personal-info',
+                    'props': {
+                        id: this.employeeId
+                    }
+                },
+                {
                     'name': this.$t('allowance'),
                     'title': this.$t('allowance'),
                     'component': 'app-employee-allowance',
@@ -60,46 +68,46 @@ export default {
                         'managerDept': this.managerDept
                     }
                 },
-                {
-                    'name': this.$t('documents'),
-                    'title': this.$t('documents'),
-                    'component': 'app-employee-document',
-                    'props': {
-                        id: this.employeeId
-                    }
-                },
-                {
-                    'name': this.$t('address_details'),
-                    'title': this.$t('address_details'),
-                    'component': 'app-employee-address-details',
-                    'props': {
-                        id: this.employeeId
-                    }
-                },
-                {
-                    'name': this.$t('dependents'),
-                    'title': this.$t('dependents'),
-                    'component': 'app-employee-dependent',
-                    'props': {
-                        id: this.employeeId
-                    }
-                },
-                {
-                    'name': this.$t('emergency_contacts'),
-                    'title': this.$t('emergency_contacts'),
-                    'component': 'app-employee-emergency-contact',
-                    'props': {
-                        id: this.employeeId
-                    }
-                },
-                {
-                    'name': this.$t('social_links'),
-                    'title': this.$t('social_links'),
-                    'component': 'app-employee-social-link',
-                    'props': {
-                        id: this.employeeId
-                    }
-                },
+                // {
+                //     'name': this.$t('documents'),
+                //     'title': this.$t('documents'),
+                //     'component': 'app-employee-document',
+                //     'props': {
+                //         id: this.employeeId
+                //     }
+                // },
+                // {
+                //     'name': this.$t('address_details'),
+                //     'title': this.$t('address_details'),
+                //     'component': 'app-employee-address-details',
+                //     'props': {
+                //         id: this.employeeId
+                //     }
+                // },
+                // {
+                //     'name': this.$t('dependents'),
+                //     'title': this.$t('dependents'),
+                //     'component': 'app-employee-dependent',
+                //     'props': {
+                //         id: this.employeeId
+                //     }
+                // },
+                // {
+                //     'name': this.$t('emergency_contacts'),
+                //     'title': this.$t('emergency_contacts'),
+                //     'component': 'app-employee-emergency-contact',
+                //     'props': {
+                //         id: this.employeeId
+                //     }
+                // },
+                // {
+                //     'name': this.$t('social_links'),
+                //     'title': this.$t('social_links'),
+                //     'component': 'app-employee-social-link',
+                //     'props': {
+                //         id: this.employeeId
+                //     }
+                // },
             ],
             employeeDetailsTabs: [
                 {

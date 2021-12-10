@@ -1480,5 +1480,6 @@ return array_merge([
     'dependent' => 'Dependent',
 
     'add_relationship' => 'Add Relationship',
+    'personal_info' => 'Personal Info',
 
 ], include 'custom.php');
