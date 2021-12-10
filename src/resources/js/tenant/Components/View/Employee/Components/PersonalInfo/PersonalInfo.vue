@@ -1,6 +1,8 @@
-<template>     
-    <div class="mb-primary">
-        <app-tab :tabs="tabsPersonalInfo" type="horizontal"/>
+<template>
+    <div>        
+        <div class="mb-primary">
+            <app-tab :tabs="tabsPersonalInfo" type="horizontal"/>
+        </div>
     </div>
 </template>
 <script>
