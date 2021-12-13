@@ -41,6 +41,8 @@ use App\Http\Controllers\Tenant\Payroll\PayrunController;
 use App\Http\Controllers\Tenant\Settings\TenantDeliveryController;
 use App\Http\Controllers\Tenant\WorkingShift\WorkingShiftAPIController;
 use App\Http\Controllers\Tenant\WorkingShift\WorkingShiftController;
+use App\Http\Controllers\Tenant\Master\RelationshipAPIController;
+use App\Http\Controllers\Tenant\Master\EducationAPIController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Bus;
 
@@ -241,6 +243,14 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('selectable/working-shifts', [WorkingShiftAPIController::class, 'index'])
         ->name('selectable.working_shift')
         ->middleware('can:view_working_shifts');
+
+    $router->get('selectable/relationships', [RelationshipAPIController::class, 'index'])
+        ->name('selectable.relationship')
+        ->middleware('can:view_relationships');
+
+    $router->get('selectable/educations', [EducationAPIController::class, 'index'])
+        ->name('selectable.education')
+        ->middleware('can:view_educations');
 
     $router->get('selectable/designations', [DesignationAPIController::class, 'index'])
         ->name('selectable.designations')

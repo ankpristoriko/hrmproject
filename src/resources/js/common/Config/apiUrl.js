@@ -44,6 +44,8 @@ export const TENANT_NOTIFICATION_SETTINGS_FRONT_END = `${TENANT_BASE_URL}/app/se
 export const TENANT_USER_CANCEL = `${TENANT_BASE_URL}/users/cancel-invitation`;
 export const TENANT_EMAIL_SETUP_SETTING = `${TENANT_BASE_URL}app/settings?tab=Email%20setup`;
 export const TENANT_SELECTABLE_WORK_SHIFT = `${TENANT_BASE_URL}selectable/working-shifts`;
+export const TENANT_SELECTABLE_RELATIONSHIP = `${TENANT_BASE_URL}selectable/relationships`;
+export const TENANT_SELECTABLE_EDUCATION = `${TENANT_BASE_URL}selectable/educations`;
 export const TENANT_SELECTABLE_ROLE_USER = `${TENANT_BASE_URL}selectable/role/users`;
 export const TENANT_SELECTABLE_FILTER_ROLES = `${TENANT_BASE_URL}selectable/filter/roles`;
 export const TENANT_DEPARTMENTS_URL = `${TENANT_BASE_URL}administration/departments`;

@@ -136,6 +136,26 @@
                             class: 'btn btn-primary'
                         }
                     },
+                    {
+                        name: this.$t('religion'),
+                        title: this.$t('religion'),
+                        component: "app-religions",
+                        permission: this.$can('view_religions'),
+                        headerButton: {
+                            label: this.$t('add_religion'),
+                            class: 'btn btn-primary'
+                        }
+                    },
+                    {
+                        name: this.$t('ethnicity'),
+                        title: this.$t('ethnicity'),
+                        component: "app-ethnicities",
+                        permission: this.$can('view_ethnicities'),
+                        headerButton: {
+                            label: this.$t('add_ethnicity'),
+                            class: 'btn btn-primary'
+                        }
+                    },
                     // {
                     //     "name": this.$t('country'),
                     //     "title": this.$t('country'),

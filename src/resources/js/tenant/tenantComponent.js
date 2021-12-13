@@ -217,6 +217,14 @@ Vue.component('app-education-level-create-edit', require('./Components/View/Mast
 Vue.component('app-relationships', require('./Components/View/Master/Relationship/Relationships').default);
 Vue.component('app-relationship-create-edit', require('./Components/View/Master/Components/RelationshipCreateEditModal').default);
 
+// Religion
+Vue.component('app-religions', require('./Components/View/Master/Religion/Religions').default);
+Vue.component('app-religion-create-edit', require('./Components/View/Master/Components/ReligionCreateEditModal').default);
+
+// Ethnicity
+Vue.component('app-ethnicities', require('./Components/View/Master/Ethnicity/Ethnicities').default);
+Vue.component('app-ethnicity-create-edit', require('./Components/View/Master/Components/EthnicityCreateEditModal').default);
+
 // Recruitment
 Vue.component('app-job-settings-layout', require('./Components/View/Recruitment/JobSettingLayout').default);
 Vue.component('app-recruitment-dashboard', require('./Components/View/Recruitment/Dashboard/Index').default);

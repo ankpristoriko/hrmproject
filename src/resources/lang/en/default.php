@@ -1069,6 +1069,8 @@ return array_merge([
     'you_cant_update_termination_type_if_the_type_already_has_termination_applied' => 'You cant update termination type if the type already has termination applied',
     'you_cant_update_training_type_if_the_type_already_has_training_applied' => 'You cant update training type if the type already has training applied',
     'you_cant_update_warning_type_if_the_type_already_has_warning_applied' => 'You cant update warning type if the type already has warning applied',
+    'you_cant_update_religion_if_the_type_already_has_religion_applied' => 'You cant update religion if the type already has religion applied',
+    'you_cant_update_ethnicity_if_the_type_already_has_ethnicity_applied' => 'You cant update ethnicity if the type already has ethnicity applied',
     'leave_label' => 'Leave',
     'leave_availability' => 'Leave availability',
     'assign_leave' => 'Assign leave',
@@ -1478,8 +1480,23 @@ return array_merge([
 
     'you_can_add_multiple_dependents' => 'You can add multiple dependents',
     'dependent' => 'Dependent',
+    'identity_no' => 'Identity No',
+    'bpjs_no' => 'BPJS No',
+    'place_of_birth' => 'Place of Birth',
+    'date_of_birth' => 'Date of Birth',
+    'relationship_id' => 'Relationship ID',
+    'occupation' => 'Occupation',
+    'education_level' => 'Education Level',
+    'state' => 'State',
+    'nationality' => 'Nationality',
 
     'add_relationship' => 'Add Relationship',
     'personal_info' => 'Personal Info',
+
+    'religion' => 'Religion',
+    'add_religion' => 'Add Religion',
+
+    'ethnicity' => 'Ethnicity',
+    'add_ethnicity' => 'Add Ethnicity',
 
 ], include 'custom.php');
