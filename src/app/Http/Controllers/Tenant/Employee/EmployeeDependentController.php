@@ -25,7 +25,7 @@ class EmployeeDependentController extends Controller
     public function update(User $employee, Request $request)
     {
         $this->service
-            ->setAttributes($request->only('name', 'identity_no', 'bpjs_no', 'place_of_birth', 'date_of_birth', 'gender', 'relationship_id', 'occupation', 'relationship_description', 'education_level', 'address_details', 'zip_code', 'city', 'country', 'state', 'nationality'))
+            ->setAttributes($request->only('name', 'identity_no', 'bpjs_no', 'place_of_birth', 'date_of_birth', 'gender', 'relationship_id', 'occupation', 'education_level', 'address', 'zip_code', 'city', 'country', 'state', 'nationality'))
             ->validateDependent()
             ->setModel($employee)
             ->updateDependent();

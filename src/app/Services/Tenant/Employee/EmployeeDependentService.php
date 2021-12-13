@@ -31,7 +31,7 @@ class EmployeeDependentService extends TenantService
         ], [
             'user_id' => $this->model->id,
             'key' => $this->getAttribute('type'),
-            'value' => json_encode($this->getAttributes('name', 'identity_no', 'bpjs_no', 'place_of_birth', 'date_of_birth', 'gender', 'relationship_id', 'occupation', 'relationship_description', 'education_level', 'address_details', 'zip_code', 'city', 'country', 'state', 'nationality'))
+            'value' => json_encode($this->getAttributes('name', 'identity_no', 'bpjs_no', 'place_of_birth', 'date_of_birth', 'gender', 'relationship_id', 'occupation', 'education_level', 'address', 'zip_code', 'city', 'country', 'state', 'nationality'))
         ]);
 
         return $this;

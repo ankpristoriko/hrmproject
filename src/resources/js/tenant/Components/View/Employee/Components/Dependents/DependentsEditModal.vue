@@ -44,12 +44,14 @@
                 </div>
                 <div class="col-md-6">
                     <app-form-group
-                        :label="$t('date_of_birth')"
-                        :placeholder="$placeholder('date_of_birth')"
-                        v-model="formData.date_of_birth"
-                        :required="true"
-                        :error-message="$errorMessage(errors, 'date_of_birth')"
-                    />
+                            :label="$fieldTitle('date_of_birth', '')"
+                            :id="'date_of_birth'"
+                            type="date"
+                            v-model="formData.date_of_birth"
+                            :placeholder="$placeholder('date_of_birth', '')"
+                            :required="true"
+                            :error-message="$errorMessage(errors, 'date_of_birth')"
+                        />
                 </div>
             </div>
 
@@ -167,8 +169,8 @@ import FormHelperMixins from "../../../../../../common/Mixin/Global/FormHelperMi
 import {addChooseInSelectArray} from "../../../../../../common/Helper/Support/FormHelper";
 import countries from "../../Helper/countries";
 import {flatObjectWithKey} from "../../../../../../common/Helper/ObjectHelper";
-import {TENANT_SELECTABLE_RELATIONSHIP} from "../../../../../../common/Config/apiUrl";
-import {TENANT_SELECTABLE_EDUCATION} from "../../../../../../common/Config/apiUrl";
+import {TENANT_SELECTABLE_RELATIONSHIP, TENANT_SELECTABLE_EDUCATION} from "../../../../../../common/Config/apiUrl";
+import {formatDateForServer} from "../../../../../../common/Helper/Support/DateTimeHelper";
 
 export default {
     name: "EmployeeDependentEditModel",
@@ -188,6 +190,9 @@ export default {
     methods: {
         submitData() {
             this.loading = true;
+            let formData = {...this.formData};
+
+            formData.date_of_birth = formatDateForServer(this.formData.date_of_birth);
             this.save(this.formData)
         },
         afterSuccess({data}) {
