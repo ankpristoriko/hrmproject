@@ -23,7 +23,7 @@ export const DELIVERY_SETTINGS_FRONT_END = `admin/settings?tab=delivery`;
 export const CUSTOM_FIELDS = 'admin/app/custom-fields';
 export const CUSTOM_FIELDS_TYPES = 'admin/app/custom-field-types';
 export const NOTIFICATIONS_FRONT_END = '/admin/settings?tab=Notification';
-
+export const CRON_JOB_SETTING = '/admin/app/settings/cronjob';
 
 // Tenant url for simplicity
 export const TENANT_SELECTABLE_ROLES = `${TENANT_BASE_URL}selectable/roles`;

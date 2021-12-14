@@ -40,6 +40,8 @@ Vue.component('app-punch-in', require('./Components/View/Attendance/Component/Ap
 Vue.component('app-leave-settings-layout', require('./Components/View/Setting/LeaveSettingLayout').default)
 Vue.component('app-payroll-settings-layout', require('./Components/View/Setting/PayrollSettingLayout').default)
 
+Vue.component('app-cron-job-settings', require('./Components/View/Setting/Component/CronJobSettings').default)
+
 //Employment Statuses
 Vue.component('app-employment-statuses', require('./Components/View/Employee/EmploymentStatus/EmploymentStatuses').default)
 Vue.component('app-employment-status-create-edit-modal', require('./Components/View/Employee/EmploymentStatus/EmploymentStatusCreateEditModal').default)
