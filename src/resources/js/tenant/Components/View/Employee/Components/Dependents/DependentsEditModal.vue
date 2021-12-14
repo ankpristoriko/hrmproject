@@ -112,10 +112,10 @@
             </div>
 
             <app-form-group
-                :label="$t('address_details')"
+                :label="$t('address')"
                 type="textarea"
                 :placeholder="$textAreaPlaceHolder('address_details')"
-                v-model="formData.details"
+                v-model="formData.address"
                 :required="true"
                 :error-message="$errorMessage(errors, 'address_details')"
             />

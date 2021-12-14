@@ -60,12 +60,12 @@ export default {
                 //         class: 'btn btn-primary',
                 //     }
                 // },
-                {
-                    name: this.$t('update'),
-                    title: this.$t('update'),
-                    component: "app-update",
-                    permission: this.$isAdmin(),
-                },
+                // {
+                //     name: this.$t('update'),
+                //     title: this.$t('update'),
+                //     component: "app-update",
+                //     permission: this.$isAdmin(),
+                // },
             ]
         }
     }

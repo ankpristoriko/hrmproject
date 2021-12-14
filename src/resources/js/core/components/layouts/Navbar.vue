@@ -52,7 +52,7 @@
                 </span>
                             </button>
                         </li>
-                        <li class="nav-item d-none d-lg-block">
+                        <!-- <li class="nav-item d-none d-lg-block">
                             <a v-if="fullScreen" class="d-flex align-items-center nav-link" href="#" :key="'maximize'"
                                @click="fullscreen" :title="$t('exit_fullscreen')">
                                 <app-icon :name="'minimize'"/>
@@ -62,7 +62,7 @@
                                :title="$t('fullscreen')">
                                 <app-icon :name="'maximize'"/>
                             </a>
-                        </li>
+                        </li> -->
 
                         <app-navbar-language-dropdown
                             :selected-language="selectedLanguage"

@@ -82,4 +82,16 @@ new Vue({
             this.recording = !this.recording;
         },
     },
+
+    watch: {
+        $route: function(current) {
+          const route = this.$router.options.routes.find(route => route.path === current.path)
+    
+          if (route && Array.isArray(route.children)) {
+            this.children = route.children
+          } else if (route) {
+            this.children = []
+          }
+        }
+      }
 });
