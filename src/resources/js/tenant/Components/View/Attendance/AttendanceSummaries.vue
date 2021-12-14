@@ -1,7 +1,15 @@
 <template>
     <div :class="!fromEmployeeDetails?'content-wrapper':''">
-        <app-page-top-section v-if="!fromEmployeeDetails" :title="$t('summery_dashboard')">
-            <app-attendance-top-buttons :specific-id="specificId" :tableId="tableId"/>
+        <app-page-top-section v-if="!fromEmployeeDetails" :title="$t('summery')">
+            <div class="d-flex d-inline">
+                <app-default-button
+                    btn-class="btn btn-success mr-2"
+                    :title="$t('export')"
+                    v-if="$can('export_attendance_summery')"
+                    @click="exportConfirmationModal = true"
+                />
+                <app-attendance-top-buttons :specific-id="specificId" :tableId="tableId"/>
+            </div>
         </app-page-top-section>
 
         <app-filter-with-search
@@ -16,9 +24,9 @@
             <div
                 :class="!fromEmployeeDetails?'p-primary':'px-0 pt-0 pb-primary'"
                 class="card-header d-flex align-items-center justify-content-between primary-card-color">
-                <app-month-calendar />
+                <app-month-calendar/>
 
-                <app-period-calendar />
+                <app-period-calendar/>
             </div>
 
             <app-overlay-loader v-if="preloader"/>
@@ -57,7 +65,7 @@
                 />
 
                 <app-attendance-summary-table
-                    :specific-employee = "fromEmployeeDetails"
+                    :specific-employee="fromEmployeeDetails"
                     :details-id="detailsId"
                     :attendance-id="attendanceId"
                     :user="employee"
@@ -65,6 +73,20 @@
 
             </div>
         </div>
+
+        <app-confirmation-modal
+            v-if="exportConfirmationModal"
+            :title="$t('attendance_export_title')"
+            :message="$t('attendance_export_message')"
+            modal-id="app-confirmation-modal"
+            modal-class="primary"
+            icon="download"
+            :first-button-name="$t('export')"
+            :second-button-name="$t('cancel')"
+            @confirmed="exportFilteredAttendance()"
+            @cancelled="exportConfirmationModal = false"
+            :self-close="false"
+        />
     </div>
 </template>
 
@@ -75,8 +97,8 @@ import AttendanceHelperMixin from "../../Mixins/AttendanceHelperMixin";
 import AttendanceSummaryDetailsMixin from "../../Mixins/AttendanceSummaryDetailsMixin";
 import EmployeeAttendanceSummary from "./Component/EmployeeAttendanceSummary";
 import {axiosGet, urlGenerator} from "../../../../common/Helper/AxiosHelper";
-import optional from "../../../../common/Helper/Support/Optional";
 import {collection} from "../../../../common/Helper/helpers";
+import {localTimeZone} from "../../../../common/Helper/Support/DateTimeHelper";
 
 export default {
     name: "AttendanceSummery",
@@ -108,14 +130,15 @@ export default {
             dataSet: [],
             isChanging: false,
             nextUser: {},
-            filterLoaded: true
+            filterLoaded: true,
+            exportConfirmationModal: false
         }
     },
     methods: {
         getAttendanceSummary(userId = false) {
             this.preloader = true;
             let employeeId = userId || this.user.id
-            if (employeeId){
+            if (employeeId) {
                 axiosGet(`${this.apiUrl.ATTENDANCES}/${employeeId}/summaries?${this.queryString}`).then(response => {
                     this.summaries = response.data;
                     const {regular, early, late, on_leave} = this.summaries;
@@ -140,25 +163,31 @@ export default {
             this.setActiveUserToAvatarFilter(filter.user)
             this.setActiveUserToDropdownFilter(filter.user);
         },
+        exportFilteredAttendance() {
+            window.location = urlGenerator(`${this.apiUrl.EXPORT}/${this.employee.id || this.user.id}/attendance?${this.queryString}&timeZone=${localTimeZone}`);
+            $("#app-confirmation-modal").modal('hide');
+            $(".modal-backdrop").remove();
+            this.exportConfirmationModal = false;
+        }
     },
     computed: {
-        specificId(){
-            if (this.specific){
+        specificId() {
+            if (this.specific) {
                 return JSON.parse(this.firstUser)?.id
             }
             return '';
         },
-        isPreviousNull(){
+        isPreviousNull() {
             return collection(this.getAllUsers).first().id === this.employee.id
         },
-        getAllUsers(){
+        getAllUsers() {
             return this.tableOptions.filters.find(data => data.key === 'user').option
         },
-        isNextNull(){
+        isNextNull() {
             return collection(this.getAllUsers).last().id === this.employee.id
         },
         user() {
-            if (this.$can('view_attendance_summary') && !this.$can('view_all_attendance')){
+            if (this.$can('view_attendance_summary') && !this.$can('view_all_attendance')) {
                 return window.user;
             }
             return this.isChanging ? this.nextUser : JSON.parse(this.firstUser);
@@ -172,7 +201,7 @@ export default {
         profileUrl() {
             return urlGenerator(`${this.apiUrl.EMPLOYEES_PROFILE}/${this.employee.id}/profile`)
         },
-        specificEmployee(){
+        specificEmployee() {
             return (this.$can('view_attendance_summary') && !this.$can('view_all_attendance')) ||
                 this.specific
         }

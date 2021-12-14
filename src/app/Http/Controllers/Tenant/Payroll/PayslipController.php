@@ -37,7 +37,7 @@ class PayslipController extends Controller
         $month = $within ?: request('month_number') + 1;
         $ranges = $this->convertRangesToStringFormat($this->getStartAndEndOf($month, request()->get('year')));
 
-        if ($within == 'total') {
+        if ($within == 'total' && Payslip::query()->exists()) {
             $min_date = Payslip::query()->oldest('start_date')->first()->start_date;
             $max_date = Payslip::query()->latest('end_date')->first()->end_date;
             $ranges = [$min_date, $max_date];

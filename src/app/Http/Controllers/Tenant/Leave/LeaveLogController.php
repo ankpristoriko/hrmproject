@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Tenant\Leave;
 
+use App\Helpers\Traits\DateTimeHelper;
 use App\Helpers\Traits\SettingKeyHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\Attendance\Attendance;
@@ -10,7 +11,7 @@ use Illuminate\Support\Carbon;
 
 class LeaveLogController extends Controller
 {
-    use SettingKeyHelper;
+    use SettingKeyHelper, DateTimeHelper;
 
     public function index(Leave $leave): Leave
     {
@@ -34,7 +35,7 @@ class LeaveLogController extends Controller
         $leave->attendances = Attendance::query()
             ->with('details')
             ->where('user_id', $leave->user->id)
-            ->whereBetween('in_date', [Carbon::parse($leave->start_at)->toDateString(), Carbon::parse($leave->end_at)->toDateString()])
+            ->whereBetween('in_date', [$this->carbon($leave->start_at)->parse()->toDateString(), $this->carbon($leave->end_at)->parse()->toDateString()])
             ->get();
 
         $leaveApprovalLevel = $this->getSettingFromKey('leave')('approval_level') ?: 'single';

@@ -100,7 +100,7 @@ class LeaveCalendarController extends Controller
             'pending_request' => $totalPendingRequest,
             'request_hours' => $this->convertSecondsToHoursMinutes($pendingTotalLeaveSeconds),
             'pending_stats' => $pendingStats,
-            'ranges' => $this->dateRange(Carbon::parse($ranges[0]), Carbon::parse($ranges[1])),
+            'ranges' => $this->dateRange($this->carbon($ranges[0])->parse(), $this->carbon($ranges[1])->parse()),
         ];
 
 

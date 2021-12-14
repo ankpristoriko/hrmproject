@@ -19,7 +19,7 @@ class DemoCommand extends Command
      *
      * @var string
      */
-    protected $description = 'This commnad will populate demo data to database for testing purpose';
+    protected $description = 'This command will populate demo data to database for testing purpose';
 
     /**
      * Create a new command instance.

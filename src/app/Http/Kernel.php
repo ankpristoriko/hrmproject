@@ -86,6 +86,8 @@ class Kernel extends HttpKernel
         'request_show_all' => \App\Http\Middleware\SetShowAllRequest::class,
         'app.installed' => \App\Http\Middleware\CheckIfInstalledMiddleware::class,
         'app.not_install' => \App\Http\Middleware\CheckIfNotInstallMiddleware::class,
+        'ifNotInstalled' => \App\Http\Middleware\CheckIfNotInstalledMiddleware::class,
+        'valid_purchase_code' => \Gainhq\Installer\App\Middleware\ValidPurchaseCodeMiddleware::class,
     ];
 
     /**

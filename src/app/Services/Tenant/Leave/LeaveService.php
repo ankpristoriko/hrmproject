@@ -46,7 +46,7 @@ class LeaveService extends TenantService
         return $leaves->reduce(function ($count, Leave $leave) use ($workingShiftsService) {
             $holidays = $this->leaveCalendarService->getUserHolidays($leave->user);
             if (in_array($leave->duration_type, Leave::$day_duration_types)) {
-                $dates = collect($this->dateRange(Carbon::parse($leave->start_at), Carbon::parse($leave->end_at)))
+                $dates = collect($this->dateRange($this->carbon($leave->start_at)->parse(), $this->carbon($leave->end_at)->parse()))
                     ->filter(fn(Carbon $carbon) => $this->checkIfItsALeaveDay(
                         $carbon,
                         $holidays,

@@ -5,6 +5,7 @@ namespace App\Filters\Tenant;
 
 
 use App\Filters\FilterBuilder;
+use App\Helpers\Traits\DateTimeHelper;
 use App\Helpers\Traits\MakeArrayFromString;
 use App\Helpers\Traits\UserAccessQueryHelper;
 use App\Repositories\Core\Status\StatusRepository;
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 
 class AttendanceRequestsFilter extends FilterBuilder
 {
-    use MakeArrayFromString, UserAccessQueryHelper;
+    use MakeArrayFromString, UserAccessQueryHelper, DateTimeHelper;
 
     public function departments($departments = null): void
     {
@@ -53,7 +54,7 @@ class AttendanceRequestsFilter extends FilterBuilder
     {
         $this->builder->when(
             $date,
-            fn(Builder $builder) => $builder->whereDate('in_date', Carbon::parse($date)),
+            fn(Builder $builder) => $builder->whereDate('in_date', $this->carbon($date)->parse()),
             fn(Builder $builder) => $builder->whereDate('in_date', todayFromApp())
         );
     }

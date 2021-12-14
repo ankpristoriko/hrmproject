@@ -63,13 +63,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'as' => 'core.'], fu
 
 });
 
-Route::group(['prefix' => 'app', 'middleware' => 'guest', 'as' => 'app.'], function () {
-    include  __DIR__.'/setup/install.php';
-});
 
-Route::group(['prefix' => 'app', 'middleware' => ['app.installed', 'auth', 'authorize']], function () {
-    include __DIR__.'/setup/update.php';
-});
 
 /*
  * This routes is for documentation purpose.

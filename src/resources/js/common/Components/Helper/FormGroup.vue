@@ -17,7 +17,7 @@
     </div>
     <div class="form-group" :class="formGroupClass" v-else-if="page === 'page'">
         <div :class="`row ${ labelAlignment === 'center' ? 'align-items-center' : ''}`">
-            <div class="col-lg-3 col-xl-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-xl-3 col-md-3 col-sm-12">
                 <label class="text-left d-block mb-lg-0">
                     {{ label }} <br v-if="recommendation"/>
                     <small v-if="recommendation" class="text-muted font-italic">
@@ -25,7 +25,7 @@
                     </small>
                 </label>
             </div>
-            <div class="col-lg-8 col-xl-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="col-lg-8 col-xl-8 col-md-8 col-sm-12">
                 <app-input
                     :type="type"
                     v-model="model"

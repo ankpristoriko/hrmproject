@@ -1,7 +1,7 @@
 <template>
     <div>
         <app-default-button
-            btn-class="btn btn-success mr-2"
+            btn-class="btn btn-success mr-1"
             :title="$t('settings')"
             :url="apiUrl.ATTENDANCE_SETTINGS_FRONT_END"
             v-if="$can('view_attendance_settings')"

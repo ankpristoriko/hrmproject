@@ -86,7 +86,7 @@ class AppUpdateController extends Controller
 
         $this->fileManager->extract($version);
 
-        $this->manager->finishUpdate();
+        // $this->manager->finishUpdate();
 
         return response()->json(['status' => true, 'message' => "$version installed successfully."]);
     }

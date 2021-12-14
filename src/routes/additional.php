@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\{Core\Auth\Role\PermissionController,
+use App\Http\Controllers\{Common\CronJobSettingController,
+    Core\Auth\Role\PermissionController,
     Core\Auth\User\AuthenticateUserController,
     Core\Auth\User\LoginController,
     Core\Auth\User\UserPasswordController as BaseUserPasswordControllerAlias,
@@ -73,3 +74,6 @@ Route::group(['prefix' => 'auth/users/{user}'], function () {
 });
 
 Route::get('languages', [LanguageController::class, 'index'])->name('languages.index');
+
+Route::get('app/settings/cronjob', [CronJobSettingController::class, 'index'])
+    ->name('cron-job-settings');

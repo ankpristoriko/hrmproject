@@ -2,6 +2,7 @@
 
 namespace App\Models\Tenant\Leave;
 
+use App\Helpers\Traits\DateTimeHelper;
 use App\Models\Core\Status;
 use App\Models\Tenant\Leave\Relationship\LeaveRelationship;
 use App\Models\Tenant\TenantModel;
@@ -11,7 +12,7 @@ use Illuminate\Support\Carbon;
 
 class Leave extends TenantModel
 {
-    use HasFactory, LeaveRelationship;
+    use HasFactory, LeaveRelationship, DateTimeHelper;
 
     public static array $statuses = [
         'canceled', 'approved', 'rejected', 'pending', 'bypassed'
@@ -68,7 +69,7 @@ class Leave extends TenantModel
 
     public function getHourPercentage(WorkingShiftDetails $details)
     {
-        return (Carbon::parse($this->start_at)->diffInSeconds(Carbon::parse($this->end_at)) / $details->getWorkingHourInSeconds());
+        return ($this->carbon($this->start_at)->parse()->diffInSeconds($this->carbon($this->end_at)->parse()) / $details->getWorkingHourInSeconds());
     }
 
 }

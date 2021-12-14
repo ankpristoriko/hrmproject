@@ -196,7 +196,7 @@ class AttendanceService extends TenantService
             return 'regular';
         }
 
-        $workShiftTime = $this->carbon($this->getToday()->toDateString().' '.$details->start_at)->parse();
+        $workShiftTime = $this->carbon($this->getToday()->toDateString().' '.$details->start_at, 'UTC')->parse();
 
         if ($this->getNow()->isBefore($workShiftTime)) {
             return 'early';
@@ -267,6 +267,30 @@ class AttendanceService extends TenantService
                 $this->details,
                 $this->getAttr('note_type')
             )->sendNotification($this->details->load('status'));
+
+        return $this;
+    }
+
+    public function manualAddPunchForSeeder()
+    {
+        $this->checkPreviousPunchIn()
+            ->validateExistingPunchTime();
+
+        $this->setAttr('today', $this->getAttr('in_date'));
+        $this->setAttr('now', $this->getAttr('in_time'));
+
+        $attributes = [
+            'out_time' => $this->carbon($this->getAttr('out_time'))->toDateTime(),
+            'review_by' => $this->getAttr('review_by'),
+            'added_by' => $this->getAttr('added_by')
+        ];
+
+        $this->buildInOutDetails($attributes)
+            ->saveManualDetails($this->todayAttendance('manual'))
+            ->createNote(
+                $this->details,
+                $this->getAttr('note_type')
+            );
 
         return $this;
     }
@@ -373,12 +397,15 @@ class AttendanceService extends TenantService
 
     public function validateIfNotFuture()
     {
-        $inTimeRules = $this->getAttr('out_time') ? 'nullable|before:out_time|before_or_equal:now' : 'nullable|before_or_equal:now';
-        $outTimeRules = $this->getAttr('in_time') ? 'nullable|after:in_time|before_or_equal:now' : 'nullable|before_or_equal:now';
+        $inTimeRules = $this->getAttr('out_time') ? 'nullable|before:out_time|before_or_equal:'.nowFromApp() : 'nullable|before_or_equal:'.nowFromApp();
+        $outTimeRules = $this->getAttr('in_time') ? 'nullable|after:in_time|before_or_equal:'.nowFromApp() : 'nullable|before_or_equal:'.nowFromApp();
 
         validator($this->getAttributes(), [
             'in_time' => $inTimeRules,
             'out_time' => $outTimeRules
+        ],[
+            'in_time.before_or_equal' => 'The in time must be a date before or equal now',
+            'out_time.before_or_equal' => 'The out time must be a date before or equal now',
         ])->validate();
 
         return $this;
@@ -391,7 +418,7 @@ class AttendanceService extends TenantService
         }
 
         throw_if(
-            Carbon::parse(Carbon::parse($date)->toDateString())
+            $this->carbon($this->carbon($date)->parse()->toDateString())->parse()
                 ->diffInDays($compareTo ? $compareTo : todayFromApp()) > 1,
             ValidationException::withMessages([
                 'in_time' => [__t('attendance_can_not_be_applied_in_different_day')]

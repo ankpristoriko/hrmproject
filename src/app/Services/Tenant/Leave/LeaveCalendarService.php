@@ -121,7 +121,7 @@ class LeaveCalendarService extends TenantService
             return  $workingShift->is_weekend ? 0 :  $workingShift->getWorkingHourInSeconds();
         }
 
-        return Carbon::parse($leave->start_at)->diffInSeconds($leave->end_at);
+        return $this->carbon($leave->start_at)->parse()->diffInSeconds($leave->end_at);
     }
 
     public function getWorkingShiftDetails($user_id, $date)

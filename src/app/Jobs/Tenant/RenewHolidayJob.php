@@ -2,6 +2,7 @@
 
 namespace App\Jobs\Tenant;
 
+use App\Helpers\Traits\DateTimeHelper;
 use App\Models\Tenant\Holiday\Holiday;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
@@ -12,7 +13,7 @@ use Illuminate\Queue\SerializesModels;
 
 class RenewHolidayJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, DateTimeHelper;
 
     /**
      * Create a new job instance.
@@ -36,8 +37,8 @@ class RenewHolidayJob implements ShouldQueue
 
         $holidays->map(function ($holiday){
             $newHoliday = $holiday->replicate()->fill([
-                'start_date' => Carbon::parse($holiday->start_date)->addYear(),
-                'end_date' => Carbon::parse($holiday->end_date)->addYear(),
+                'start_date' => $this->carbon($holiday->start_date)->parse()->addYear(),
+                'end_date' => $this->carbon($holiday->end_date)->parse()->addYear(),
             ]);
             $newHoliday->save();
             $newHoliday->departments()->sync($holiday->departments);

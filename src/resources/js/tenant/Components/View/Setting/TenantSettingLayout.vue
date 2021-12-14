@@ -25,6 +25,12 @@ export default {
                     permission: this.$can('view_settings')
                 },
                 {
+                    name: this.$t('cron_job'),
+                    title: this.$t('cron_job'),
+                    component: "app-cron-job-settings",
+                    props: {alias: 'tenant'},
+                },
+                {
                     name: this.$t('email_setup'),
                     title: this.$t('email_setup'),
                     component: "app-delivery-settings",

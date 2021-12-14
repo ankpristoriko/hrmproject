@@ -71,7 +71,7 @@ class AttendanceUpdateService extends AttendanceService
 
             if ($this->getAttr('out_time')) {
                 throw_if(
-                    Carbon::parse($this->getAttr('in_time'))->diffInHours(Carbon::parse($this->getAttr('out_time'))) >= 24,
+                    $this->carbon($this->getAttr('in_time'))->parse()->diffInHours($this->carbon($this->getAttr('out_time'))->parse()) >= 24,
                     ValidationException::withMessages([
                         'out_time' => [__t('punch_in_and_out_time_difference_message')]
                     ])

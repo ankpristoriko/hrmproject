@@ -18,7 +18,7 @@ class CreatePayrunsTable extends Migration
             $table->string('name');
             $table->string('uid');
             $table->foreignId('status_id')->constrained();
-            $table->json('data');
+            $table->text('data');
             $table->enum('followed', ['employee','settings','customized'])->default('settings');
             $table->string('batch_id',255)->nullable();
             $table->unsignedBigInteger('tenant_id')->default(1);

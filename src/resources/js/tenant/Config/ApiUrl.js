@@ -74,6 +74,7 @@ export const SALARY_RANGE = `${TENANT_BASE_URL}app/salary-range`;
 
 //Update
 export const APP_UPDATE = `${TENANT_BASE_URL}app/updates`;
+export const APP_UPDATE_INSTALL = `${TENANT_BASE_URL}app/updates/install`;
 
 //Payroll
 export const PAYROLL_SETTINGS = `${TENANT_BASE_URL}app/settings/payrun`;
@@ -93,6 +94,9 @@ export const PAYROLL = `${TENANT_BASE_URL}/app/payroll`;
 
 //import
 export const IMPORT = `${TENANT_BASE_URL}/app/import`;
+
+//export
+export const EXPORT = `${TENANT_BASE_URL}app/export`;
 
 // Promotion
 export const PROMOTION_DATA = `${TENANT_BASE_URL}core_hr/promotions`;
@@ -132,3 +136,23 @@ export const JOB_APPLICANT = `${TENANT_BASE_URL}app/job-applicant`;
 export const PUBLIC_JOB_POST = `${TENANT_BASE_URL}public/job-post`;
 export const PUBLIC_VERIFY_EMAIL = `${TENANT_BASE_URL}public/candidate/check-email`;
 export const PUBLIC_CAREER_PAGE = `${TENANT_BASE_URL}public/career`;
+
+//Install
+export const APP_LOG_IN = `${TENANT_BASE_URL}admin/users/login`;
+export const APP_INSTALL_ADMIN_INFO = `${TENANT_BASE_URL}setup/admin-info`;
+export const GENERATE_PURCHASE_CODE_URL = `${TENANT_BASE_URL}setup/generate-url`;
+export const GET_DATABASE_HOSTNAME = `${TENANT_BASE_URL}setup/get-database-hostname`;
+export const GET_UPDATE_URL = `${TENANT_BASE_URL}app/generated-update-url-purchase-code`;
+export const SET_UP_EMAIL = `${TENANT_BASE_URL}setup/email-setup`;
+export const SET_UP_BROADCAST = `${TENANT_BASE_URL}setup/broadcast-setup`;
+export const BROADCAST_SETTING_UPDATE = `${TENANT_BASE_URL}setup/broadcast-setting-update`;
+export const BROADCAST_SKIP = `${TENANT_BASE_URL}setup/broadcast-skip`;
+export const EMAIL_SETUP_SKIP = `${TENANT_BASE_URL}setup/email-setup-skip`;
+export const ADDITIONAL_REQUIREMENTS = `${TENANT_BASE_URL}setup/additional-requirements`;
+export const ADDITIONAL_REQUIREMENT = `${TENANT_BASE_URL}setup/additional-requirement`;
+export const DATABASE_CONFIGURATION = `${TENANT_BASE_URL}setup/database`;
+export const PURCHASE_CODE= `${TENANT_BASE_URL}setup/purchase-code`;
+export const PURCHASE_CODE_STORE= `${TENANT_BASE_URL}setup/purchase-code-store`;
+export const INSTALL= `${TENANT_BASE_URL}install`;
+export const EMAIL_SETTING_UPDATE= `${TENANT_BASE_URL}setup/email-setting-update-delivery`;
+export const CLEAR_CACHE= `${TENANT_BASE_URL}app/clear-cache`;

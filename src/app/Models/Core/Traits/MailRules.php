@@ -25,6 +25,7 @@ trait MailRules
         return array_merge([
             'access_key_id' => 'required|min:3',
             'secret_access_key' => 'required|min:3',
+            'api_region' => 'required',
         ], $this->basicRules);
     }
 

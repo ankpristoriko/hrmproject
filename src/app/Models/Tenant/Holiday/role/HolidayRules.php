@@ -10,7 +10,7 @@ trait HolidayRules
     {
         return [
             'name' => 'required',
-            'start_date' => 'required|date|after:now',
+            'start_date' => 'required|date|after:'.nowFromApp(),
             'end_date' => 'required|date|after_or_equal:start_date',
             'departments' => 'array',
             'departments.*' => "exists:departments,id"

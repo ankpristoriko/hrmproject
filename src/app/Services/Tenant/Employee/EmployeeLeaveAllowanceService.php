@@ -139,18 +139,18 @@ class EmployeeLeaveAllowanceService extends TenantService
 
         if ((boolean)$leaveType->is_earning_enabled == 0) {
             if (!$this->model->exists && (nowFromApp()->month != $leaveStartMonth)) {
-                $monthDifference = (nowFromApp()->diffInMonths(Carbon::parse($ranges[1]))) + 1;
+                $monthDifference = (nowFromApp()->diffInMonths($this->carbon($ranges[1])->parse())) + 1;
                 return $this->setAttr('amount', $earning_rate * $monthDifference);
             }
             if ($this->model->exists && (nowFromApp()->month != $leaveStartMonth) && $this->checkIfStartedThisYear()) {
-                $monthDifference = (Carbon::parse($this->model->created_at)->diffInMonths(Carbon::parse($ranges[1]))) + 1;
+                $monthDifference = ($this->carbon($this->model->created_at)->parse()->diffInMonths($this->carbon($ranges[1])->parse())) + 1;
                 return $this->setAttr('amount', $earning_rate * $monthDifference);
             }
             return $this->setAttr('amount', $leaveType->amount);
         }
 
         $start_month = $this->getStartMonth($leaveStartMonth);
-        $monthDifference = (Carbon::parse($ranges[0])->month(Carbon::parse($start_month)->month)
+        $monthDifference = ($this->carbon($ranges[0])->parse()->month($this->carbon($start_month)->parse()->month)
                 ->diffInMonths(nowFromApp())) + 1;
 
         return $this->setAttr('amount', $earning_rate * $monthDifference);
@@ -159,15 +159,15 @@ class EmployeeLeaveAllowanceService extends TenantService
 
     private function checkIfStartedThisYear(): bool
     {
-        return (Carbon::parse($this->model->created_at)->year == Carbon::parse($this->model->start_date)->year);
+        return ($this->carbon($this->model->created_at)->parse()->year == $this->carbon($this->model->start_date)->parse()->year);
     }
 
     private function getStartMonth($leaveStartMonth): string
     {
         if ($this->model->exists && $this->checkIfStartedThisYear()) {
-            return Carbon::parse($this->model->created_at)->format('M');
+            return $this->carbon($this->model->created_at)->parse()->format('M');
         }
-        if (!$this->model->exists && (nowFromApp()->month != Carbon::parse($leaveStartMonth)->month)) {
+        if (!$this->model->exists && (nowFromApp()->month != $this->carbon($leaveStartMonth)->parse()->month)) {
             return nowFromApp()->format('M');
         }
         return $leaveStartMonth;
@@ -175,7 +175,7 @@ class EmployeeLeaveAllowanceService extends TenantService
 
     private function checkIfUpdatedThisYear(): bool
     {
-        if (Carbon::parse($this->model->updated_at)->year == Carbon::parse($this->model->start_date)->year) {
+        if ($this->carbon($this->model->updated_at)->parse()->year == $this->carbon($this->model->start_date)->parse()->year) {
             return true;
         }
         $this->setAttr('is_updated', 0);

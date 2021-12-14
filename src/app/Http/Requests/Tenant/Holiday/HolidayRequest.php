@@ -12,4 +12,11 @@ class HolidayRequest extends BaseRequest
     {
         return $this->initRules( new Holiday());
     }
+
+    public function messages(): array
+    {
+        return [
+            'start_date.after' => 'The start date must be a date after now'
+        ];
+    }
 }

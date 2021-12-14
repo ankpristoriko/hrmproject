@@ -250,8 +250,8 @@ class LeaveAssignService extends TenantService
     {
         $range = $this->leaveYear();
         throw_if(
-            Carbon::parse($this->getAttr('start_at'))->isBefore($range[0])
-            || Carbon::parse($this->getAttr('end_at'))->isAfter($range[1]),
+            $this->carbon($this->getAttr('start_at'))->parse()->isBefore($range[0])
+            || $this->carbon($this->getAttr('end_at'))->parse()->isAfter($range[1]),
             new GeneralException(__t('leave_must_assigned_in_current_leave_year'))
         );
         return $this;
@@ -299,8 +299,8 @@ class LeaveAssignService extends TenantService
 
         $holidays = $this->leaveCalendarService->setRanges($ranges)->getUserHolidays($this->model);
 
-        $dates = collect($this->dateRange(Carbon::parse($this->getAttr('start_at')),
-            Carbon::parse($this->getAttr('end_at'))))
+        $dates = collect($this->dateRange($this->carbon($this->getAttr('start_at'))->parse(),
+            $this->carbon($this->getAttr('end_at'))->parse()))
             ->filter(fn(Carbon $carbon) => $this->checkIfItsALeaveDay(
                 $carbon,
                 $holidays,

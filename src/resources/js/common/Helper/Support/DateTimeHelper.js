@@ -1,4 +1,4 @@
-import moment from "moment";
+import moment from "moment-timezone";
 import Vue from "vue";
 import optional from "./Optional";
 
@@ -19,6 +19,8 @@ export const date_format = () => {
         'Y.m.d': 'YYYY.MM.DD',
     };
 };
+
+export const localTimeZone = moment.tz.guess();
 
 export const serverDateTimeFormat = 'YYYY-MM-DD H:mm:ss';
 

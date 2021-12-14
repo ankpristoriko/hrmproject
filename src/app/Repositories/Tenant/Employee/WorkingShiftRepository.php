@@ -27,10 +27,10 @@ class WorkingShiftRepository extends TenantRepository
     {
         $workingShiftUser = $this->usersWorkingShifts->first(function (WorkingShiftUser $workingShiftUser) use ($date, $user_id) {
             return $workingShiftUser->user_id == $user_id &&
-                ((Carbon::parse($date)->isBetween($workingShiftUser->start_date, $workingShiftUser->end_date) &&
-                    Carbon::parse($date)->isBefore($workingShiftUser->end_date)) ||
-                    ((Carbon::parse($date)->isAfter($workingShiftUser->start_date) ||
-                            Carbon::parse($date)->isSameDay($workingShiftUser->start_date))
+                (($this->carbon($date)->parse()->isBetween($workingShiftUser->start_date, $workingShiftUser->end_date) &&
+                    $this->carbon($date)->parse()->isBefore($workingShiftUser->end_date)) ||
+                    (($this->carbon($date)->parse()->isAfter($workingShiftUser->start_date) ||
+                            $this->carbon($date)->parse()->isSameDay($workingShiftUser->start_date))
                         && is_null($workingShiftUser->end_date)));
         });
 

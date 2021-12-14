@@ -47,7 +47,7 @@ class Holiday extends TenantModel
     {
         return $holidays->reduce(fn($holidays, Holiday $holiday) => array_merge(
             $holidays,
-            (new static())->dateRange(Carbon::parse($holiday->start_date), Carbon::parse($holiday->end_date))
+            (new static())->dateRange(Carbon::parse($holiday->start_date, 'UTC'), Carbon::parse($holiday->end_date, 'UTC'))
         ), []);
     }
 

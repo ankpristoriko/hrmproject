@@ -40,14 +40,12 @@ class Requirements
             $supported = true;
         }
 
-        $phpStatus = [
+        return [
             'full' => $currentPhpVersion['full'],
             'current' => $currentPhpVersion['version'],
             'minimum' => $minVersionPhp,
             'supported' => $supported,
         ];
-
-        return $phpStatus;
     }
 
     public function getMinPhpVersion()
@@ -63,7 +61,7 @@ class Requirements
             switch ($type) {
                 // check php requirements
                 case 'php':
-                    $this->checkPhpRequirments($requirements, $type);
+                    $this->checkPhpRequirements($requirements, $type);
                     break;
                 // check apache requirements
                 case 'apache':
@@ -74,7 +72,7 @@ class Requirements
         return $this->results;
     }
 
-    public function checkPhpRequirments($requirements, $type)
+    public function checkPhpRequirements($requirements, $type)
     {
         foreach ($requirements[$type] as $requirement) {
             $this->results['requirements'][$type][$requirement] = true;

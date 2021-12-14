@@ -86,9 +86,7 @@
 <script>
 import FormHelperMixins from "../../../../../../common/Mixin/Global/FormHelperMixins";
 import {axiosGet, urlGenerator} from "../../../../../../common/Helper/AxiosHelper";
-import {mapState} from "vuex";
-import {addChooseInSelectArray, formDataAssigner} from "../../../../../../common/Helper/Support/FormHelper";
-import countries from "../../../Employee/Helper/countries";
+import {formDataAssigner} from "../../../../../../common/Helper/Support/FormHelper";
 
 export default {
     name: "PayslipSetting",

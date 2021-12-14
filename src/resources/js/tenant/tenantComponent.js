@@ -138,6 +138,7 @@ Vue.component('app-import-loading-modal', require('./Components/View/Setting/Imp
 
 //update
 Vue.component('app-update', require('./Components/View/Setting/Update/Update').default)
+Vue.component('app-manual-updater', require('./Components/View/Setting/Update/template/ManualUpdater').default);
 Vue.component('app-update-confirmation-modal', require('./Components/View/Setting/Update/UpdateConfirmationModal').default)
 
 //Payroll

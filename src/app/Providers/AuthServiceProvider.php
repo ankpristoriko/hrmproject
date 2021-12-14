@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Core\Auth\User;
 use Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 /**
  * Class AuthServiceProvider.
@@ -25,6 +26,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
+
         $this->registerPolicies();
         // Implicitly grant "Admin" role all permissions
         // This works in the app by using gate-related functions like auth()->user->can() and @can()

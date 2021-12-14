@@ -10,6 +10,7 @@ use Illuminate\Support\Carbon;
 
 trait DateRangeHelper
 {
+    use DateTimeHelper;
     private function today(): array
     {
         return [
@@ -188,7 +189,7 @@ trait DateRangeHelper
     public function yearRange($month, $year = null): array
     {
         $year = $year ?: nowFromApp()->year;
-        $monthNumber = is_string($month) ? Carbon::parse($month)->month : $month;
+        $monthNumber = is_string($month) ? $this->carbon($month)->parse()->month : $month;
         return [
             nowFromApp()->setYear($year)->setMonth($monthNumber)->startOfMonth(),
             nowFromApp()->setYear($year)->setMonth($monthNumber)->startOfMonth()
@@ -213,8 +214,8 @@ trait DateRangeHelper
 
     public function getDateDifferenceString($start, $end): string
     {
-        $start = $start instanceof Carbon ? $start : Carbon::parse($start);
-        $end = $end instanceof Carbon ? $end : Carbon::parse($end);
+        $start = $start instanceof Carbon ? $start : $this->carbon($start)->parse();
+        $end = $end instanceof Carbon ? $end : $this->carbon($end)->parse();
         $start_format = $start->day;
         $end_format = $end->format('d M,Y');
         if ($start->month != $end->month){
