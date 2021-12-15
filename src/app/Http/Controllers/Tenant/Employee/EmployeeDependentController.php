@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Core\Auth\User;
 use App\Services\Tenant\Employee\EmployeeDependentService;
 use App\Models\Tenant\Employee\UserDependent;
-use Illuminate\Http\Request;
+use App\Http\Requests\Tenant\Employee\EmployeeDependentRequest;
 
 class EmployeeDependentController extends Controller
 {
@@ -22,21 +22,34 @@ class EmployeeDependentController extends Controller
         });
     }
 
-    public function update(User $employee, Request $request)
+    public function store(User $employee, EmployeeDependentRequest $request)
     {
-        $this->service
-            ->setAttributes($request->only('name', 'identity_no', 'bpjs_no', 'place_of_birth', 'date_of_birth', 'gender', 'relationship_id', 'occupation', 'education_level', 'address', 'zip_code', 'city', 'country', 'state', 'nationality'))
-            ->validateDependent()
-            ->setModel($employee)
-            ->updateDependent();
+        $employee->dependents()->save(new UserDependent([
+            'key' => 'employee_dependents',
+            'value' => json_encode($request->only('name', 'identity_no', 'bpjs_no', 'place_of_birth', 'date_of_birth', 'gender', 'relationship_id', 'occupation', 'education_level', 'address', 'zip_code', 'city', 'country', 'state', 'nationality'))
+        ]));
 
-        return updated_responses('dependent');
+        return created_responses('employee_dependents');
     }
 
-    public function delete(User $employee, $type)
+    public function show(User $employee, UserDependent $employee_dependent)
     {
-        $employee->dependents()->where('key', $type)->delete();
+        return $employee_dependent;
+    }
+    
+    public function update(User $employee,UserDependent $employee_dependent, EmployeeDependentRequest $request)
+    {
+        $employee_dependent->update([
+            'value' => $request->only('name', 'identity_no', 'bpjs_no', 'place_of_birth', 'date_of_birth', 'gender', 'relationship_id', 'occupation', 'education_level', 'address', 'zip_code', 'city', 'country', 'state', 'nationality')
+        ]);
 
-        return deleted_responses('dependent');
+        return updated_responses('employee_dependents');
+    }
+
+    public function destroy(User $employee, UserDependent $employee_dependent)
+    {
+        $employee_dependent->delete();
+
+        return deleted_responses('employee_dependents');
     }
 }

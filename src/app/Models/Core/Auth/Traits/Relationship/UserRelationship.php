@@ -189,7 +189,12 @@ trait UserRelationship
 
     public function dependents()
     {
-        return $this->hasMany(UserDependent::class)->where('key', 'dependents');
+        return $this->hasMany(UserDependent::class)
+        ->select('user_dependents.id','user_id','key','value','user_dependents.created_at','user_dependents.updated_at','relationships.name as relationship_name')
+        ->join('relationships', function($join) {
+            $join->on('value->relationship_id', '=', 'relationships.id');
+        })
+        ->where('key', 'employee_dependents');
     }
 
     public function attendances()

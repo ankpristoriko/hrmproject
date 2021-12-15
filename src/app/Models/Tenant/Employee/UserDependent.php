@@ -19,7 +19,7 @@ class UserDependent extends Model
 
     public function getValueAttribute()
     {
-        if (in_array($this->key, ['dependents'])) {
+        if (in_array($this->key, ['employee_dependents'])) {
             return json_decode($this->attributes['value']);
         }
 

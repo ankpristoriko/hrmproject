@@ -15,10 +15,9 @@
                 </div>
                 <div class="col-lg-4">
                     <template v-if="dependent.value">
-                        <contact-details :value="dependent.value" identifier="relationship" icon="users"/>
-                        <contact-details :value="dependent.value" identifier="phone_number" icon="phone"/>
-                        <contact-details :value="dependent.value" identifier="email" icon="mail"/>
-                        <div v-if="dependent.value.area || dependent.value.country || dependent.value.details" class="d-flex">
+                        <dependent-details :value="dependent.relationship_name" identifier="relationship_name"  icon="users"/>
+                        <dependent-details :value="dependent.value" identifier="bpjs_no" icon="clipboard"/>
+                        <div v-if="dependent.value.city || dependent.value.country || dependent.value.address" class="d-flex">
                             <div class="mr-2">
                                 <app-icon
                                     name="map-pin"
@@ -28,10 +27,10 @@
                                 />
                             </div>
                             <div>
-                                <p v-if="$optional(dependent, 'value', 'details')" class="mb-0">{{ dependent.value.details }}</p>
+                                <p v-if="$optional(dependent, 'value', 'address')" class="mb-0">{{ dependent.value.address }}</p>
                                 <p class="mb-0">
-                                    {{ dependent.value.area }}
-                                    <template v-if="dependent.value.area && dependent.value.country">,</template>
+                                    {{ dependent.value.city }}
+                                    <template v-if="dependent.value.city && dependent.value.country">,</template>
                                     {{ dependent.value.country }}
                                 </p>
                             </div>
@@ -109,11 +108,11 @@
 
 <script>
 import {axiosGet, axiosDelete} from "../../../../../../common/Helper/AxiosHelper";
-import Dependents from "./Components/Dependents";
+import DependentDetails from "./Components/DependentDetails";
 
 export default {
     name: "Dependents",
-    components: {Dependents},
+    components: {DependentDetails},
     props: ['props'],
     data() {
         return {
