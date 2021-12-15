@@ -1,6 +1,6 @@
 <template>
     <div class="horizontal-tab">
-        <div class="card card-with-shadow border-0">
+        <div class="card border-0">
             <nav>
                 <div class="nav nav-tabs">
                     <a v-for="(tab, index) in filteredTab" :key="index"
