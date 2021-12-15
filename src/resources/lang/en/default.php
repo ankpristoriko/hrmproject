@@ -1491,6 +1491,7 @@ return array_merge([
 
     'you_can_add_multiple_dependents' => 'You can add multiple dependents',
     'dependent' => 'Dependent',
+    'employee_dependents' => 'Employee Dependent',
     'identity_no' => 'Identity No',
     'bpjs_no' => 'BPJS No',
     'place_of_birth' => 'Place of Birth',

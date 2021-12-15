@@ -91,12 +91,12 @@ Route::group(['prefix' => 'app'], function (Router $router) {
             ->name('employee-beneficiary.update');
 
         $router->apiResource('dependents', EmployeeDependentController::class, [
-                'names' => [
-                    'store' => 'employee-dependents.store',
-                    'destroy' => 'employee-dependents.destroy',
-                    'update' => 'employee-dependents.update',
-                    'show' => 'employee-dependents.show'
-                ]
+            'names' => [
+                'store' => 'employee-dependents.store',
+                'destroy' => 'employee-dependents.destroy',
+                'update' => 'employee-dependents.update',
+                'show' => 'employee-dependents.show'
+            ]
         ])->except('index');
 
         $router->apiResource('emergency-contacts', EmployeeContactController::class, [
