@@ -1500,7 +1500,7 @@ return array_merge([
     'occupation' => 'Occupation',
     'education_level' => 'Education Level',
     'educational_institution' => 'Education Institution',
-    'add_educational_institution' => 'Add Education Institution',
+    'add_educational_institution' => 'Add Educational Institution',
     'state' => 'State',
     'nationality' => 'Nationality',
 
