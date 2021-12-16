@@ -60,6 +60,28 @@
             :error-message="$errorMessage(errors, 'marital_status')"
         />
 
+        <app-form-group-selectable
+            page="page"
+            type="search-select"
+            :label="$t('religion')"
+            list-value-field="name"
+            :chooseLabel="$t('religion')"
+            v-model="formData.religion_id"
+            :error-message="$errorMessage(errors, 'religion_id')"
+            :fetch-url="`${TENANT_SELECTABLE_RELIGION}`"
+        />
+
+        <app-form-group-selectable
+            page="page"
+            type="search-select"
+            :label="$t('ethnicity')"
+            list-value-field="name"
+            :chooseLabel="$t('ethnicity')"
+            v-model="formData.ethnicity_id"
+            :error-message="$errorMessage(errors, 'ethnicity_id')"
+            :fetch-url="`${TENANT_SELECTABLE_ETHNICITY}`"
+        />
+
         <app-form-group
             v-if="userProfileInfo.profile"
             :disabled="!editField"
@@ -107,6 +129,7 @@
     import moment from 'moment'
     import FormHelperMixins from "../../../Mixin/Global/FormHelperMixins";
     import {addSelectInSelectArray} from "../../../../common/Helper/Support/FormHelper";
+    import {TENANT_SELECTABLE_RELIGION, TENANT_SELECTABLE_ETHNICITY} from "../../../../common/Config/apiUrl";
 
     export default {
         name: "ProfilePersonalInfo",
@@ -118,6 +141,8 @@
         },
         data() {
             return {
+                TENANT_SELECTABLE_RELIGION,
+                TENANT_SELECTABLE_ETHNICITY,
                 userProfileInfo: {},
                 editField: false,
             }
@@ -128,6 +153,8 @@
                 this.loading = true;
                 profile.gender = this.userProfileInfo.profile.gender;
                 profile.marital_status = this.userProfileInfo.profile.marital_status;
+                profile.religion_id =  this.userProfileInfo.profile.religion_id;
+                profile.ethnicity_id =  this.userProfileInfo.profile.ethnicity_id;
                 profile.contact = this.userProfileInfo.profile.contact;
                 profile.address = this.userProfileInfo.profile.address;
                 profile.date_of_birth = this.userProfileInfo.profile.date_of_birth ? moment(this.userProfileInfo.profile.date_of_birth).format('YYYY-MM-DD') : '';

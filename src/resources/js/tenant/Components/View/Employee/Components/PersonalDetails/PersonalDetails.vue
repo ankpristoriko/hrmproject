@@ -69,6 +69,28 @@
                 :error-message="$errorMessage(errors, 'marital_status')"
             />
 
+            <app-form-group-selectable
+                page="page"
+                type="search-select"
+                :label="$t('religion')"
+                list-value-field="name"
+                :chooseLabel="$t('religion')"
+                v-model="formData.religion_id"
+                :error-message="$errorMessage(errors, 'religion_id')"
+                :fetch-url="`${TENANT_SELECTABLE_RELIGION}`"
+            />
+
+            <app-form-group-selectable
+                page="page"
+                type="search-select"
+                :label="$t('ethnicity')"
+                list-value-field="name"
+                :chooseLabel="$t('ethnicity')"
+                v-model="formData.ethnicity_id"
+                :error-message="$errorMessage(errors, 'ethnicity_id')"
+                :fetch-url="`${TENANT_SELECTABLE_ETHNICITY}`"
+            />
+
             <app-form-group
                 page="page"
                 :label="$t('birthday')"
@@ -99,12 +121,15 @@ import {mapState} from "vuex";
 import {EMPLOYEES} from "../../../../../Config/ApiUrl";
 import optional from "../../../../../../common/Helper/Support/Optional";
 import {addSelectInSelectArray} from "../../../../../../common/Helper/Support/FormHelper";
+import {TENANT_SELECTABLE_RELIGION, TENANT_SELECTABLE_ETHNICITY} from "../../../../../../common/Config/apiUrl";
 
 export default {
     name: "EmployeePersonalDetails",
     mixins: [FormHelperMixins],
     data() {
         return {
+            TENANT_SELECTABLE_RELIGION,
+            TENANT_SELECTABLE_ETHNICITY,
             formData: {},
             preloader: true
         }
@@ -152,6 +177,8 @@ export default {
                     about_me: employee.profile ? employee.profile.about_me : '',
                     phone_number: employee.profile ? employee.profile.phone_number : '',
                     marital_status: employee.profile ? employee.profile.marital_status : '',
+                    religion_id: employee.profile ? employee.profile.religion_id : '',
+                    ethnicity_id: employee.profile ? employee.profile.ethnicity_id : '',
                     date_of_birth: optional(employee, 'profile', 'date_of_birth') ? new Date(employee.profile.date_of_birth) : ''
                 }
             },

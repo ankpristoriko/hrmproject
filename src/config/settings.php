@@ -7,6 +7,8 @@ return [
         ['name' => 'address', 'value' => '', 'context' => 'user'],
         ['name' => 'date_of_birth', 'value' => '', 'context' => 'user'],
         ['name' => 'marital_status', 'value' => '', 'context' => 'user'],
+        ['name' => 'religion_id', 'value' => '', 'context' => 'user'],
+        ['name' => 'ethnicity_id', 'value' => '', 'context' => 'user'],
     ],
     'app' => [
         ['name' => 'company_name', 'value' => env('APP_NAME', 'Email Marketing'), 'context' => 'app', 'autoload' => 0, 'public' => 1],

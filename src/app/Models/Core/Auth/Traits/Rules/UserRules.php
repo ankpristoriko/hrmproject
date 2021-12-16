@@ -37,6 +37,8 @@ trait UserRules
             'gender' => 'required|in:male,female,other',
             'date_of_birth' => 'nullable|date',
             'marital_status' => 'nullable',
+            'religion_id' => 'nullable',
+            'ethnicity_id' => 'nullable',
             'first_name' => 'required|min:2',
             'email' => 'required|email|unique:users,email,'.auth()->id().',id',
         ];
