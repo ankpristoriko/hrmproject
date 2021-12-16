@@ -1499,7 +1499,7 @@ return array_merge([
     'relationship_id' => 'Relationship ID',
     'occupation' => 'Occupation',
     'education_level' => 'Education Level',
-    'educational_institution' => 'Education Institution',
+    'educational_institution' => 'Educational Institution',
     'add_educational_institution' => 'Add Educational Institution',
     'state' => 'State',
     'nationality' => 'Nationality',
