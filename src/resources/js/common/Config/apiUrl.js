@@ -48,6 +48,7 @@ export const TENANT_SELECTABLE_RELATIONSHIP = `${TENANT_BASE_URL}selectable/rela
 export const TENANT_SELECTABLE_RELIGION = `${TENANT_BASE_URL}selectable/religions`;
 export const TENANT_SELECTABLE_ETHNICITY = `${TENANT_BASE_URL}selectable/ethnicities`;
 export const TENANT_SELECTABLE_EDUCATION = `${TENANT_BASE_URL}selectable/educations`;
+export const TENANT_SELECTABLE_EDUCATIONAL_INSTITUTION = `${TENANT_BASE_URL}selectable/educational-institutions`;
 export const TENANT_SELECTABLE_ROLE_USER = `${TENANT_BASE_URL}selectable/role/users`;
 export const TENANT_SELECTABLE_FILTER_ROLES = `${TENANT_BASE_URL}selectable/filter/roles`;
 export const TENANT_DEPARTMENTS_URL = `${TENANT_BASE_URL}administration/departments`;

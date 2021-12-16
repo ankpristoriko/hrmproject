@@ -127,6 +127,16 @@
                         }
                     },
                     {
+                        name: this.$t('educational_institution'),
+                        title: this.$t('educational_institution'),
+                        component: "app-educational-institutions",
+                        permission: this.$can('view_educational_institutions'),
+                        headerButton: {
+                            label: this.$t('add_educational_institution'),
+                            class: 'btn btn-primary'
+                        }
+                    },
+                    {
                         name: this.$t('relationship'),
                         title: this.$t('relationship'),
                         component: "app-relationships",

@@ -109,6 +109,7 @@ export const AWARD_TYPES = `${TENANT_BASE_URL}app/award-types`;
 export const TERMINATION_TYPES = `${TENANT_BASE_URL}app/termination-types`;
 export const EXPENSE_TYPES = `${TENANT_BASE_URL}app/expense-types`;
 export const EDUCATION_LEVELS = `${TENANT_BASE_URL}app/education-levels`;
+export const EDUCATIONAL_INSTITUTIONS = `${TENANT_BASE_URL}app/educational-institutions`;
 export const TRAINING_TYPES = `${TENANT_BASE_URL}app/training-types`;
 export const RELATIONSHIPS = `${TENANT_BASE_URL}app/relationships`;
 export const RELIGIONS = `${TENANT_BASE_URL}app/religions`;

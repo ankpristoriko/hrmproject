@@ -44,6 +44,7 @@ use App\Http\Controllers\Tenant\WorkingShift\WorkingShiftController;
 use App\Http\Controllers\Tenant\Master\RelationshipAPIController;
 use App\Http\Controllers\Tenant\Master\EducationAPIController;
 use App\Http\Controllers\Tenant\Master\ReligionAPIController;
+use App\Http\Controllers\Tenant\Master\EducationalInstitutionAPIController;
 use App\Http\Controllers\Tenant\Master\EthnicityAPIController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Bus;
@@ -261,6 +262,10 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('selectable/educations', [EducationAPIController::class, 'index'])
         ->name('selectable.education')
         ->middleware('can:view_educations');
+
+    $router->get('selectable/educational-institutions', [EducationalInstitutionAPIController::class, 'index'])
+        ->name('selectable.educational_institution')
+        ->middleware('can:view_educational_institutions');
 
     $router->get('selectable/designations', [DesignationAPIController::class, 'index'])
         ->name('selectable.designations')
