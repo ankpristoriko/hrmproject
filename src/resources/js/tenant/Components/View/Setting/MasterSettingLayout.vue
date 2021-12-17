@@ -137,6 +137,16 @@
                         }
                     },
                     {
+                        name: this.$t('license'),
+                        title: this.$t('license'),
+                        component: "app-licenses",
+                        permission: this.$can('view_licenses'),
+                        headerButton: {
+                            label: this.$t('add_license'),
+                            class: 'btn btn-primary'
+                        }
+                    },
+                    {
                         name: this.$t('relationship'),
                         title: this.$t('relationship'),
                         component: "app-relationships",

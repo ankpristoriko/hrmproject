@@ -112,6 +112,7 @@ export const EDUCATION_LEVELS = `${TENANT_BASE_URL}app/education-levels`;
 export const EDUCATIONAL_INSTITUTIONS = `${TENANT_BASE_URL}app/educational-institutions`;
 export const TRAINING_TYPES = `${TENANT_BASE_URL}app/training-types`;
 export const RELATIONSHIPS = `${TENANT_BASE_URL}app/relationships`;
+export const LICENSES = `${TENANT_BASE_URL}app/licenses`;
 export const RELIGIONS = `${TENANT_BASE_URL}app/religions`;
 export const ETHNICITIES = `${TENANT_BASE_URL}app/ethnicities`;
 

@@ -1071,6 +1071,7 @@ return array_merge([
     'you_cant_update_warning_type_if_the_type_already_has_warning_applied' => 'You cant update warning type if the type already has warning applied',
     'you_cant_update_religion_if_the_type_already_has_religion_applied' => 'You cant update religion if the type already has religion applied',
     'you_cant_update_ethnicity_if_the_type_already_has_ethnicity_applied' => 'You cant update ethnicity if the type already has ethnicity applied',
+    'you_cant_update_license_if_the_type_already_has_license_applied' => 'You cant update license if the type already has license applied',
     'leave_label' => 'Leave',
     'leave_availability' => 'Leave availability',
     'assign_leave' => 'Assign leave',
@@ -1512,5 +1513,8 @@ return array_merge([
 
     'ethnicity' => 'Ethnicity',
     'add_ethnicity' => 'Add Ethnicity',
+
+    'license' => 'License',
+    'add_license' => 'Add License',
 
 ], include 'custom.php');

@@ -46,6 +46,7 @@ use App\Http\Controllers\Tenant\Master\EducationAPIController;
 use App\Http\Controllers\Tenant\Master\ReligionAPIController;
 use App\Http\Controllers\Tenant\Master\EducationalInstitutionAPIController;
 use App\Http\Controllers\Tenant\Master\EthnicityAPIController;
+use App\Http\Controllers\Tenant\Master\LicenseAPIController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Bus;
 
@@ -250,6 +251,10 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('selectable/relationships', [RelationshipAPIController::class, 'index'])
         ->name('selectable.relationship')
         ->middleware('can:view_relationships');
+    
+    $router->get('selectable/licenses', [LicenseAPIController::class, 'index'])
+        ->name('selectable.license')
+        ->middleware('can:view_licenses');
 
     $router->get('selectable/religions', [ReligionAPIController::class, 'index'])
         ->name('selectable.religion')

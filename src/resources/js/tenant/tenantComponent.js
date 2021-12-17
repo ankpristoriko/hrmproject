@@ -224,6 +224,10 @@ Vue.component('app-educational-institution-create-edit', require('./Components/V
 Vue.component('app-relationships', require('./Components/View/Master/Relationship/Relationships').default);
 Vue.component('app-relationship-create-edit', require('./Components/View/Master/Components/RelationshipCreateEditModal').default);
 
+// License
+Vue.component('app-licenses', require('./Components/View/Master/license/Licenses').default);
+Vue.component('app-license-create-edit', require('./Components/View/Master/Components/LicenseCreateEditModal').default);
+
 // Religion
 Vue.component('app-religions', require('./Components/View/Master/Religion/Religions').default);
 Vue.component('app-religion-create-edit', require('./Components/View/Master/Components/ReligionCreateEditModal').default);
