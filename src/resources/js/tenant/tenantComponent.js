@@ -220,6 +220,10 @@ Vue.component('app-education-level-create-edit', require('./Components/View/Mast
 Vue.component('app-educational-institutions', require('./Components/View/Master/EducationalInstitution/EducationalInstitutions').default);
 Vue.component('app-educational-institution-create-edit', require('./Components/View/Master/Components/EducationalInstitutionCreateEditModal').default);
 
+// Educational Institution
+Vue.component('app-industry-areas', require('./Components/View/Master/IndustryArea/IndustryAreas').default);
+Vue.component('app-industry-area-create-edit', require('./Components/View/Master/Components/IndustryAreaCreateEditModal').default);
+
 // Relationship
 Vue.component('app-relationships', require('./Components/View/Master/Relationship/Relationships').default);
 Vue.component('app-relationship-create-edit', require('./Components/View/Master/Components/RelationshipCreateEditModal').default);

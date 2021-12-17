@@ -1517,4 +1517,7 @@ return array_merge([
     'license' => 'License',
     'add_license' => 'Add License',
 
+    'industry_area' => 'Industry Area',
+    'add_industry_area' => 'Add Industry Area',
+
 ], include 'custom.php');

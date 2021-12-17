@@ -137,6 +137,16 @@
                         }
                     },
                     {
+                        name: this.$t('industry_area'),
+                        title: this.$t('industry_area'),
+                        component: "app-industry-areas",
+                        permission: this.$can('view_industry_areas'),
+                        headerButton: {
+                            label: this.$t('add_industry_area'),
+                            class: 'btn btn-primary'
+                        }
+                    },
+                    {
                         name: this.$t('license'),
                         title: this.$t('license'),
                         component: "app-licenses",

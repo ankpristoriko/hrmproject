@@ -113,6 +113,7 @@ export const EDUCATIONAL_INSTITUTIONS = `${TENANT_BASE_URL}app/educational-insti
 export const TRAINING_TYPES = `${TENANT_BASE_URL}app/training-types`;
 export const RELATIONSHIPS = `${TENANT_BASE_URL}app/relationships`;
 export const LICENSES = `${TENANT_BASE_URL}app/licenses`;
+export const INDUSTRY_AREAS = `${TENANT_BASE_URL}app/industry-areas`;
 export const RELIGIONS = `${TENANT_BASE_URL}app/religions`;
 export const ETHNICITIES = `${TENANT_BASE_URL}app/ethnicities`;
 
