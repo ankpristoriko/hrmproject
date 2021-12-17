@@ -1520,4 +1520,10 @@ return array_merge([
     'industry_area' => 'Industry Area',
     'add_industry_area' => 'Add Industry Area',
 
+    'course_category' => 'Course Category',
+    'add_course_category' => 'Add Course Category',
+
+    'course_material_category' => 'Course Material Category',
+    'add_course_material_category' => 'Add Course Material Category',
+
 ], include 'custom.php');

@@ -147,6 +147,26 @@
                         }
                     },
                     {
+                        name: this.$t('course_category'),
+                        title: this.$t('course_category'),
+                        component: "app-course-categories",
+                        permission: this.$can('view_course_categories'),
+                        headerButton: {
+                            label: this.$t('add_course_category'),
+                            class: 'btn btn-primary'
+                        }
+                    },
+                    {
+                        name: this.$t('course_material_category'),
+                        title: this.$t('course_material_category'),
+                        component: "app-course-material-categories",
+                        permission: this.$can('view_course_material_categories'),
+                        headerButton: {
+                            label: this.$t('add_course_material_category'),
+                            class: 'btn btn-primary'
+                        }
+                    },
+                    {
                         name: this.$t('license'),
                         title: this.$t('license'),
                         component: "app-licenses",

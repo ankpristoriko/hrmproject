@@ -13,6 +13,8 @@ use App\Http\Controllers\Tenant\Master\ReligionController;
 use App\Http\Controllers\Tenant\Master\EthnicityController;
 use App\Http\Controllers\Tenant\Master\LicenseController;
 use App\Http\Controllers\Tenant\Master\IndustryAreaController;
+use App\Http\Controllers\Tenant\Master\CourseCategoryController;
+use App\Http\Controllers\Tenant\Master\CourseMaterialCategoryController;
 use Illuminate\Routing\Router;
 
 Route::group(['prefix' => 'app'], function (Router $router) {
@@ -29,5 +31,7 @@ Route::group(['prefix' => 'app'], function (Router $router) {
     $router->apiResource('ethnicities', EthnicityController::class);
     $router->apiResource('licenses', LicenseController::class);
     $router->apiResource('industry-areas', IndustryAreaController::class);
+    $router->apiResource('course-categories', CourseCategoryController::class);
+    $router->apiResource('course-material-categories', CourseMaterialCategoryController::class);
 
 });

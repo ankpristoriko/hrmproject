@@ -114,6 +114,8 @@ export const TRAINING_TYPES = `${TENANT_BASE_URL}app/training-types`;
 export const RELATIONSHIPS = `${TENANT_BASE_URL}app/relationships`;
 export const LICENSES = `${TENANT_BASE_URL}app/licenses`;
 export const INDUSTRY_AREAS = `${TENANT_BASE_URL}app/industry-areas`;
+export const COURSE_CATEGORIES = `${TENANT_BASE_URL}app/course-categories`;
+export const COURSE_MATERIAL_CATEGORIES = `${TENANT_BASE_URL}app/course-material-categories`;
 export const RELIGIONS = `${TENANT_BASE_URL}app/religions`;
 export const ETHNICITIES = `${TENANT_BASE_URL}app/ethnicities`;
 

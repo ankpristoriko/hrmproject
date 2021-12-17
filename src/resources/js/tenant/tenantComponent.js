@@ -46,7 +46,6 @@ Vue.component('app-cron-job-settings', require('./Components/View/Setting/Compon
 Vue.component('app-employment-statuses', require('./Components/View/Employee/EmploymentStatus/EmploymentStatuses').default)
 Vue.component('app-employment-status-create-edit-modal', require('./Components/View/Employee/EmploymentStatus/EmploymentStatusCreateEditModal').default)
 
-
 //Employee designation
 Vue.component('app-designations', require('./Components/View/Employee/Designation/Designations').default);
 Vue.component('app-designation-modal', require('./Components/View/Employee/Designation/DesignationCreateEditModal').default);
@@ -220,9 +219,17 @@ Vue.component('app-education-level-create-edit', require('./Components/View/Mast
 Vue.component('app-educational-institutions', require('./Components/View/Master/EducationalInstitution/EducationalInstitutions').default);
 Vue.component('app-educational-institution-create-edit', require('./Components/View/Master/Components/EducationalInstitutionCreateEditModal').default);
 
-// Educational Institution
+// Industry Area
 Vue.component('app-industry-areas', require('./Components/View/Master/IndustryArea/IndustryAreas').default);
 Vue.component('app-industry-area-create-edit', require('./Components/View/Master/Components/IndustryAreaCreateEditModal').default);
+
+// Course Category
+Vue.component('app-course-categories', require('./Components/View/Master/CourseCategory/CourseCategories').default);
+Vue.component('app-course-category-create-edit', require('./Components/View/Master/Components/CourseCategoryCreateEditModal').default);
+
+// Course Material Category
+Vue.component('app-course-material-categories', require('./Components/View/Master/CourseMaterialCategory/CourseMaterialCategories').default);
+Vue.component('app-course-material-category-create-edit', require('./Components/View/Master/Components/CourseMaterialCategoryCreateEditModal').default);
 
 // Relationship
 Vue.component('app-relationships', require('./Components/View/Master/Relationship/Relationships').default);
