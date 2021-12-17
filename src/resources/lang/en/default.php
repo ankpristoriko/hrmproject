@@ -1525,5 +1525,8 @@ return array_merge([
 
     'course_material_category' => 'Course Material Category',
     'add_course_material_category' => 'Add Course Material Category',
-
+    'work_experiences' => 'Work Experience',
+    'training_histories' => 'Training History',
+    'educations' => 'Education',
+    'licenses' => 'License',
 ], include 'custom.php');

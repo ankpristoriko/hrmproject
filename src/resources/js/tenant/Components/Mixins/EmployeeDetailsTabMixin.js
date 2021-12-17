@@ -11,6 +11,14 @@ export default {
                     }
                 },
                 {
+                    'name': this.$t('qualification'),
+                    'title': this.$t('qualification'),
+                    'component': 'app-employee-qualification',
+                    'props': {
+                        id: this.employeeId
+                    }
+                },
+                {
                     'name': this.$t('allowance'),
                     'title': this.$t('allowance'),
                     'component': 'app-employee-allowance',

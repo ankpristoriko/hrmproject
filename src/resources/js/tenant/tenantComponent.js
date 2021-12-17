@@ -71,6 +71,7 @@ Vue.component('app-employee-termination-reason-modal', require('./Components/Vie
 
 //Employee Details
 Vue.component('app-employee-personal-info', require('./Components/View/Employee/Components/PersonalInfo/PersonalInfo').default);
+Vue.component('app-employee-qualification', require('./Components/View/Employee/Components/Qualification/Qualification').default);
 Vue.component('app-employee-details', require('./Components/View/Employee/Employee').default);
 Vue.component('app-employee-personal-details',require('./Components/View/Employee/Components/PersonalDetails/PersonalDetails').default);
 Vue.component('app-employee-password-change',require('./Components/View/Employee/Components/ChangePassword/ChangePassword').default);
