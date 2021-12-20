@@ -6,11 +6,11 @@
                                 @click="isInviterOpenModalActive = true"
                                 v-if="$can('invite_user')"
             />
-<!--            <app-default-button-->
-<!--                :title="$addLabel('role')"-->
-<!--                @click="isRoleModalActive = true"-->
-<!--                v-if="$can('create_roles')"-->
-<!--            />-->
+           <app-default-button
+               :title="$addLabel('role')"
+               @click="isRoleModalActive = true"
+               v-if="$can('create_roles')"
+           />
         </app-page-top-section>
 
         <!--Users And Roles Pages Started Here....-->
