@@ -20,6 +20,7 @@ use App\Models\Tenant\Employee\Profile;
 use App\Models\Tenant\Employee\UserContact;
 use App\Models\Tenant\Employee\UserDocument;
 use App\Models\Tenant\Employee\UserDependent;
+use App\Models\Tenant\Employee\UserEducation;
 use App\Models\Tenant\Leave\Leave;
 use App\Models\Tenant\Leave\UserLeave;
 use App\Models\Tenant\Payroll\BeneficiaryValue;
@@ -195,6 +196,19 @@ trait UserRelationship
             $join->on('value->relationship_id', '=', 'relationships.id');
         })
         ->where('key', 'employee_dependents');
+    }
+
+    public function educations()
+    {
+        return $this->hasMany(UserEducation::class)
+        ->select('user_educations.id','user_id','key','value','user_educations.created_at','user_educations.updated_at','education_levels.name as education_level_name','educational_institutions.name as institution_name')
+        ->join('education_levels', function($join) {
+            $join->on('value->education_level', '=', 'education_levels.id');
+        })
+        ->join('educational_institutions', function($join) {
+            $join->on('value->educational_institution', '=', 'educational_institutions.id');
+        })
+        ->where('key', 'employee_educations');
     }
 
     public function attendances()

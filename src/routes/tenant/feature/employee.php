@@ -6,6 +6,7 @@ use App\Http\Controllers\Tenant\Employee\DepartmentStatusController;
 use App\Http\Controllers\Tenant\Employee\EmployeeAddressController;
 use App\Http\Controllers\Tenant\Employee\EmployeeDocumentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeDependentController;
+use App\Http\Controllers\Tenant\Employee\EmployeeEducationController;
 use App\Http\Controllers\Tenant\Employee\EmployeeContactController;
 use App\Http\Controllers\Tenant\Employee\EmployeeController;
 use App\Http\Controllers\Tenant\Employee\EmployeeInviteController;
@@ -96,6 +97,15 @@ Route::group(['prefix' => 'app'], function (Router $router) {
                 'destroy' => 'employee-dependents.destroy',
                 'update' => 'employee-dependents.update',
                 'show' => 'employee-dependents.show'
+            ]
+        ])->except('index');
+
+        $router->apiResource('educations', EmployeeEducationController::class, [
+            'names' => [
+                'store' => 'employee-educations.store',
+                'destroy' => 'employee-educations.destroy',
+                'update' => 'employee-educations.update',
+                'show' => 'employee-educations.show'
             ]
         ])->except('index');
 

@@ -11,6 +11,7 @@ class UserContact extends Model
     use HasFactory;
 
     protected $fillable = ['key', 'user_id', 'value'];
+    protected $table = 'user_contacts';
 
     public function user()
     {

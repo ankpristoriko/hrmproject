@@ -34,4 +34,7 @@ Route::group(['prefix' => 'app'], function (Router $router) {
     $router->apiResource('course-categories', CourseCategoryController::class);
     $router->apiResource('course-material-categories', CourseMaterialCategoryController::class);
 
+    $router->get('educational-institutions/{id}', [EducationalInstitutionController::class, 'getInstitutionLocation'])
+        ->name('educational-institutions.index');
+
 });

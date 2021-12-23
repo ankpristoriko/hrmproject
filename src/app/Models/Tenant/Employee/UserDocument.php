@@ -11,6 +11,7 @@ class UserDocument extends Model
     use HasFactory;
 
     protected $fillable = ['key', 'user_id', 'value'];
+    protected $table = 'user_documents';
 
     public function user()
     {

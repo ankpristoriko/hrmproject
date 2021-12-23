@@ -11,6 +11,7 @@ class UserDependent extends Model
     use HasFactory;
 
     protected $fillable = ['key', 'user_id', 'value'];
+    protected $table = 'user_dependents';
 
     protected $dates = [
         'date_of_birth'

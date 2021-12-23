@@ -61,4 +61,11 @@ class EducationalInstitutionController extends Controller
 
         return deleted_responses('educational_institution');       
     }
+
+    public function getInstitutionLocation($id)
+    {
+        $getLocationName = EducationalInstitution::findOrFail($id);
+        dd($getLocationName);
+        return $getLocationName;
+    }
 }

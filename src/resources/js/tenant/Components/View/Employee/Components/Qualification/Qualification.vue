@@ -13,7 +13,7 @@ export default {
                 {
                     'name': this.$t('educations'),
                     'title': this.$t('educations'),
-                    'component': 'app-employee-educations',
+                    'component': 'app-employee-education',
                     'props': {
                         id: this.props.id
                     }
@@ -21,7 +21,7 @@ export default {
                 {
                     'name': this.$t('licenses'),
                     'title': this.$t('licenses'),
-                    'component': 'app-employee-licenses',
+                    'component': 'app-employee-license',
                     'props': {
                         id: this.props.id
                     }
@@ -29,7 +29,7 @@ export default {
                 {
                     'name': this.$t('work_experiences'),
                     'title': this.$t('work_experiences'),
-                    'component': 'app-employee-work-experiences',
+                    'component': 'app-employee-work-experience',
                     'props': {
                         id: this.props.id
                     }
@@ -37,7 +37,7 @@ export default {
                 {
                     'name': this.$t('training_histories'),
                     'title': this.$t('training_histories'),
-                    'component': 'app-employee-training-histories',
+                    'component': 'app-employee-training-history',
                     'props': {
                         id: this.props.id
                     }

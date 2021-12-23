@@ -1525,8 +1525,18 @@ return array_merge([
 
     'course_material_category' => 'Course Material Category',
     'add_course_material_category' => 'Add Course Material Category',
-    'work_experiences' => 'Work Experience',
-    'training_histories' => 'Training History',
-    'educations' => 'Education',
-    'licenses' => 'License',
+    'work_experiences' => 'Work Experiences',
+    'training_histories' => 'Training Histories',
+    'educations' => 'Educations',
+    'licenses' => 'Licenses',
+
+    'you_can_add_multiple_educations' => 'You can add multiple educations',
+    'education' => 'Education',
+    'education_field' => 'Education Field',
+    'educational_institution_detail' => 'Educational Institution Detail',
+    'start_year' => 'Start Year',
+    'end_year' => 'End Year',
+    'grade_point_average' => 'Grade Point Average',
+    'achievement' => 'Achievement',
+    'remark' => 'Remark',
 ], include 'custom.php');
