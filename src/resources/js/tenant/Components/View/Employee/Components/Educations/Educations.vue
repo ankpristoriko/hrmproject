@@ -7,7 +7,7 @@
                     <div class="d-flex align-items-center mb-3 mb-lg-0">
                         <div>
                             <div class="icon-box mr-2">
-                                <app-icon name="user"/>
+                                <app-icon name="file-text"/>
                             </div>
                         </div>
                         {{ education.value.name }}

@@ -134,6 +134,9 @@ import {axiosGet} from "../../../../../../common/Helper/AxiosHelper";
 export default {
     name: "EmployeeEducationEditModel",
     mixins: [FormHelperMixins, ModalMixin],
+    props: {
+        url: {},
+    },
     data() {
         return {
             TENANT_SELECTABLE_EDUCATIONAL_INSTITUTION,
@@ -162,13 +165,13 @@ export default {
             this.formData = flatObjectWithKey(this.formData, 'value');
         },
         selectedItem(event) {
-            axiosGet(`${TENANT_BASE_URL}/${this.url}/${event}`).then(response => {
+            axiosGet(`${TENANT_BASE_URL}/${this.getUrl}/${event}`).then(response => {
                 this.formData.location = response.data.address;
             })
         }
     },
     computed: {
-        url() {
+        getUrl() {
             return `${this.apiUrl.EDUCATIONAL_INSTITUTIONS}`;
         }
     }
