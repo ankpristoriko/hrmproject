@@ -144,7 +144,8 @@ export default {
                 this.$toastr.s('', data.message);
                 this.deletedUrl = '';
                 this.confirmationModalActive = false;
-                this.$emit('reload');
+                // this.$emit('reload');
+                this.getEducations();
             }).catch((error) => {
                 if (error.response)
                     this.toastException(error.response.data)

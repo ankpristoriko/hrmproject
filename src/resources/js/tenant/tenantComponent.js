@@ -88,6 +88,8 @@ Vue.component('app-employee-dependent',require('./Components/View/Employee/Compo
 Vue.component('app-employee-dependent-modal',require('./Components/View/Employee/Components/Dependents/DependentsEditModal').default);
 Vue.component('app-employee-education',require('./Components/View/Employee/Components/Educations/Educations').default);
 Vue.component('app-employee-education-modal',require('./Components/View/Employee/Components/Educations/EducationsEditModal').default);
+Vue.component('app-employee-license',require('./Components/View/Employee/Components/Licenses/Licenses').default);
+Vue.component('app-employee-license-modal',require('./Components/View/Employee/Components/Licenses/LicensesEditModal').default);
 Vue.component('app-employee-address-details-model',require('./Components/View/Employee/Components/AddressDetails/AddressDetailsEditModal').default);
 Vue.component('app-employment-status-modal',require('./Components/View/Employee/EmploymentStatusModal').default);
 Vue.component('app-employee-emergency-contact-model',require('./Components/View/Employee/Components/EmergencyContact/EmergencyContactEditModal').default);

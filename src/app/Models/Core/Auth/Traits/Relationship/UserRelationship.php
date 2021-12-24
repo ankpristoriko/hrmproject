@@ -21,6 +21,7 @@ use App\Models\Tenant\Employee\UserContact;
 use App\Models\Tenant\Employee\UserDocument;
 use App\Models\Tenant\Employee\UserDependent;
 use App\Models\Tenant\Employee\UserEducation;
+use App\Models\Tenant\Employee\UserLicense;
 use App\Models\Tenant\Leave\Leave;
 use App\Models\Tenant\Leave\UserLeave;
 use App\Models\Tenant\Payroll\BeneficiaryValue;
@@ -186,6 +187,11 @@ trait UserRelationship
     public function documents()
     {
         return $this->hasMany(UserDocument::class)->whereIn('key', ['ktp', 'npwp', 'bpjs_kesehatan', 'bpjs_ketenagakerjaan']);
+    }
+
+    public function licenses()
+    {
+        return $this->hasMany(UserLicense::class)->where('key', 'employee_licenses');
     }
 
     public function dependents()

@@ -17,6 +17,7 @@ use App\Http\Controllers\Tenant\Employee\EmployeeAddressController;
 use App\Http\Controllers\Tenant\Employee\EmployeeDocumentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeDependentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeEducationController;
+use App\Http\Controllers\Tenant\Employee\EmployeeLicenseController;
 use App\Http\Controllers\Tenant\Employee\EmployeeContactController;
 use App\Http\Controllers\Tenant\Employee\EmployeeController;
 use App\Http\Controllers\Tenant\Employee\EmployeeEmploymentStatusController;
@@ -366,6 +367,10 @@ Route::group(['prefix' => ''], function (Router $router) {
 
             $router->get('educations', [EmployeeEducationController::class, 'index'])
                 ->name('employee-education.index')
+                ->middleware('employee_access');
+
+            $router->get('licenses', [EmployeeLicenseController::class, 'index'])
+                ->name('employee-license.index')
                 ->middleware('employee_access');
 
             $router->get('emergency-contacts', [EmployeeContactController::class, 'index'])

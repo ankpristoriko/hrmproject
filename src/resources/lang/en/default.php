@@ -1529,7 +1529,6 @@ return array_merge([
     'training_histories' => 'Training Histories',
     'educations' => 'Educations',
     'employee_educations' => 'Employee Education',
-    'licenses' => 'Licenses',
 
     'you_can_add_multiple_educations' => 'You can add multiple educations',
     'education' => 'Education',
@@ -1540,4 +1539,13 @@ return array_merge([
     'grade_point_average' => 'Grade Point Average',
     'achievement' => 'Achievement',
     'remark' => 'Remark',
+
+    'you_can_add_multiple_licenses' => 'You can add multiple licenses',
+    'licenses' => 'Licenses',
+    'add_licenses' => 'Add License',
+    'license' => 'License',
+    'license_name' => 'License Name',
+    'license_description' => 'License Description',
+    'license_no' => 'License No',
+    'employee_licenses' => 'Employee License',
 ], include 'custom.php');
