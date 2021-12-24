@@ -8,6 +8,7 @@ use App\Http\Controllers\Tenant\Employee\EmployeeDocumentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeDependentController;
 use App\Http\Controllers\Tenant\Employee\EmployeeEducationController;
 use App\Http\Controllers\Tenant\Employee\EmployeeLicenseController;
+use App\Http\Controllers\Tenant\Employee\EmployeeWorkExperienceController;
 use App\Http\Controllers\Tenant\Employee\EmployeeContactController;
 use App\Http\Controllers\Tenant\Employee\EmployeeController;
 use App\Http\Controllers\Tenant\Employee\EmployeeInviteController;
@@ -116,6 +117,15 @@ Route::group(['prefix' => 'app'], function (Router $router) {
                 'destroy' => 'employee-licenses.destroy',
                 'update' => 'employee-licenses.update',
                 'show' => 'employee-licenses.show'
+            ]
+        ])->except('index');
+
+        $router->apiResource('work-experiences', EmployeeWorkExperienceController::class, [
+            'names' => [
+                'store' => 'employee-work-experiences.store',
+                'destroy' => 'employee-work-experiences.destroy',
+                'update' => 'employee-work-experiences.update',
+                'show' => 'employee-work-experiences.show'
             ]
         ])->except('index');
 

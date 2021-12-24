@@ -95,8 +95,6 @@ export default {
             formData.valid_from = formatDateForServer(this.formData.valid_from);
             formData.valid_to = formatDateForServer(this.formData.valid_to);
 
-            console.log(formData.valid_from)
-
             this.loading = true;
             this.save(formData)
         },

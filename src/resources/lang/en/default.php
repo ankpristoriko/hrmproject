@@ -1548,4 +1548,13 @@ return array_merge([
     'license_description' => 'License Description',
     'license_no' => 'License No',
     'employee_licenses' => 'Employee License',
+
+    'you_can_add_multiple_work_experiences' => 'You can add multiple work experiences',
+    'employee_work_experiences' => 'Work Experiences',
+    'work_experience' => 'Work Experience',
+    'company_description' => 'Company Description',
+    'job_title' => 'Job Title',
+    'job_description' => 'Job Description',
+    'last_salary' => 'Last Salary',
+    'reason_of_leaving' => 'Reason of Leaving',
 ], include 'custom.php');

@@ -22,6 +22,7 @@ use App\Models\Tenant\Employee\UserDocument;
 use App\Models\Tenant\Employee\UserDependent;
 use App\Models\Tenant\Employee\UserEducation;
 use App\Models\Tenant\Employee\UserLicense;
+use App\Models\Tenant\Employee\UserWorkExperience;
 use App\Models\Tenant\Leave\Leave;
 use App\Models\Tenant\Leave\UserLeave;
 use App\Models\Tenant\Payroll\BeneficiaryValue;
@@ -192,6 +193,11 @@ trait UserRelationship
     public function licenses()
     {
         return $this->hasMany(UserLicense::class)->where('key', 'employee_licenses');
+    }
+
+    public function workExperiences()
+    {
+        return $this->hasMany(UserWorkExperience::class)->where('key', 'employee_work_experiences');
     }
 
     public function dependents()
