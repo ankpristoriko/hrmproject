@@ -10,12 +10,24 @@
                                 <app-icon name="file-text"/>
                             </div>
                         </div>
-                        {{ education.value.name }}
+                        {{ education.education_level_name }}
+                        <br />
+                        <template>
+                            {{ education.value.education_field }}
+                        </template>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <template v-if="education.value">
-                        <education-details :value="education.value" identifier="education_level" icon="clipboard"/>
+                    <template>
+                            {{ education.institution_name }}
+                    </template>
+                    <br />
+                    <template>
+                            {{ education.value.location }}
+                    </template>
+                    <br />
+                    <template>
+                            {{ education.value.start_year }} - {{ education.value.end_year }} 
                     </template>
                 </div>
                 <div class="col-lg-3">

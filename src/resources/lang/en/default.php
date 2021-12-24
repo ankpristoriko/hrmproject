@@ -1528,6 +1528,7 @@ return array_merge([
     'work_experiences' => 'Work Experiences',
     'training_histories' => 'Training Histories',
     'educations' => 'Educations',
+    'employee_educations' => 'Employee Education',
     'licenses' => 'Licenses',
 
     'you_can_add_multiple_educations' => 'You can add multiple educations',
