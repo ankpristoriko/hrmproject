@@ -92,6 +92,8 @@ Vue.component('app-employee-license',require('./Components/View/Employee/Compone
 Vue.component('app-employee-license-modal',require('./Components/View/Employee/Components/Licenses/LicensesEditModal').default);
 Vue.component('app-employee-work-experience',require('./Components/View/Employee/Components/WorkExperiences/WorkExperiences').default);
 Vue.component('app-employee-work-experience-modal',require('./Components/View/Employee/Components/WorkExperiences/WorkExperiencesEditModal').default);
+Vue.component('app-employee-bank-account',require('./Components/View/Employee/Components/BankAccounts/BankAccounts').default);
+Vue.component('app-employee-bank-account-modal',require('./Components/View/Employee/Components/BankAccounts/BankAccountsEditModal').default);
 Vue.component('app-employee-address-details-model',require('./Components/View/Employee/Components/AddressDetails/AddressDetailsEditModal').default);
 Vue.component('app-employment-status-modal',require('./Components/View/Employee/EmploymentStatusModal').default);
 Vue.component('app-employee-emergency-contact-model',require('./Components/View/Employee/Components/EmergencyContact/EmergencyContactEditModal').default);

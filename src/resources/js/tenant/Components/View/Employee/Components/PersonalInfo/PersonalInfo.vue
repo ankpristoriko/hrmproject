@@ -43,6 +43,14 @@ export default {
                     }
                 },
                 {
+                    'name': this.$t('bank_accounts'),
+                    'title': this.$t('bank_accounts'),
+                    'component': 'app-employee-bank-account',
+                    'props': {
+                        id: this.props.id
+                    }
+                },
+                {
                     'name': this.$t('social_links'),
                     'title': this.$t('social_links'),
                     'component': 'app-employee-social-link',

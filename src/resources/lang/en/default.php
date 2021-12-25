@@ -1557,4 +1557,10 @@ return array_merge([
     'job_description' => 'Job Description',
     'last_salary' => 'Last Salary',
     'reason_of_leaving' => 'Reason of Leaving',
+
+    'bank_account' => 'Bank Account',
+    'bank_accounts' => 'Bank Accounts',
+    'add_bank_account' => 'Add Bank Account',
+    'you_can_add_multiple_bank_accounts' => 'You can add multiple bank accounts',
+    'employee_bank_accounts' => 'Bank Accounts',
 ], include 'custom.php');

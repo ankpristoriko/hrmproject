@@ -17,6 +17,7 @@ use App\Models\Tenant\Employee\Designation;
 use App\Models\Tenant\Employee\DesignationUser;
 use App\Models\Tenant\Employee\EmploymentStatus;
 use App\Models\Tenant\Employee\Profile;
+use App\Models\Tenant\Employee\UserBankAccount;
 use App\Models\Tenant\Employee\UserContact;
 use App\Models\Tenant\Employee\UserDocument;
 use App\Models\Tenant\Employee\UserDependent;
@@ -198,6 +199,11 @@ trait UserRelationship
     public function workExperiences()
     {
         return $this->hasMany(UserWorkExperience::class)->where('key', 'employee_work_experiences');
+    }
+
+    public function bankAccounts()
+    {
+        return $this->hasMany(UserBankAccount::class)->where('key', 'employee_bank_accounts');
     }
 
     public function dependents()
