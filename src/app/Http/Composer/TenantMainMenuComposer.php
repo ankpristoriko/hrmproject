@@ -10,7 +10,9 @@ use App\Http\Composer\Helper\EmployeePermissions;
 use App\Http\Composer\Helper\AttendancePermissions;
 use App\Http\Composer\Helper\PayrollPermissions;
 use App\Http\Composer\Helper\AdministrationPermissions;
+use App\Http\Composer\Helper\TrainingPermissions;
 use App\Http\Composer\Helper\SettingPermissions;
+use App\Models\Tenant\WorkingShift\WorkingShift;
 use Illuminate\View\View;
 
 class TenantMainMenuComposer
@@ -19,6 +21,16 @@ class TenantMainMenuComposer
     {
         ['logo' => $logo, 'icon' => $icon] = LogoIcon::new(true)
             ->logoIcon();
+
+        if (!Cache::get('has_default_work_shift')) {
+            Cache::forget('has_default_work_shift');
+
+            Cache::rememberForever('has_default_work_shift', function () {
+                return WorkingShift::query()
+                    ->where('is_default', 1)
+                    ->exists();
+            });
+        }
 
         if(request()->segment(1) == 'employee' || request()->segment(1) == 'employees') {
             $view->with([
@@ -217,6 +229,69 @@ class TenantMainMenuComposer
                         'id' => 'payroll',
                         'permission' => PayrollPermissions::new(true)->canVisit(),
                         'subMenu' => PayrollPermissions::new(true)->permissions(),
+                    ],
+                ],
+                'settings' => SettingParser::new(true)->getSettings(),
+                'top_bar_menu' => [
+                    [
+                        'optionName' => __t('my_profile'),
+                        'optionIcon' => 'user',
+                        'url' => route('tenant.user.profile', optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name])
+                    ],
+                    [
+                        'optionName' => __t('notifications'),
+                        'optionIcon' => 'bell',
+                        'url' => route("support.tenant.notifications", optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name])
+                    ],
+                    auth()->user()->can('view_settings') ?
+                        [
+                            'optionName' => __t('settings'),
+                            'optionIcon' => 'settings',
+                            'url' => authorize_any([
+                                'view_settings',
+                                'view_corn_job_settings',
+                                'view_delivery_settings',
+                                'view_notification_settings'
+                            ]) ? route("support.tenant.settings", optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name]) : '#'
+                        ] : [],
+                    [
+                        'optionName' => __t('log_out'),
+                        'optionIcon' => 'log-out',
+                        'url' => request()->root() . '/admin/log-out'
+                    ],
+                ],
+                'logo' => $logo,
+                'logo_icon' => $icon,
+                'hasDefaultWorkShift' => Cache::get('has_default_work_shift')
+            ]);
+        } elseif (request()->segment(1) == 'training' || request()->segment(1) == 'trainings') {
+            $view->with([
+                'permissions' => [
+                    [
+                        'name' => __t('main_menu'),
+                        'icon' => 'home',
+                        'url' => route('tenant.menu', optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name]),
+                        'permission' => true,
+                    ],
+                    [
+                        'name' => __t('dashboard'),
+                        'icon' => 'pie-chart',
+                        'url' => route('support.trainings.dashboard',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+                        'permission' => true
+                    ],
+                    TrainingPermissions::new(true)->canVisit() ?
+                    [
+                        'name' => __t('training_administration'),
+                        'icon' => 'settings',
+                        'id' => 'training_administration',
+                        'permission' => TrainingPermissions::new(true)->canVisit(),
+                        'subMenu' => TrainingPermissions::new(true)->permissions(),
+                    ] : [],
+                    [
+                        'name' => __t('training_list'),
+                        'icon' => 'award',
+                        'url' => route('support.trainings.training-list',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+                        'permission' => true
                     ],
                 ],
                 'settings' => SettingParser::new(true)->getSettings(),
