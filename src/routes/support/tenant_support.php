@@ -50,6 +50,7 @@ use App\Http\Controllers\Tenant\Master\EducationAPIController;
 use App\Http\Controllers\Tenant\Master\ReligionAPIController;
 use App\Http\Controllers\Tenant\Master\EducationalInstitutionAPIController;
 use App\Http\Controllers\Tenant\Master\EthnicityAPIController;
+use App\Http\Controllers\Tenant\Master\BankAPIController;
 use App\Http\Controllers\Tenant\Master\LicenseAPIController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Bus;
@@ -267,6 +268,10 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('selectable/ethnicities', [EthnicityAPIController::class, 'index'])
         ->name('selectable.ethnicity')
         ->middleware('can:view_ethnicities');
+
+    $router->get('selectable/banks', [BankAPIController::class, 'index'])
+        ->name('selectable.bank')
+        ->middleware('can:view_banks');
 
     $router->get('selectable/educations', [EducationAPIController::class, 'index'])
         ->name('selectable.education')

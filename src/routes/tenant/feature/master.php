@@ -11,6 +11,7 @@ use App\Http\Controllers\Tenant\Master\EducationalInstitutionController;
 use App\Http\Controllers\Tenant\Master\RelationshipController;
 use App\Http\Controllers\Tenant\Master\ReligionController;
 use App\Http\Controllers\Tenant\Master\EthnicityController;
+use App\Http\Controllers\Tenant\Master\BankController;
 use App\Http\Controllers\Tenant\Master\LicenseController;
 use App\Http\Controllers\Tenant\Master\IndustryAreaController;
 use App\Http\Controllers\Tenant\Master\CourseCategoryController;
@@ -29,6 +30,7 @@ Route::group(['prefix' => 'app'], function (Router $router) {
     $router->apiResource('relationships', RelationshipController::class);
     $router->apiResource('religions', ReligionController::class);
     $router->apiResource('ethnicities', EthnicityController::class);
+    $router->apiResource('banks', BankController::class);
     $router->apiResource('licenses', LicenseController::class);
     $router->apiResource('industry-areas', IndustryAreaController::class);
     $router->apiResource('course-categories', CourseCategoryController::class);

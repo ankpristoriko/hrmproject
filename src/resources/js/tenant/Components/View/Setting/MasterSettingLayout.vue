@@ -206,6 +206,16 @@
                             class: 'btn btn-primary'
                         }
                     },
+                    {
+                        name: this.$t('bank'),
+                        title: this.$t('bank'),
+                        component: "app-banks",
+                        permission: this.$can('view_banks'),
+                        headerButton: {
+                            label: this.$t('add_bank'),
+                            class: 'btn btn-primary'
+                        }
+                    },
                     // {
                     //     "name": this.$t('country'),
                     //     "title": this.$t('country'),

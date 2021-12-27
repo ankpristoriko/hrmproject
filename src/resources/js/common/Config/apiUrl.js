@@ -46,6 +46,7 @@ export const TENANT_EMAIL_SETUP_SETTING = `${TENANT_BASE_URL}app/settings?tab=Em
 export const TENANT_SELECTABLE_WORK_SHIFT = `${TENANT_BASE_URL}selectable/working-shifts`;
 export const TENANT_SELECTABLE_RELATIONSHIP = `${TENANT_BASE_URL}selectable/relationships`;
 export const TENANT_SELECTABLE_RELIGION = `${TENANT_BASE_URL}selectable/religions`;
+export const TENANT_SELECTABLE_BANK = `${TENANT_BASE_URL}selectable/banks`;
 export const TENANT_SELECTABLE_ETHNICITY = `${TENANT_BASE_URL}selectable/ethnicities`;
 export const TENANT_SELECTABLE_EDUCATION = `${TENANT_BASE_URL}selectable/educations`;
 export const TENANT_SELECTABLE_EDUCATIONAL_INSTITUTION = `${TENANT_BASE_URL}selectable/educational-institutions`;

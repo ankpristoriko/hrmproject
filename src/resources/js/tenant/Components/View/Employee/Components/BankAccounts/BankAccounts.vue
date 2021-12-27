@@ -10,16 +10,20 @@
                                 <app-icon name="file-text"/>
                             </div>
                         </div>
-                        {{ bankAccount.value.license_name }}
+                        {{ bankAccount.bank_name }}
+                        <br />
+                        <template>
+                            {{ bankAccount.value.branch_name }}
+                        </template>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <template>
-                            {{ bankAccount.value.license_no }}
+                            {{ bankAccount.value.bank_account_no }}
                     </template>
                     <br />
                     <template>
-                            {{ bankAccount.value.license_description }}
+                            {{ bankAccount.value.account_holder_name }}
                     </template>
                 </div>
                 <div class="col-lg-3">

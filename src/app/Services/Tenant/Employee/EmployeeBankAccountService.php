@@ -15,9 +15,10 @@ class EmployeeBankAccountService extends TenantService
     public function validateBankAccount()
     {
         validator($this->getAttributes(), [
-            'account_title' => 'required',
-            'account_number' => 'required',
-            'bank_code' => 'required',
+            'bank_id' => 'required',
+            'branch_name' => 'required',
+            'account_holder_name' => 'required',
+            'bank_account_no' => 'required',
         ])->validate();
 
         return $this;
@@ -31,7 +32,7 @@ class EmployeeBankAccountService extends TenantService
         ], [
             'user_id' => $this->model->id,
             'key' => $this->getAttribute('type'),
-            'value' => json_encode($this->getAttributes('account_title', 'account_number', 'bank_name', 'bank_code', 'bank_branch'))
+            'value' => json_encode($this->getAttributes('bank_id', 'branch_name', 'account_holder_name', 'bank_account_no'))
         ]);
 
         return $this;

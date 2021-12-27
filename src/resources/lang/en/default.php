@@ -1563,4 +1563,11 @@ return array_merge([
     'add_bank_account' => 'Add Bank Account',
     'you_can_add_multiple_bank_accounts' => 'You can add multiple bank accounts',
     'employee_bank_accounts' => 'Bank Accounts',
+    'branch_name' => 'Branch Name',
+    'account_holder_name' => 'Account Holder Name',
+    'bank_account_no' => 'Bank Account No',
+
+    'bank' => 'Bank',
+    'banks' => 'Banks',
+    'add_bank' => 'Add Bank',
 ], include 'custom.php');

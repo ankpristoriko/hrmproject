@@ -26,7 +26,7 @@ class EmployeeBankAccountController extends Controller
     {
         $employee->bankAccounts()->save(new UserBankAccount([
             'key' => 'employee_bank_accounts',
-            'value' => json_encode($request->only('account_title', 'account_number', 'bank_name', 'bank_code', 'bank_branch'))
+            'value' => json_encode($request->only('bank_id', 'branch_name', 'account_holder_name', 'bank_account_no'))
         ]));
 
         return created_responses('employee_bank_accounts');
@@ -40,7 +40,7 @@ class EmployeeBankAccountController extends Controller
     public function update(User $employee,UserBankAccount $bankAccount, EmployeeBankAccountRequest $request)
     {
         $bankAccount->update([
-            'value' => $request->only('account_title', 'account_number', 'bank_name', 'bank_code', 'bank_branch')
+            'value' => $request->only('bank_id', 'branch_name', 'account_holder_name', 'bank_account_no')
         ]);
 
         return updated_responses('employee_bank_accounts');

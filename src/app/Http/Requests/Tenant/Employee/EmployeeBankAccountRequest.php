@@ -15,9 +15,10 @@ class EmployeeBankAccountRequest extends BaseRequest
     public function rules()
     {
         return [
-            'account_title' => 'required',
-            'account_number' => 'required',
-            'bank_code' => 'required',
+            'bank_id' => 'required',
+            'branch_name' => 'required',
+            'account_holder_name' => 'required',
+            'bank_account_no' => 'required',
         ];
     }
 }

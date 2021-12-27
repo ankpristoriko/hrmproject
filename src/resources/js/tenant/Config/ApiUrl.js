@@ -118,6 +118,7 @@ export const COURSE_CATEGORIES = `${TENANT_BASE_URL}app/course-categories`;
 export const COURSE_MATERIAL_CATEGORIES = `${TENANT_BASE_URL}app/course-material-categories`;
 export const RELIGIONS = `${TENANT_BASE_URL}app/religions`;
 export const ETHNICITIES = `${TENANT_BASE_URL}app/ethnicities`;
+export const BANKS = `${TENANT_BASE_URL}app/banks`;
 
 // Recruitment
 export const JOB_TYPES = `${TENANT_BASE_URL}app/job-types`;

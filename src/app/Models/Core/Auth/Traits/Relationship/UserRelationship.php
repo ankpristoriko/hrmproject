@@ -203,7 +203,12 @@ trait UserRelationship
 
     public function bankAccounts()
     {
-        return $this->hasMany(UserBankAccount::class)->where('key', 'employee_bank_accounts');
+        return $this->hasMany(UserBankAccount::class)
+        ->select('user_bank_accounts.id','user_id','key','value','banks.name as bank_name')
+        ->join('banks', function($join) {
+            $join->on('value->bank_id', '=', 'banks.id');
+        })
+        ->where('key', 'employee_bank_accounts');
     }
 
     public function dependents()

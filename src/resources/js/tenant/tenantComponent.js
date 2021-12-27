@@ -256,6 +256,10 @@ Vue.component('app-religion-create-edit', require('./Components/View/Master/Comp
 Vue.component('app-ethnicities', require('./Components/View/Master/Ethnicity/Ethnicities').default);
 Vue.component('app-ethnicity-create-edit', require('./Components/View/Master/Components/EthnicityCreateEditModal').default);
 
+// Bank
+Vue.component('app-banks', require('./Components/View/Master/Bank/Banks').default);
+Vue.component('app-bank-create-edit', require('./Components/View/Master/Components/BankCreateEditModal').default);
+
 // Recruitment
 Vue.component('app-job-settings-layout', require('./Components/View/Recruitment/JobSettingLayout').default);
 Vue.component('app-recruitment-dashboard', require('./Components/View/Recruitment/Dashboard/Index').default);
