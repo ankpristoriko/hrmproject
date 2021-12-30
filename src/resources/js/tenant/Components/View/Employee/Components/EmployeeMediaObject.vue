@@ -29,7 +29,7 @@ export default {
         },
         imageUrl() {
             if (this.rowData.profile_picture) {
-                return urlGenerator(this.rowData.profile_picture.path);
+                return urlGenerator(`/src/public`+this.rowData.profile_picture.path);
             }
         }
     }

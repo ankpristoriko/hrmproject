@@ -112,7 +112,7 @@ export default {
         },
         getImageUrl(employee) {
             if (employee.profile_picture) {
-                return urlGenerator(employee.profile_picture.path);
+                return urlGenerator(`/src/public/`+employee.profile_picture.path);
             }
         }
     },
