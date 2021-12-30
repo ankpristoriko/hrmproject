@@ -6,7 +6,8 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-8">
             @php
                 $banner = settings('tenant_banner', 'app_banner');
-                $banner = $banner ? asset($banner) : asset('images/default-banner.png');
+                $banner = $banner ? asset('/src/public'.$banner) : asset('images/default-banner.png');
+                // dd($banner);
             @endphp
             <div class="back-image"
                  style="background-image: url({{ $banner }})">
