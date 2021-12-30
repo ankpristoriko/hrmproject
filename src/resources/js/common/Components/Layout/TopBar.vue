@@ -83,6 +83,7 @@ export default {
             'getLanguages'
         ]),
         setUser() {
+            console.log(window.user)
             this.user = {
                 full_name: this.$optional(window.user, 'full_name'),
                 img: this.$optional(window.user, 'profile_picture', 'full_url') ||

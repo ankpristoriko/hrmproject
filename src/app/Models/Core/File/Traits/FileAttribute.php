@@ -13,7 +13,7 @@ trait FileAttribute
     public function getFullUrlAttribute()
     {
         if (in_array(config('filesystems.default'), ['local', 'public'])) {
-            return request()->root().$this->path;
+            return request()->root().'/src/public'.$this->path;
         }
         return $this->path;
     }
