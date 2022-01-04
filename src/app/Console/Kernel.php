@@ -38,6 +38,12 @@ class Kernel extends ConsoleKernel
         $schedule->job(new AssignLeaveByStatusJob)->dailyAt('00:01');
         $schedule->job(new AssignLeaveJob)->monthly();
         $schedule->job(new RenewHolidayJob())->yearlyOn(12, 31, '22:00');
+
+        // $schedule->job(new UpdateWorkingShiftJob)->everyMinute();
+        // $schedule->job(new AssignUpcomingWorkingShiftJob())->everyMinute();
+        // $schedule->job(new AssignLeaveByStatusJob)->everyMinute();
+        // $schedule->job(new AssignLeaveJob)->everyMinute();
+        // $schedule->job(new RenewHolidayJob())->everyMinute();
     }
 
     /**
