@@ -14,9 +14,6 @@ class EmployeeEducationRequest extends BaseRequest
      */
     public function rules()
     {
-        return [
-            'education_level' => 'required',
-            'educational_institution' => 'required',
-        ];
+        
     }
 }

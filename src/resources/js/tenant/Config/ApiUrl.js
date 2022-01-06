@@ -65,6 +65,8 @@ export const TENANT_SELECTABLE_DEPARTMENT_DEPARTMENTS = `${TENANT_BASE_URL}selec
 export const TENANT_SELECTABLE_DEPARTMENT_USERS = `${TENANT_BASE_URL}selectable/department/users`;
 export const TENANT_SELECTABLE_PAYRUN_USER = `${TENANT_BASE_URL}selectable/payrun/users`;
 
+export const EMPLOYEE_EDUCATION = `${TENANT_BASE_URL}app/employees/education`;
+
 //dashboard
 export const APP_DASHBOARD = `${TENANT_BASE_URL}app/dashboard`;
 
@@ -162,3 +164,6 @@ export const PURCHASE_CODE_STORE= `${TENANT_BASE_URL}setup/purchase-code-store`;
 export const INSTALL= `${TENANT_BASE_URL}install`;
 export const EMAIL_SETTING_UPDATE= `${TENANT_BASE_URL}setup/email-setting-update-delivery`;
 export const CLEAR_CACHE= `${TENANT_BASE_URL}app/clear-cache`;
+
+//Training
+export const TRAINING_INSTITUTIONS = `${TENANT_BASE_URL}app/training-institutions`;

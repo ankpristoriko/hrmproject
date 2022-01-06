@@ -1539,6 +1539,7 @@ return array_merge([
     'grade_point_average' => 'Grade Point Average',
     'achievement' => 'Achievement',
     'remark' => 'Remark',
+    'education_attachment_allowed_file_types' => 'Allowed file types: png,pdf. (Max file size is 2MB)',
 
     'you_can_add_multiple_licenses' => 'You can add multiple licenses',
     'licenses' => 'Licenses',
@@ -1570,4 +1571,11 @@ return array_merge([
     'bank' => 'Bank',
     'banks' => 'Banks',
     'add_bank' => 'Add Bank',
+
+    'training' => 'Training',
+    'training_list' => 'Training List',
+    'training_administration' => 'Administration',
+    'training_institution' => 'Training Institution',
+    'training_institutions' => 'All Training Institutions',
+    'add_training_institutions' => 'Add Trarining Insitution',
 ], include 'custom.php');

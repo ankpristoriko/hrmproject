@@ -149,6 +149,9 @@ Route::group(['prefix' => 'app'], function (Router $router) {
         ])->except('index');
     });
 
+    $router->post('employees/education', [EmployeeEducationController::class, 'store'])
+        ->name('employee-educations.store');
+
     $router->post('employees/invite', [EmployeeInviteController::class, 'invite'])
         ->name('employees.invite')
         ->middleware('check_behavior');

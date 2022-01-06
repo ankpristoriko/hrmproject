@@ -13,7 +13,7 @@ import Role from "./modules/Common/Role";
 import CustomField from "./modules/Common/Settings/CustomField/CustomField";
 import Profile from "./modules/Common/Profile";
 import TenantSettings from "./modules/Tenant/TenantSettings";
-import Department from "./modules/Tenant/Departments";
+// import Department from "./modules/Tenant/Departments";
 import Departments from "./modules/Tenant/Departments";
 import Designations from "./modules/Tenant/Designations";
 import WorkingShifts from "./modules/Tenant/WorkingShift";
@@ -63,7 +63,7 @@ export default new Vuex.Store({
         custom_field: CustomField,
         profile: Profile,
         tenant_settings: TenantSettings,
-        department: Department,
+        // department: Department,
         departments: Departments,
         designations: Designations,
         working_shifts: WorkingShifts,

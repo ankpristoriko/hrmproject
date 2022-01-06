@@ -5,6 +5,8 @@ namespace App\Models\Tenant\Employee;
 use App\Models\Core\Auth\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Core\File\File;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class UserEducation extends Model
 {
@@ -29,5 +31,10 @@ class UserEducation extends Model
         }
 
         return $this->attributes['value'];
+    }
+    
+    public function attachments(): MorphMany
+    {
+        return $this->morphMany(File::class, 'fileable');
     }
 }

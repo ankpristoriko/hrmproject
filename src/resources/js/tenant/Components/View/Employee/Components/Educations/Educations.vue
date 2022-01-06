@@ -86,6 +86,8 @@
             @close="isModalActive = false"
             :selected-url="selectedUrl"
             @reload="getEducations"
+            :empId="employeeId"
+            :educationId="educationId"
             :url="url"
         />
         <app-confirmation-modal
@@ -114,7 +116,9 @@ export default {
             educations: [],
             isModalActive: false,
             selectedUrl: '',
-            deletedUrl: ''
+            deletedUrl: '',
+            employeeId: this.props.id,
+            educationId: '',
         }
     },
     mounted() {
@@ -132,10 +136,12 @@ export default {
             this.isModalActive = true;
         },
         addModal() {
+            this.educationId = '';
             this.selectedUrl = '';
             this.openModal();
         },
         editModal(educationId) {
+            this.educationId = educationId;
             this.selectedUrl = `${this.url}/${educationId}`;
             this.openModal();
         },

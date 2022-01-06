@@ -3,11 +3,11 @@
            size="large"
            v-model="showModal"
            :title="generateModalTitle('education')"
-           @submit="submitData"
+           @submit="submit"
            :loading="loading"
            :preloader="preloader">
         <form ref="form"
-              :data-url="selectedUrl ? selectedUrl : url"
+              enctype="multipart/form-data"
               @submit.prevent="submitData">
             <div class="row">
                 <div class="col-md-6">
@@ -109,7 +109,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <app-form-group
                         :label="$t('remark')"
                         :placeholder="$placeholder('remark')"
@@ -118,6 +118,18 @@
                         :error-message="$errorMessage(errors, 'remark')"
                     />
                 </div>
+            </div>
+
+            <div class="form-group mb-0">
+                <label>
+                    {{ $t('attachments') }}
+                </label>
+                <app-input
+                    type="dropzone"
+                    v-model="attachments"
+                    :error-message="errorMessageInArray(errors, 'attachments.0')"
+                />
+                <small class="text-muted">{{ $t('education_attachment_allowed_file_types') }}</small>
             </div>
         </form>
     </modal>
@@ -129,29 +141,55 @@ import FormHelperMixins from "../../../../../../common/Mixin/Global/FormHelperMi
 import {flatObjectWithKey} from "../../../../../../common/Helper/ObjectHelper";
 import {TENANT_SELECTABLE_EDUCATIONAL_INSTITUTION, TENANT_SELECTABLE_EDUCATION} from "../../../../../../common/Config/apiUrl";
 import {TENANT_BASE_URL} from '../../../../../../common/Config/UrlHelper';
-import {axiosGet} from "../../../../../../common/Helper/AxiosHelper";
+import {axiosGet, axiosPost} from "../../../../../../common/Helper/AxiosHelper";
+import {errorMessageInArray, formDataAssigner} from "../../../../../../common/Helper/Support/FormHelper";
 
 export default {
     name: "EmployeeEducationEditModel",
     mixins: [FormHelperMixins, ModalMixin],
-    props: {
-        url: {},
-    },
+    props: ['props', 'empId', 'educationId'],
     data() {
         return {
             TENANT_SELECTABLE_EDUCATIONAL_INSTITUTION,
             TENANT_SELECTABLE_EDUCATION,
+            errorMessageInArray,
             formData: {
                 location: '',
+                education_level: '',
+                educational_institution: '',
             },
+            attachments: [],
             errors: {},
             preloader: false,
         }
     },
     methods: {
-        submitData() {
+        submit() {
             this.loading = true;
-            this.save(this.formData)
+            let formData = {...this.formData}
+            formData = formDataAssigner(new FormData, formData);
+                
+            this.attachments.forEach(file => {
+                formData.append('attachments[]', file)
+            })
+
+            formData.append('employee_id', this.empId)
+            formData.append('education_id', this.educationId)
+            formData.append('type', 'employee_educations')
+
+            axiosPost(this.apiUrl.EMPLOYEE_EDUCATION, formData).then(({data}) => {
+                this.loading = false;
+                this.$toastr.s('', data.message);
+                $('#employee-education-modal').modal('hide');
+                this.$emit('reload')
+            }).catch(({response}) => {
+                this.loading = false;
+                this.message = '';
+                this.errors = response.data.errors || {};
+                this.fieldStatus.isSubmit = true
+                if (response.status != 422)
+                    this.$toastr.e(response.data.message || response.statusText)
+            })
         },
         afterSuccess({data}) {
             this.loading = false;
