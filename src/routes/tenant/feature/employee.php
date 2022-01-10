@@ -76,6 +76,9 @@ Route::group(['prefix' => 'app'], function (Router $router) {
         $router->delete('documents/{type}', [EmployeeDocumentController::class, 'delete'])
             ->name('employee-documents.delete');
 
+        $router->delete('educations/{educationId}', [EmployeeEducationController::class, 'delete'])
+            ->name('employee-educations.delete');
+
         $router->get('job-history', [EmployeeJobHistoryController::class, 'index'])
             ->name('job-history.index');
 
@@ -106,8 +109,8 @@ Route::group(['prefix' => 'app'], function (Router $router) {
         $router->apiResource('educations', EmployeeEducationController::class, [
             'names' => [
                 'store' => 'employee-educations.store',
-                'destroy' => 'employee-educations.destroy',
-                'update' => 'employee-educations.update',
+                // 'destroy' => 'employee-educations.destroy',
+                // 'update' => 'employee-educations.update',
                 'show' => 'employee-educations.show'
             ]
         ])->except('index');

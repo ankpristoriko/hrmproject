@@ -146,11 +146,9 @@ export default {
             this.openModal();
         },
         deleteModal() {
-            axiosDelete(this.deletedUrl).then(({data}) => {
+            axiosDelete(`${this.url}/${this.educationId}`).then(({data}) => {
                 this.$toastr.s('', data.message);
-                this.deletedUrl = '';
                 this.confirmationModalActive = false;
-                // this.$emit('reload');
                 this.getEducations();
             }).catch((error) => {
                 if (error.response)
@@ -158,7 +156,7 @@ export default {
             });
         },
         getConfirmations(educationId) {
-            this.deletedUrl = `${this.url}/${educationId}`;
+            this.educationId = educationId;
             this.confirmationModalActive = true;
         },
         cancelled() {

@@ -35,9 +35,11 @@ class EmployeeEducationController extends Controller
         return $education;
     }
 
-    public function destroy(User $employee, UserEducation $education)
+    public function delete(User $employee, $educationId)
     {
-        $education->delete();
+        $userEducation = UserEducation::where('id', $educationId)->first();
+        $userEducation->attachments()->delete();
+        $userEducation->delete();
 
         return deleted_responses('employee_educations');
     }
