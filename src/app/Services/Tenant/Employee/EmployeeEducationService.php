@@ -69,7 +69,7 @@ class EmployeeEducationService extends TenantService
             foreach ($this->getAttr('attachments') as $attachment) {
                 $this->userEducation->attachments()->save(new File([
                     'path' => $this->storeFile($attachment, 'employee-education'),
-                    'type' => 'employee-education',
+                    'type' => 'employee_education',
                 ]));
             }
         }
