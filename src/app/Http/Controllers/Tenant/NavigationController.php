@@ -66,14 +66,6 @@ class NavigationController extends Controller
         }
         throw new GeneralException(trans('default.action_not_allowed'));
     }
-
-    public function jobSettings()
-    {
-        if (authorize_any(['view_job_settings'])) {
-            return view('tenant.recruitment.job_settings');
-        }
-        throw new GeneralException(trans('default.action_not_allowed'));
-    }
     
     public function masterSettings()
     {
@@ -443,6 +435,14 @@ class NavigationController extends Controller
     {
         if (authorize_any(['view_career_page'])) {
             return view('tenant.recruitment.career_page');
+        }
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function recruitmentJobSettings()
+    {
+        if (authorize_any(['view_job_settings'])) {
+            return view('tenant.recruitment.job_settings');
         }
         throw new GeneralException(trans('default.action_not_allowed'));
     }

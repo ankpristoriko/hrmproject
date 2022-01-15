@@ -174,8 +174,8 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('settings/import', [NavigationController::class, 'import'])
         ->name('settings.import');
     
-    // $router->get('recruitment/job-settings', [NavigationController::class, 'jobSettings'])
-    //     ->name('recruitment.job');
+    $router->get('recruitment/job-setting', [NavigationController::class, 'recruitmentJobSettings'])
+        ->name('recruitment.job-setting');
 
     $router->get('recruitment/dashboard', [NavigationController::class, 'recruitmentDashboard'])
         ->name('recruitment.dashboard');
