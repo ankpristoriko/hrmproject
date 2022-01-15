@@ -53,4 +53,5 @@ export const TENANT_SELECTABLE_EDUCATIONAL_INSTITUTION = `${TENANT_BASE_URL}sele
 export const TENANT_SELECTABLE_ROLE_USER = `${TENANT_BASE_URL}selectable/role/users`;
 export const TENANT_SELECTABLE_FILTER_ROLES = `${TENANT_BASE_URL}selectable/filter/roles`;
 export const TENANT_DEPARTMENTS_URL = `${TENANT_BASE_URL}administration/departments`;
+export const TENANT_TRAINING_INSTITUTIONS = `${TENANT_BASE_URL}training/training-institutions`;
 

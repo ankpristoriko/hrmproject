@@ -12,6 +12,7 @@ use App\Http\Composer\Helper\LogoIcon;
 use App\Http\Composer\Helper\PayrollPermissions;
 use App\Http\Composer\Helper\SettingPermissions;
 use App\Http\Composer\Helper\RecruitmentPermissions;
+use App\Http\Composer\Helper\TrainingPermissions;
 use App\Models\Tenant\WorkingShift\WorkingShift;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
@@ -72,20 +73,6 @@ class TenantDashboardComposer
                     'subMenu' => AttendancePermissions::new(true)->permissions(),
                 ],
                 [
-                    'name' => __t('recruitment'),
-                    'icon' => 'user-check',
-                    'id' => 'recruitment_menu',
-                    'permission' => RecruitmentPermissions::new(true)->canVisit(),
-                    'subMenu' => RecruitmentPermissions::new(true)->permissions(),
-                ],
-                [
-                    'name' => __t('core_hr'),
-                    'icon' => 'package',
-                    'id' => 'core_hr',
-                    'permission' => CoreHrPermissions::new(true)->canVisit(),
-                    'subMenu' => CoreHrPermissions::new(true)->permissions(),
-                ],
-                [
                     'name' => __t('payroll'),
                     'icon' => 'credit-card',
                     'id' => 'payroll',
@@ -106,6 +93,27 @@ class TenantDashboardComposer
                         'url' => AdministrationPermissions::new(true)->holidayUrl(),
                         'permission' => authorize_any(['view_holidays'])
                     ],
+                [
+                    'name' => __t('training'),
+                    'icon' => 'award',
+                    'id' => 'trainings',
+                    'permission' => TrainingPermissions::new(true)->canVisit(),
+                    'subMenu' => TrainingPermissions::new(true)->permissions(),
+                ],
+                [
+                    'name' => __t('recruitment'),
+                    'icon' => 'user-check',
+                    'id' => 'recruitment_menu',
+                    'permission' => RecruitmentPermissions::new(true)->canVisit(),
+                    'subMenu' => RecruitmentPermissions::new(true)->permissions(),
+                ],
+                [
+                    'name' => __t('core_hr'),
+                    'icon' => 'package',
+                    'id' => 'core_hr',
+                    'permission' => CoreHrPermissions::new(true)->canVisit(),
+                    'subMenu' => CoreHrPermissions::new(true)->permissions(),
+                ],
                 [
                     'name' => __t('settings'),
                     'id' => 'settings',

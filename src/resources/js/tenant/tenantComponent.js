@@ -297,3 +297,12 @@ Vue.component('candidate-mailing-modal', require('./Components/View/Recruitment/
 Vue.component('candidate-event-modal', require('./Components/View/Recruitment/Candidates/CandidateActionsModal/EventAddEditModal').default);
 Vue.component('career-page', require('./Components/View/Recruitment/CareerPage/Index').default);
 Vue.component('candidate-status', require('./Components/View/Recruitment/Candidates/Helpers/CandidateStatus').default);
+
+//Training Module
+Vue.component('app-training-institution-list', require('./Components/View/Training/TrainingInstitutions').default);
+Vue.component('app-training-institution-card-view', require('./Components/View/Training/TrainingInstitutionCardView').default);
+Vue.component('app-training-institution-preview-card', require('./Components/View/Training/Components/TrainingInstitutionPreviewCard').default);
+Vue.component('app-training-institution-add', require('./Components/View/Training/TrainingInstitutionCreateEditModal').default);
+// Vue.component('app-employee-media-object', require('./Components/View/Employee/Components/EmployeeMediaObject').default);
+// Vue.component('app-employee-status', require('./Components/View/Employee/Components/EmployeeStatus').default);
+// Vue.component('app-employee-termination-reason-modal', require('./Components/View/Employee/EmployeeTerminationReasonModal').default);

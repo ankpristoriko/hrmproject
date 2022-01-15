@@ -183,6 +183,18 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('recruitments/career-page', [NavigationController::class, 'recruitmentCareerPage'])
         ->name('recruitments.career-page');
     
+    $router->get('trainings/dashboard', [NavigationController::class, 'trainingDashboard'])
+        ->name('trainings.dashboard');
+
+    $router->get('trainings/training-list', [NavigationController::class, 'trainingList'])
+        ->name('trainings.training-list');
+
+    $router->get('trainings/training-administration', [NavigationController::class, 'trainingAdministration'])
+        ->name('trainings.training-administration');
+
+    $router->get('trainings/training-institution', [NavigationController::class, 'trainingInstitution'])
+        ->name('trainings.training-institution');
+
     $router->get('employee/payroll', [NavigationController::class, 'payroll'])
         ->name('employee.payroll');
 

@@ -436,4 +436,36 @@ class NavigationController extends Controller
 
         throw new GeneralException(trans('default.action_not_allowed'));
     }
+
+    public function trainingDashboard()
+    {
+        return view('tenant.trainings.dashboard');
+    }
+
+    public function trainingList()
+    {
+        if (authorize_any(['view_training_list'])) {
+            return view('tenant.trainings.training-list');
+        }
+
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function trainingAdministration()
+    {
+        if (authorize_any(['view_training_administration'])) {
+            return view('tenant.trainings.training-administration');
+        }
+
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function trainingInstitution()
+    {
+        if (authorize_any(['view_training_institution'])) {
+            return view('tenant.trainings.training-institution');
+        }
+
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
 }
