@@ -1,7 +1,7 @@
 @extends('layout.tenant')
 
-@section('title', trans('default.recruitment_dashboard_title'))
+@section('title', __t('dashboard'))
 
 @section('contents')
-    <app-recruitment-dashboard></app-recruitment-dashboard>
+
 @endsection

@@ -11,6 +11,7 @@ use App\Http\Composer\Helper\AttendancePermissions;
 use App\Http\Composer\Helper\PayrollPermissions;
 use App\Http\Composer\Helper\AdministrationPermissions;
 use App\Http\Composer\Helper\TrainingPermissions;
+use App\Http\Composer\Helper\RecruitmentPermissions;
 use App\Http\Composer\Helper\SettingPermissions;
 use App\Models\Tenant\WorkingShift\WorkingShift;
 use Illuminate\View\View;
@@ -293,6 +294,93 @@ class TenantMainMenuComposer
                         'url' => route('support.trainings.training-list',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
                         'permission' => true
                     ],
+                ],
+                'settings' => SettingParser::new(true)->getSettings(),
+                'top_bar_menu' => [
+                    [
+                        'optionName' => __t('my_profile'),
+                        'optionIcon' => 'user',
+                        'url' => route('tenant.user.profile', optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name])
+                    ],
+                    [
+                        'optionName' => __t('notifications'),
+                        'optionIcon' => 'bell',
+                        'url' => route("support.tenant.notifications", optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name])
+                    ],
+                    auth()->user()->can('view_settings') ?
+                        [
+                            'optionName' => __t('settings'),
+                            'optionIcon' => 'settings',
+                            'url' => authorize_any([
+                                'view_settings',
+                                'view_corn_job_settings',
+                                'view_delivery_settings',
+                                'view_notification_settings'
+                            ]) ? route("support.tenant.settings", optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name]) : '#'
+                        ] : [],
+                    [
+                        'optionName' => __t('log_out'),
+                        'optionIcon' => 'log-out',
+                        'url' => request()->root() . '/admin/log-out'
+                    ],
+                ],
+                'logo' => $logo,
+                'logo_icon' => $icon,
+                'hasDefaultWorkShift' => Cache::get('has_default_work_shift')
+            ]);
+        } elseif (request()->segment(1) == 'recruitment' || request()->segment(1) == 'recruitments') {
+            $view->with([
+                'permissions' => [
+                    [
+                        'name' => __t('main_menu'),
+                        'icon' => 'home',
+                        'url' => route('tenant.menu', optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name]),
+                        'permission' => true,
+                    ],
+                    [
+                        'name' => __t('dashboard'),
+                        'icon' => 'pie-chart',
+                        'url' => route('support.recruitment.dashboard',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+                        'permission' => true
+                    ],
+                    [
+                        'name' => __t('candidates'),
+                        'icon' => 'users',
+                        'url' =>  route('support.recruitment.candidate',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+                        'permission' => true,
+                    ],
+                    [
+                        'icon' => 'layout',
+                        'name' => __t('career_page'),
+                        'url' => route('support.recruitment.career-page',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+                        'permission' => true,
+                    ],
+                    RecruitmentPermissions::new(true)->canVisit() ?
+                    [
+                        'name' => __t('settings'),
+                        'icon' => 'settings',
+                        'id' => 'settings',
+                        'permission' => RecruitmentPermissions::new(true)->canVisit(),
+                        'subMenu' => RecruitmentPermissions::new(true)->permissions(),
+                    ] : [],
+                    // [
+                    //     'name' => trans('default.settings'),
+                    //     'id' => 'settings',
+                    //     'permission' => authorize_any(
+                    //         [
+                    //             'view_settings',
+                    //             'can_view_job_setting'
+                    //         ]
+                    //     ),
+                    //     'icon' => 'settings',
+                    //     'subMenu' => [
+                    //         [
+                    //             'name' => __t('job_settings_menu'),
+                    //             'url' => route('support.recruitment.job-setting',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+                    //             'permission' => true,
+                    //         ]
+                    //     ],
+                    // ],
                 ],
                 'settings' => SettingParser::new(true)->getSettings(),
                 'top_bar_menu' => [

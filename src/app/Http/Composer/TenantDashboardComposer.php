@@ -103,7 +103,7 @@ class TenantDashboardComposer
                 [
                     'name' => __t('recruitment'),
                     'icon' => 'user-check',
-                    'id' => 'recruitment_menu',
+                    'id' => 'recruitment',
                     'permission' => RecruitmentPermissions::new(true)->canVisit(),
                     'subMenu' => RecruitmentPermissions::new(true)->permissions(),
                 ],

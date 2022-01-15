@@ -173,15 +173,18 @@ Route::group(['prefix' => ''], function (Router $router) {
 
     $router->get('settings/import', [NavigationController::class, 'import'])
         ->name('settings.import');
+    
+    // $router->get('recruitment/job-settings', [NavigationController::class, 'jobSettings'])
+    //     ->name('recruitment.job');
 
-    $router->get('recruitments/job-settings', [NavigationController::class, 'jobSettings'])
-        ->name('recruitments.job');
+    $router->get('recruitment/dashboard', [NavigationController::class, 'recruitmentDashboard'])
+        ->name('recruitment.dashboard');
 
-    $router->get('recruitments/dashboard', [NavigationController::class, 'recruitmentDashboard'])
-        ->name('recruitments.dashboard');
+    $router->get('recruitment/career-page', [NavigationController::class, 'recruitmentCareerPage'])
+        ->name('recruitment.career-page');
 
-    $router->get('recruitments/career-page', [NavigationController::class, 'recruitmentCareerPage'])
-        ->name('recruitments.career-page');
+    $router->get('recruitment/candidate', [NavigationController::class, 'recruitmentCandidate'])
+        ->name('recruitment.candidate');
     
     $router->get('trainings/dashboard', [NavigationController::class, 'trainingDashboard'])
         ->name('trainings.dashboard');

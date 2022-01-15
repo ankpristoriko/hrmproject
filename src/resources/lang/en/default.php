@@ -1578,4 +1578,7 @@ return array_merge([
     'training_institution' => 'Training Institution',
     'training_institutions' => 'All Training Institutions',
     'add_training_institutions' => 'Add Trarining Insitution',
+
+    'career_page' => 'Career Page',
+    'candidates' => 'Candidates',
 ], include 'custom.php');

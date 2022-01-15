@@ -1,8 +1,9 @@
-@extends('layouts.app-candidate')
+{{-- @extends('layouts.app-candidate') --}}
+@extends('layout.tenant')
 
 @section('title', trans('default.career_page'))
 
-@section('sharable-content')
+{{-- @section('sharable-content')
     <meta property="og:url" content="{{request()->root().'public/career'}}">
     <meta property="og:title" content="{{config('app.name')}}">
     <meta property="og:description" content="{{config('app.name').' - '.__t('job_point_description')}}">
@@ -17,5 +18,5 @@
             :career-page="{{json_encode($careerPage)}}"
             :job-posts="{{json_encode($jobPosts)}}">
     </candidate-career-page>
-@endsection
+@endsection --}}
 

@@ -74,14 +74,6 @@ class NavigationController extends Controller
         }
         throw new GeneralException(trans('default.action_not_allowed'));
     }
-
-    public function recruitmentCareerPage()
-    {
-        if (authorize_any(['view_career_page'])) {
-            return view('tenant.recruitment.career_page');
-        }
-        throw new GeneralException(trans('default.action_not_allowed'));
-    }
     
     public function masterSettings()
     {
@@ -434,6 +426,24 @@ class NavigationController extends Controller
             ]);
         }
 
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function recruitmentDashboard()
+    {
+        return view('tenant.recruitment.dashboard');
+    }
+
+    public function recruitmentCandidate()
+    {
+       return view('tenant.recruitment.candidates.index');
+    }
+
+    public function recruitmentCareerPage()
+    {
+        if (authorize_any(['view_career_page'])) {
+            return view('tenant.recruitment.career_page');
+        }
         throw new GeneralException(trans('default.action_not_allowed'));
     }
 

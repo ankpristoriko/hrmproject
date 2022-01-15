@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layout.tenant')
 
 @section('title', trans('default.candidates'))
 
 @section('contents')
-    <candidates></candidates>
+    {{-- <candidates></candidates> --}}
 @endsection
 
