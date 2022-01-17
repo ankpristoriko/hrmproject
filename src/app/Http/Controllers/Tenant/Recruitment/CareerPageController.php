@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\App\GlobalModules;
+namespace App\Http\Controllers\Tenant\Recruitment;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\Recruitment\JobPost\JobPost;
@@ -29,14 +29,14 @@ class CareerPageController extends Controller
         $setting = Setting::where('name', 'career_page')->first();
         $careerPage = json_decode($setting->value);
         $jobPosts = $jobPost
-            ->select('id', 'name', 'job_type_id', 'slug', 'company_location_id', 'last_submission_date')
+            ->select('id', 'name', 'job_type_id', 'slug', 'last_submission_date')
             ->with([
                 'location:id,address',
                 'jobType:id,name',
             ])
             ->where('status_id', resolve(StatusRepository::class)->getStatusId('job_post', 'status_open'))
             ->get();
-        return view('career-page.index', ['careerPage' => $careerPage, 'jobPosts' => $jobPosts]);
+        return view('tenant.recruitment.career-page.index', ['careerPage' => $careerPage, 'jobPosts' => $jobPosts]);
     }
 
     private function __setCareerSettingsData()

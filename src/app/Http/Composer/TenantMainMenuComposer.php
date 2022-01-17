@@ -352,7 +352,8 @@ class TenantMainMenuComposer
                     [
                         'icon' => 'layout',
                         'name' => __t('career_page'),
-                        'url' => route('support.recruitment.career-page',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
+                        'url' => request()->root().'/recruitment/career-page',
+                        // 'url' => route('recruitment.career-page',optional(tenant())->is_single ? '' : ['tenant_parameter' => tenant()->short_name ]),
                         'permission' => true,
                     ],
                     RecruitmentPermissions::new(true)->canVisit() ?

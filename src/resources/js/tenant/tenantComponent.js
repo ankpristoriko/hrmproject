@@ -5,6 +5,7 @@ Vue.mixin(UrlMixin);
 Vue.mixin(TenantMixin);
 
 //Support
+Vue.component('app-editor', require('./Components/Helper/Editor/Editor').default);
 Vue.component('app-form-group-selectable', require('./Components/Helper/AppFromGroupSelectable').default)
 Vue.component('app-note-editor', require('./Components/Helper/AppNoteEditor').default)
 Vue.component('app-month-calendar', require('./Components/Helper/MonthCalendar').default);

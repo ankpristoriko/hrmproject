@@ -1581,4 +1581,12 @@ return array_merge([
 
     'career_page' => 'Career Page',
     'candidates' => 'Candidates',
+
+    'page_styling' => 'Page styling',
+    'page_blocks' => 'Page blocks',
+    'job_openings' => 'Job Openings',
+    'desktop' => 'Desktop',
+    'mobile' => 'Mobile',
+    'copyright_text' => 'Copyright @ 2021 by ',
+
 ], include 'custom.php');

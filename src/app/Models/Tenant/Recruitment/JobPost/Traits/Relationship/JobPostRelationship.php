@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\App\JobPost\Traits\Relationship;
+namespace App\Models\Tenant\Recruitment\JobPost\Traits\Relationship;
 
 
 use App\Models\App\Applicant\JobApplicant;
-use App\Models\App\Company\CompanyLocation;
+// use App\Models\App\Company\CompanyLocation;
 use App\Models\App\Company\Department;
 use App\Models\App\JobPost\JobType;
 use App\Models\App\Recruitment\HiringTeam;
@@ -15,10 +15,10 @@ use App\Models\Core\Status;
 
 trait JobPostRelationship
 {
-    public function location()
-    {
-        return $this->belongsTo(CompanyLocation::class, 'company_location_id');
-    }
+    // public function location()
+    // {
+    //     return $this->belongsTo(CompanyLocation::class, 'company_location_id');
+    // }
 
     public function department()
     {

@@ -431,13 +431,10 @@ class NavigationController extends Controller
        return view('tenant.recruitment.candidates.index');
     }
 
-    public function recruitmentCareerPage()
-    {
-        if (authorize_any(['view_career_page'])) {
-            return view('tenant.recruitment.career_page');
-        }
-        throw new GeneralException(trans('default.action_not_allowed'));
-    }
+    // public function recruitmentCareerPage()
+    // {
+    //     return view('tenant.recruitment.career-page.index');
+    // }
 
     public function recruitmentJobSettings()
     {

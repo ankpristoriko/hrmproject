@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\App\JobPost\Traits\Rules;
+namespace App\Models\Tenant\Recruitment\JobPost\Traits\Rules;
 
 trait JobPostRules
 {
     public function createdRules()
     {
         return [
-            'company_location_id' => 'required|exists:company_locations,id',
+            // 'company_location_id' => 'required|exists:company_locations,id',
             'department_id' => 'nullable|exists:departments,id',
             'job_type_id' => 'required|exists:job_types,id',
             'name' => 'required',
@@ -24,7 +24,7 @@ trait JobPostRules
     public function updatedRules()
     {
         return [
-            'company_location_id' => 'nullable|exists:company_locations,id',
+            // 'company_location_id' => 'nullable|exists:company_locations,id',
             'department_id' => 'nullable|exists:departments,id',
             'job_type_id' => 'nullable|exists:job_types,id',
             'status_id' => 'nullable|exists:statuses,id',
@@ -42,7 +42,7 @@ trait JobPostRules
     public function failedMessage()
     {
         return [
-            'company_location_id' => ' Company Location must be inside Location ',
+            // 'company_location_id' => ' Company Location must be inside Location ',
             'department_id' => 'Address is not valid',
             'job_type_id' => 'Job Type not valid',
             'status_id' => 'Status is not a valid status',

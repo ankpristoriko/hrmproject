@@ -6,9 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     {{--<meta name="csrf-token" content="{{ csrf_token() }}">--}}
-    <link rel="shortcut icon" href="{{ url(settings('tenant_icon', 'app_icon')) }}" />
-    <link rel="apple-touch-icon" href="{{ url(settings('tenant_icon', 'app_icon')) }}" />
-    <link rel="apple-touch-icon-precomposed" href="{{ url(settings('tenant_icon', 'app_icon')) }}" />
+    <link rel="shortcut icon" href="{{ url('src/public/'.settings('tenant_icon', 'app_icon')) }}" />
+    <link rel="apple-touch-icon" href="{{ url('src/public/'.settings('tenant_icon', 'app_icon')) }}" />
+    <link rel="apple-touch-icon-precomposed" href="{{ url('src/public/'.settings('tenant_icon', 'app_icon')) }}" />
 
     <title>@yield('title') - {{ settings('tenant_name', 'app_name') }}</title>
     @stack('before-styles')

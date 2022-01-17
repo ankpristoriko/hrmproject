@@ -180,8 +180,8 @@ Route::group(['prefix' => ''], function (Router $router) {
     $router->get('recruitment/dashboard', [NavigationController::class, 'recruitmentDashboard'])
         ->name('recruitment.dashboard');
 
-    $router->get('recruitment/career-page', [NavigationController::class, 'recruitmentCareerPage'])
-        ->name('recruitment.career-page');
+    // $router->get('recruitment/career-page', [NavigationController::class, 'recruitmentCareerPage'])
+    //     ->name('recruitment.career-page');
 
     $router->get('recruitment/candidate', [NavigationController::class, 'recruitmentCandidate'])
         ->name('recruitment.candidate');

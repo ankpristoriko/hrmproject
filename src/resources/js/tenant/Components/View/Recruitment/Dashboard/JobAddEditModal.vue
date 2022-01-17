@@ -59,7 +59,7 @@
                         />
                     </div>
                 </div>
-                <div class="form-group row align-items-center">
+                <!-- <div class="form-group row align-items-center">
                     <label for="locations" class="col-sm-3 mb-sm-0">
                         {{ $t('location') }}
                     </label>
@@ -74,7 +74,7 @@
                             v-model="formData.company_location_id"
                         />
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group row">
                     <label for="description" class="col-sm-3 mb-0">
                         {{ $t('description') }}
@@ -143,7 +143,7 @@ export default {
                 name: '',
                 job_type_id: '',
                 department_id: '',
-                company_location_id: '',
+                // company_location_id: '',
                 salary: '',
                 description: '',
                 last_submission_date: new Date(),
@@ -163,7 +163,8 @@ export default {
         generateSettingData() {
             this.content.title = this.formData.name;
             this.content.subtitle = this.formData.description ? this.formData.description : `${this.formData.name} - Description Here`;
-            this.content.details = `${this.jobTypeList.find(item => item.id === this.formData.job_type_id)?.name} - ${this.companyLocationList.find(item => item.id === this.formData.company_location_id)?.address}`;
+            // this.content.details = `${this.jobTypeList.find(item => item.id === this.formData.job_type_id)?.name} - ${this.companyLocationList.find(item => item.id === this.formData.company_location_id)?.address}`;
+            this.content.details = `${this.jobTypeList.find(item => item.id === this.formData.job_type_id)?.name}`;
             let data = {};
             data.content = this.content;
             data.pageStyle = this.pageStyle;
@@ -193,7 +194,7 @@ export default {
             this.formData.name = data.name;
             this.formData.job_type_id = data.job_type_id;
             this.formData.department_id = data.department_id;
-            this.formData.company_location_id = data.company_location_id;
+            // this.formData.company_location_id = data.company_location_id;
             this.formData.salary = data.salary;
             this.formData.description = data.description;
             this.formData.last_submission_date = data.last_submission_date;

@@ -1,7 +1,7 @@
 <template>
 
-    <app-editor
-        v-if="!preloader && $have('PERMISSION_VIEW_CAREER_PAGE')"
+    <!-- <app-editor
+        v-if="!preloader && $can('view_career_page')"
         :editor-content="pageData.content"
         :editor-logo="urlGenerator(logo)"
         :editor-icon="urlGenerator(icon)"
@@ -10,7 +10,21 @@
         :editor-page-style="pageData.pageStyle"
         :editor-page-blocks="pageData.pageBlocks"
         :publish-btn="false"
-        :save-btn="$have('PERMISSION_UPDATE_CAREER_PAGE')"
+        :save-btn="$can('update_career_page')"
+        @viewPreview="goToPreview"
+        @changed="saveChangedData"
+    /> -->
+    <app-editor
+        v-if="!preloader && $can('view_career_page')"
+        :editor-content="pageData.content"
+        :editor-logo="urlGenerator('src/public/'+logo)"
+        :editor-icon="urlGenerator('src/public/'+icon)"
+        :editor-is-career="isCareer"
+        :editor-job-list="jobList"
+        :editor-page-style="pageData.pageStyle"
+        :editor-page-blocks="pageData.pageBlocks"
+        :publish-btn="false"
+        :save-btn="$can('update_career_page')"
         @viewPreview="goToPreview"
         @changed="saveChangedData"
     />
@@ -41,8 +55,8 @@ export default {
             preloader: false,
             modified: false,
             modifiedData: null,
-            logo: window.settings.company_logo,
-            icon: window.settings.company_icon,
+            logo: settings.tenant_logo,
+            icon: settings.tenant_icon,
             isCareer: true
         }
     },

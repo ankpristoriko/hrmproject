@@ -14,11 +14,11 @@ class LogoIcon
     {
         $logo = empty(settings('tenant_logo', 'app_logo'))
             ? url('/images/logo.png') :
-            url(settings('tenant_logo', 'app_logo'));
+            url('src/public'.settings('tenant_logo', 'app_logo'));
 
         $icon = empty(settings('tenant_icon', 'app_icon')) ?
             url('/images/icon.png') :
-            url(settings('tenant_icon', 'app_icon'));
+            url('src/public'.settings('tenant_icon', 'app_icon'));
 
         return [
             'logo' => $logo,

@@ -3,16 +3,15 @@
 namespace App\Models\Tenant\Recruitment\JobPost;
 
 use App\Models\Tenant\TenantModel;
-use App\Models\App\JobPost\Traits\Rules\JobPostRules;
+use App\Models\Tenant\Recruitment\JobPost\Traits\Rules\JobPostRules;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Models\App\JobPost\Traits\Relationship\JobPostRelationship;
+use App\Models\Tenant\Recruitment\JobPost\Traits\Relationship\JobPostRelationship;
 
 class JobPost extends TenantModel
 {
     use HasFactory, JobPostRules, JobPostRelationship;
 
     protected $fillable = [
-        'company_location_id',
         'department_id',
         'job_type_id',
         'status_id',
@@ -29,7 +28,6 @@ class JobPost extends TenantModel
     ];
 
     protected $casts = [
-        'company_location_id' => 'integer',
         'department_id' => 'integer',
         'job_type_id' => 'integer',
         'status_id' => 'integer',
