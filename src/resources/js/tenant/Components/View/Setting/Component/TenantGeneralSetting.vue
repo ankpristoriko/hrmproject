@@ -424,9 +424,9 @@
                     if (!Object.keys(this.settings).length) {
                         this.settings = settings;
                         this.image = {
-                            tenant_logo: settings.tenant_logo ? urlGenerator(settings.tenant_logo) : urlGenerator('/images/logo.png'),
-                            tenant_icon: settings.tenant_icon ? urlGenerator(settings.tenant_icon) : urlGenerator('/images/icon.png'),
-                            tenant_banner: settings.tenant_banner ? urlGenerator(settings.tenant_banner) : urlGenerator('/images/default_banner.jpg')
+                            tenant_logo: settings.tenant_logo ? urlGenerator('/src/public'+settings.tenant_logo) : urlGenerator('/images/logo.png'),
+                            tenant_icon: settings.tenant_icon ? urlGenerator('/src/public'+settings.tenant_icon) : urlGenerator('/images/icon.png'),
+                            tenant_banner: settings.tenant_banner ? urlGenerator('/src/public'+settings.tenant_banner) : urlGenerator('/images/default_banner.jpg')
                         }
                         this.preloader = false;
                         this.imageUploaderBoot = true;
