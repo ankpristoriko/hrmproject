@@ -22,11 +22,6 @@ export default {
                         key: 'address',
                         isVisible: true,
                     },
-                    {
-                        title: this.$t('actions'),
-                        type: 'action',
-                        isVisible: true
-                    },
                 ],
                 filters: [
                     {
@@ -39,7 +34,7 @@ export default {
                 paginationType: "pagination",
                 responsive: true,
                 rowLimit: 10,
-                showAction: true,
+                showAction: (this.$have('PERMISSION_UPDATE_EDUCATIONAL_INSTITUTION') || this.$have('PERMISSION_DELETE_EDUCATIONAL_INSTITUTION')),
                 orderBy: 'desc',
                 actionType: "default",
                 actions: [
@@ -51,7 +46,7 @@ export default {
                         modalId: 'educational-institution-modal',
                         url: EDUCATIONAL_INSTITUTIONS,
                         name: 'edit',
-                        modifier: row => this.$can('update_educational_institutions')
+                        modifier: () => this.$have('PERMISSION_UPDATE_EDUCATIONAL_INSTITUTION')
                     },
                     {
                         title: this.$t('delete'),
@@ -59,10 +54,21 @@ export default {
                         icon: 'trash-2',
                         modalClass: 'warning',
                         url: EDUCATIONAL_INSTITUTIONS,
-                        modifier: row => this.$can('delete_educational_institutions')
+                        modifier: () => this.$have('PERMISSION_DELETE_EDUCATIONAL_INSTITUTION')
                     },
                 ],
-            }
+            },
+            isEducationalInstitutionAddEditModalActive: false,
+            isEducationalInstitutionDeleteModalActive: false,
         }
-    }
+    },
+
+    beforeMount() {
+        if (this.$have('PERMISSION_UPDATE_EDUCATIONAL_INSTITUTION') || this.$have('PERMISSION_DELETE_EDUCATIONAL_INSTITUTION')) {
+            this.options.columns.push({
+                title: this.$t('actions'),
+                type: 'action'
+            })
+        }
+    },
 }

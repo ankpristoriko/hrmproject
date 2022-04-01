@@ -156,6 +156,7 @@ Vue.component('app-update-confirmation-modal', require('./Components/View/Settin
 Vue.component('app-default-payrun-setting', require('./Components/View/Setting/Component/Payroll/DefaultPayrunSetting').default)
 Vue.component('app-payrun-audience-setting', require('./Components/View/Setting/Component/Payroll/PayrunAudienceSetting').default)
 Vue.component('app-badge-value-setting', require('./Components/View/Setting/Component/Payroll/BadgeValueSetting').default)
+Vue.component('app-parameter-setting', require('./Components/View/Setting/Component/Payroll/ParameterSetting').default)
 Vue.component('app-beneficiary-badges', require('./Components/View/Payroll/BeneficiaryBadge').default)
 Vue.component('app-beneficiary-badges-create-edit-modal', require('./Components/View/Payroll/BeneficiaryBadgeCreateEditModal').default)
 Vue.component('app-beneficiary-status-toggle-button', require('./Components/View/Payroll/Components/BeneficiaryStatusToggleButton').default)

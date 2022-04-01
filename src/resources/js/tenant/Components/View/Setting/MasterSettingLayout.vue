@@ -1,6 +1,6 @@
 <template>
     <div class="content-wrapper">
-        <app-breadcrumb :page-title="pageTitle" :icon="pageIcon"/>
+        <app-page-top-section :title="$t('master_settings')"/>
         <app-tab :tabs="tabs" :icon="pageIcon"/>
     </div>
 </template>
@@ -60,161 +60,161 @@
                         name: this.$t('document_type'),
                         title: this.$t('document_type'),
                         component: "app-document-types",
-                        permission: this.$can('view_document_types'),
-                        headerButton: {
-                            label: this.$t('add_document_type'),
+                        permission: this.$have('PERMISSION_VIEW_DOCUMENT_TYPES'),
+                        headerButton: this.$have('PERMISSION_CREATE_DOCUMENT_TYPES') ? {
+                            label: this.$addLabel('document_type'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('warning_type'),
                         title: this.$t('warning_type'),
                         component: "app-warning-types",
-                        permission: this.$can('view_warning_types'),
-                        headerButton: {
-                            label: this.$t('add_warning_type'),
+                        permission: this.$have('PERMISSION_VIEW_WARNING_TYPES'),
+                        headerButton: this.$have('PERMISSION_CREATE_WARNING_TYPES') ? {
+                            label: this.$addLabel('warning_type'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('award_type'),
                         title: this.$t('award_type'),
                         component: "app-award-types",
-                        permission: this.$can('view_award_types'),
-                        headerButton: {
-                            label: this.$t('add_award_type'),
+                        permission: this.$have('PERMISSION_VIEW_AWARD_TYPES'),
+                        headerButton: this.$have('PERMISSION_CREATE_AWARD_TYPES') ? {
+                            label: this.$addLabel('award_type'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('termination_type'),
                         title: this.$t('termination_type'),
                         component: "app-termination-types",
-                        permission: this.$can('view_termination_types'),
-                        headerButton: {
-                            label: this.$t('add_termination_type'),
+                        permission: this.$have('PERMISSION_VIEW_TERMINATION_TYPES'),
+                        headerButton: this.$have('PERMISSION_CREATE_TERMINATION_TYPES') ? {
+                            label: this.$addLabel('termination_type'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('expense_type'),
                         title: this.$t('expense_type'),
                         component: "app-expense-types",
-                        permission: this.$can('view_expense_types'),
-                        headerButton: {
-                            label: this.$t('add_expense_type'),
+                        permission: this.$have('PERMISSION_VIEW_EXPENSE_TYPES'),
+                        headerButton: this.$have('PERMISSION_CREATE_EXPENSE_TYPES') ? {
+                            label: this.$addLabel('expense_type'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('training_type'),
                         title: this.$t('training_type'),
                         component: "app-training-types",
-                        permission: this.$can('view_training_types'),
-                        headerButton: {
-                            label: this.$t('add_training_type'),
+                        permission: this.$have('PERMISSION_VIEW_TRAINING_TYPES'),
+                        headerButton: this.$have('PERMISSION_CREATE_TRAINING_TYPES') ? {
+                            label: this.$addLabel('training_type'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('education_level'),
                         title: this.$t('education_level'),
                         component: "app-education-levels",
-                        permission: this.$can('view_education_levels'),
-                        headerButton: {
-                            label: this.$t('add_education_level'),
+                        permission: this.$have('PERMISSION_VIEW_EDUCATION_LEVELS'),
+                        headerButton: this.$have('PERMISSION_CREATE_EDUCATION_LEVELS') ? {
+                            label: this.$addLabel('education_level'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('educational_institution'),
                         title: this.$t('educational_institution'),
                         component: "app-educational-institutions",
-                        permission: this.$can('view_educational_institutions'),
-                        headerButton: {
-                            label: this.$t('add_educational_institution'),
+                        permission: this.$have('PERMISSION_VIEW_EDUCATIONAL_INSTITUTIONS'),
+                        headerButton: this.$have('PERMISSION_CREATE_EDUCATIONAL_INSTITUTIONS') ? {
+                            label: this.$addLabel('educational_institution'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('industry_area'),
                         title: this.$t('industry_area'),
                         component: "app-industry-areas",
-                        permission: this.$can('view_industry_areas'),
-                        headerButton: {
-                            label: this.$t('add_industry_area'),
+                        permission: this.$have('PERMISSION_VIEW_INDUSTRY_AREAS'),
+                        headerButton: this.$have('PERMISSION_CREATE_INDUSTRY_AREAS') ? {
+                            label: this.$addLabel('industry_area'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('course_category'),
                         title: this.$t('course_category'),
                         component: "app-course-categories",
-                        permission: this.$can('view_course_categories'),
-                        headerButton: {
-                            label: this.$t('add_course_category'),
+                        permission: this.$have('PERMISSION_VIEW_COURSE_CATEGORIES'),
+                        headerButton: this.$have('PERMISSION_CREATE_COURSE_CATEGORIES') ? {
+                            label: this.$addLabel('course_category'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('course_material_category'),
                         title: this.$t('course_material_category'),
                         component: "app-course-material-categories",
-                        permission: this.$can('view_course_material_categories'),
-                        headerButton: {
-                            label: this.$t('add_course_material_category'),
+                        permission: this.$have('PERMISSION_VIEW_COURSE_MATERIAL_CATEGORIES'),
+                        headerButton: this.$have('PERMISSION_CREATE_COURSE_MATERIAL_CATEGORIES') ? {
+                            label: this.$addLabel('course_material_category'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('license'),
                         title: this.$t('license'),
                         component: "app-licenses",
-                        permission: this.$can('view_licenses'),
-                        headerButton: {
-                            label: this.$t('add_license'),
+                        permission: this.$have('PERMISSION_VIEW_LICENSES'),
+                        headerButton: this.$have('PERMISSION_CREATE_LICENSES') ? {
+                            label: this.$addLabel('license'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('relationship'),
                         title: this.$t('relationship'),
                         component: "app-relationships",
-                        permission: this.$can('view_relationships'),
-                        headerButton: {
-                            label: this.$t('add_relationship'),
+                        permission: this.$have('PERMISSION_VIEW_RELATIONSHIPS'),
+                        headerButton: this.$have('PERMISSION_CREATE_RELATIONSHIPS') ? {
+                            label: this.$addLabel('relationship'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('religion'),
                         title: this.$t('religion'),
                         component: "app-religions",
-                        permission: this.$can('view_religions'),
-                        headerButton: {
-                            label: this.$t('add_religion'),
+                        permission: this.$have('PERMISSION_VIEW_RELIGIONS'),
+                        headerButton: this.$have('PERMISSION_CREATE_RELIGIONS') ? {
+                            label: this.$addLabel('religion'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('ethnicity'),
                         title: this.$t('ethnicity'),
                         component: "app-ethnicities",
-                        permission: this.$can('view_ethnicities'),
-                        headerButton: {
-                            label: this.$t('add_ethnicity'),
+                        permission: this.$have('PERMISSION_VIEW_ETHNICITIES'),
+                        headerButton: this.$have('PERMISSION_CREATE_ETHNICITIES') ? {
+                            label: this.$addLabel('ethnicity'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     {
                         name: this.$t('bank'),
                         title: this.$t('bank'),
                         component: "app-banks",
-                        permission: this.$can('view_banks'),
-                        headerButton: {
-                            label: this.$t('add_bank'),
+                        permission: this.$have('PERMISSION_VIEW_BANKS'),
+                        headerButton: this.$have('PERMISSION_CREATE_BANKS') ? {
+                            label: this.$addLabel('bank'),
                             class: 'btn btn-primary'
-                        }
+                        } : {}
                     },
                     // {
                     //     "name": this.$t('country'),

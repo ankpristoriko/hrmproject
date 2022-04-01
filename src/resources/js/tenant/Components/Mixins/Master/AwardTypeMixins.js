@@ -16,11 +16,6 @@ export default {
                         key: 'name',
                         isVisible: true,
                     },
-                    {
-                        title: this.$t('actions'),
-                        type: 'action',
-                        isVisible: true
-                    },
                 ],
                 filters: [
                     {
@@ -33,7 +28,7 @@ export default {
                 paginationType: "pagination",
                 responsive: true,
                 rowLimit: 10,
-                showAction: true,
+                showAction: (this.$have('PERMISSION_UPDATE_AWARD_TYPE') || this.$have('PERMISSION_DELETE_AWARD_TYPE')),
                 orderBy: 'desc',
                 actionType: "default",
                 actions: [
@@ -45,7 +40,7 @@ export default {
                         modalId: 'award-type-modal',
                         url: AWARD_TYPES,
                         name: 'edit',
-                        modifier: row => this.$can('update_award_types')
+                        modifier: () => this.$have('PERMISSION_UPDATE_AWARD_TYPE')
                     },
                     {
                         title: this.$t('delete'),
@@ -53,10 +48,21 @@ export default {
                         icon: 'trash-2',
                         modalClass: 'warning',
                         url: AWARD_TYPES,
-                        modifier: row => this.$can('delete_award_types')
+                        modifier: () => this.$have('PERMISSION_DELETE_AWARD_TYPE')
                     },
                 ],
-            }
+            },
+            isAwardTypeAddEditModalActive: false,
+            isAwardTypeDeleteModalActive: false,
         }
-    }
+    },
+
+    beforeMount() {
+        if (this.$have('PERMISSION_UPDATE_AWARD_TYPE') || this.$have('PERMISSION_DELETE_AWARD_TYPE')) {
+            this.options.columns.push({
+                title: this.$t('actions'),
+                type: 'action'
+            })
+        }
+    },
 }

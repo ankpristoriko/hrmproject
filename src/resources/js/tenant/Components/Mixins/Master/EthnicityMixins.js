@@ -16,11 +16,6 @@ export default {
                         key: 'name',
                         isVisible: true,
                     },
-                    {
-                        title: this.$t('actions'),
-                        type: 'action',
-                        isVisible: true
-                    },
                 ],
                 filters: [
                     {
@@ -33,7 +28,7 @@ export default {
                 paginationType: "pagination",
                 responsive: true,
                 rowLimit: 10,
-                showAction: true,
+                showAction: (this.$have('PERMISSION_UPDATE_ETHNICITY') || this.$have('PERMISSION_DELETE_ETHNICITY')),
                 orderBy: 'desc',
                 actionType: "default",
                 actions: [
@@ -45,7 +40,7 @@ export default {
                         modalId: 'ethnicity-modal',
                         url: ETHNICITIES,
                         name: 'edit',
-                        modifier: row => this.$can('update_ethnicities')
+                        modifier: () => this.$have('PERMISSION_UPDATE_ETHNICITY')
                     },
                     {
                         title: this.$t('delete'),
@@ -53,10 +48,21 @@ export default {
                         icon: 'trash-2',
                         modalClass: 'warning',
                         url: ETHNICITIES,
-                        modifier: row => this.$can('delete_ethnicities')
+                        modifier: () => this.$have('PERMISSION_DELETE_ETHNICITY')
                     },
                 ],
-            }
+            },
+            isEthnicityAddEditModalActive: false,
+            isEthnicityDeleteModalActive: false,
         }
-    }
+    },
+
+    beforeMount() {
+        if (this.$have('PERMISSION_UPDATE_ETHNICITY') || this.$have('PERMISSION_DELETE_ETHNICITY')) {
+            this.options.columns.push({
+                title: this.$t('actions'),
+                type: 'action'
+            })
+        }
+    },
 }

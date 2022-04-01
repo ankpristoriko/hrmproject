@@ -3,12 +3,12 @@
 namespace App\Models\Tenant\Recruitment\JobPost\Traits\Relationship;
 
 
-use App\Models\App\Applicant\JobApplicant;
+use App\Models\Tenant\Recruitment\Applicant\JobApplicant;
 // use App\Models\App\Company\CompanyLocation;
-use App\Models\App\Company\Department;
-use App\Models\App\JobPost\JobType;
-use App\Models\App\Recruitment\HiringTeam;
-use App\Models\App\Recruitment\JobStage;
+use App\Models\Tenant\Employee\Department;
+use App\Models\Tenant\Recruitment\JobType;
+use App\Models\Tenant\Recruitment\HiringTeam;
+use App\Models\Tenant\Recruitment\JobStage;
 use App\Models\Core\Auth\User;
 use App\Models\Core\File\File;
 use App\Models\Core\Status;

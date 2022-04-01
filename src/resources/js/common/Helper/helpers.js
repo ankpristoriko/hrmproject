@@ -4,6 +4,7 @@ import moment from "moment";
 import Collection from "./Collection";
 import Permission from "./Permission";
 import optional from "./Support/Optional";
+import * as PermissionString from "./../../tenant/Config/PermissionString";
 
 Vue.prototype.$optional = (obj, ...props) => {
     return optional(obj, ...props);
@@ -14,6 +15,15 @@ export const collection = list => new Collection(list);
 Vue.prototype.collection = list => collection(list);
 
 Vue.prototype.$can = ability => (new Permission()).can(ability);
+
+Vue.prototype.$have = ability => {
+    // console.log(PermissionString[ability])
+    if(!PermissionString[ability]) {
+        console.warn(`Please add ${ability} in PermissionString.js file`);
+        return (new Permission()).can(ability)
+    }
+    return (new Permission()).can(PermissionString[ability])
+};
 
 Vue.prototype.$isAdmin = () => (new Permission()).isAdmin();
 

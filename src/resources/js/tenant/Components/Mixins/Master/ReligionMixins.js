@@ -16,11 +16,6 @@ export default {
                         key: 'name',
                         isVisible: true,
                     },
-                    {
-                        title: this.$t('actions'),
-                        type: 'action',
-                        isVisible: true
-                    },
                 ],
                 filters: [
                     {
@@ -33,7 +28,7 @@ export default {
                 paginationType: "pagination",
                 responsive: true,
                 rowLimit: 10,
-                showAction: true,
+                showAction: (this.$have('PERMISSION_UPDATE_RELIGION') || this.$have('PERMISSION_DELETE_RELIGION')),
                 orderBy: 'desc',
                 actionType: "default",
                 actions: [
@@ -45,7 +40,7 @@ export default {
                         modalId: 'religion-modal',
                         url: RELIGIONS,
                         name: 'edit',
-                        modifier: row => this.$can('update_religions')
+                        modifier: () => this.$have('PERMISSION_UPDATE_RELIGION')
                     },
                     {
                         title: this.$t('delete'),
@@ -53,10 +48,21 @@ export default {
                         icon: 'trash-2',
                         modalClass: 'warning',
                         url: RELIGIONS,
-                        modifier: row => this.$can('delete_religions')
+                        modifier: () => this.$have('PERMISSION_DELETE_RELIGION')
                     },
                 ],
-            }
+            },
+            isReligionAddEditModalActive: false,
+            isReligionDeleteModalActive: false,
         }
-    }
+    },
+
+    beforeMount() {
+        if (this.$have('PERMISSION_UPDATE_RELIGION') || this.$have('PERMISSION_DELETE_RELIGION')) {
+            this.options.columns.push({
+                title: this.$t('actions'),
+                type: 'action'
+            })
+        }
+    },
 }

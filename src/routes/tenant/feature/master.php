@@ -17,8 +17,9 @@ use App\Http\Controllers\Tenant\Master\IndustryAreaController;
 use App\Http\Controllers\Tenant\Master\CourseCategoryController;
 use App\Http\Controllers\Tenant\Master\CourseMaterialCategoryController;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'app'], function (Router $router) {
+Route::group(['prefix' => 'app', 'as' => 'app_permission.', 'middleware' => ['permission']], function (Router $router) {
     $router->apiResource('document-types', DocumentTypeController::class);
     $router->apiResource('warning-types', WarningTypeController::class);
     $router->apiResource('award-types', AwardTypeController::class);

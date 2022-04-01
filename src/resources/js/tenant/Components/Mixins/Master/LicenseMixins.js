@@ -22,11 +22,6 @@ export default {
                         key: 'description',
                         isVisible: true,
                     },
-                    {
-                        title: this.$t('actions'),
-                        type: 'action',
-                        isVisible: true
-                    },
                 ],
                 filters: [
                     {
@@ -39,7 +34,7 @@ export default {
                 paginationType: "pagination",
                 responsive: true,
                 rowLimit: 10,
-                showAction: true,
+                showAction: (this.$have('PERMISSION_UPDATE_LICENSE') || this.$have('PERMISSION_DELETE_LICENSE')),
                 orderBy: 'desc',
                 actionType: "default",
                 actions: [
@@ -51,7 +46,7 @@ export default {
                         modalId: 'license-modal',
                         url: LICENSES,
                         name: 'edit',
-                        modifier: row => this.$can('update_licenses')
+                        modifier: () => this.$have('PERMISSION_UPDATE_LICENSE')
                     },
                     {
                         title: this.$t('delete'),
@@ -59,10 +54,22 @@ export default {
                         icon: 'trash-2',
                         modalClass: 'warning',
                         url: LICENSES,
-                        modifier: row => this.$can('delete_licenses')
+                        modifier: () => this.$have('PERMISSION_DELETE_LICENSE')
                     },
                 ],
-            }
+            },
+
+            isLicenseAddEditModalActive: false,
+            isLicenseDeleteModalActive: false,
         }
-    }
+    },
+
+    beforeMount() {
+        if (this.$have('PERMISSION_UPDATE_LICENSE') || this.$have('PERMISSION_DELETE_LICENSE')) {
+            this.options.columns.push({
+                title: this.$t('actions'),
+                type: 'action'
+            })
+        }
+    },
 }

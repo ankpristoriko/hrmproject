@@ -371,6 +371,7 @@ return array_merge([
     'update_leave_notes' => 'Can update own leave notes',
     'assign_leaves' => 'Can assign leaves',
     'view_all_leaves' => 'Can view all leaves',
+    'view_master_settings' => 'Can view master settings',
 
     'date_format' => 'date format',
     'time_format' => 'time format',
@@ -1588,5 +1589,29 @@ return array_merge([
     'desktop' => 'Desktop',
     'mobile' => 'Mobile',
     'copyright_text' => 'Copyright @ 2021 by ',
+
+    'parameter' => 'Parameters',
+    'system_parameter' => 'System Parameter',
+    'bpjs_parameter' => 'BPJS Parameter',
+    'tax_bracket' => 'Tax Bracket',
+    'non_npwp_tax_bracket' => 'Non NPWP Tax Bracket',
+    'pension_tax_bracket' => 'Pension Tax Bracket',
+    'severance_pay_tax_bracket' => 'Severance Pay Tax Bracket',
+
+    'global_application_form' => 'Application form',
+    'can_manage_global_application_form' => 'Can manage global application form',
+    'can_view_job_setting' => 'Can view job settings',
+    'can_view_event_type' => 'Can view event type',
+    'can_create_event_type' => 'Can create event type',
+    'can_update_event_type' => 'Can update event type',
+    'can_delete_event_type' => 'Can delete event type',
+    'can_view_job_type' => 'Can view job type',
+    'can_create_job_type' => 'Can create job type',
+    'can_update_job_type' => 'Can update job type',
+    'can_delete_job_type' => 'Can delete job type',
+    'can_view_stage' => 'Can view stage',
+    'can_create_stage' => 'Can create stage',
+    'can_update_stage' => 'Can update stage',
+    'can_delete_stage' => 'Can delete stage',
 
 ], include 'custom.php');

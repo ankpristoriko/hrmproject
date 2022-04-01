@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\App\JobPost\Traits\Rules;
+namespace App\Models\Tenant\Recruitment\JobPost\Traits\Rules;
 
 trait JobApplicationSettingRules
 {

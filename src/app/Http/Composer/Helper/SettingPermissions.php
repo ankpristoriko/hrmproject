@@ -61,7 +61,7 @@ class SettingPermissions
             'view_payroll_settings',
             'view_attendance_settings',
             'view_master_settings',
-            'import_employees'
+            'import_employees',
         ]);
     }
 }

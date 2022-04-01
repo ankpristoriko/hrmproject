@@ -27,6 +27,12 @@ export default {
                     permission: this.$can('view_payroll_settings')
                 },
                 {
+                    name: this.$t('parameter'),
+                    title: this.$t('parameter'),
+                    component: "app-parameter-setting",
+                    permission: this.$can('view_parameter_settings')
+                },
+                {
                     name: this.$t('manage_audience'),
                     title: this.$t('manage_audience'),
                     component: "app-payrun-audience-setting",

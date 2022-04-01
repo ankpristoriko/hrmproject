@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models\App\JobPost\Traits\Relationship;
+namespace App\Models\Tenant\Recruitment\JobPost\Traits\Relationship;
 
-use App\Models\App\JobPost\JobPost;
+use App\Models\Tenant\Recruitment\JobPost\JobPost;
 
 trait JobApplicationSettingRelationship
 {

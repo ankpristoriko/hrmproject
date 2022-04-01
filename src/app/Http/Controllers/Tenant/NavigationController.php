@@ -444,6 +444,22 @@ class NavigationController extends Controller
         throw new GeneralException(trans('default.action_not_allowed'));
     }
 
+    public function recruitmentApplicationForm()
+    {
+        if (authorize_any(['can_manage_global_application_form'])) {
+            return view('tenant.recruitment.application_form');
+        }
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
+    public function recruitmentEventType()
+    {
+        if (authorize_any(['can_view_event_type'])) {
+            return view('tenant.recruitment.event_type');
+        }
+        throw new GeneralException(trans('default.action_not_allowed'));
+    }
+
     public function trainingDashboard()
     {
         return view('tenant.trainings.dashboard');

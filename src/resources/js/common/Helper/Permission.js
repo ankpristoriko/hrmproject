@@ -11,8 +11,15 @@ export default class Permission {
         if (this.permissions().is_app_admin || this.permissions().is_tenant_admin) {
             return true
         }
-        return this.permissions()[ability];
+        return Boolean(this.permissions()[ability]);
     }
+
+    // can(ability) {
+    //     if (this.permissions().is_app_admin) {
+    //         return true
+    //     }
+    //     return Boolean(this.permissions()[ability]);
+    // }
     
     isAppAdmin() {
         return this.permissions().is_app_admin

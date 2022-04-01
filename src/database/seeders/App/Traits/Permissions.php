@@ -592,6 +592,12 @@ trait Permissions
                 'type_id' => $tenant,
                 'group_name' => 'import'
             ],
+
+            [
+                'name' => 'view_master_settings',
+                'type_id' => $tenant,
+                'group_name' => 'master_settings'
+            ],
         ];
     }
 }

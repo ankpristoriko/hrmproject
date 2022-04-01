@@ -16,11 +16,6 @@ export default {
                         key: 'name',
                         isVisible: true,
                     },
-                    {
-                        title: this.$t('actions'),
-                        type: 'action',
-                        isVisible: true
-                    },
                 ],
                 filters: [
                     {
@@ -33,7 +28,7 @@ export default {
                 paginationType: "pagination",
                 responsive: true,
                 rowLimit: 10,
-                showAction: true,
+                showAction: (this.$have('PERMISSION_UPDATE_TERMINATION_TYPE') || this.$have('PERMISSION_DELETE_TERMINATION_TYPE')),
                 orderBy: 'desc',
                 actionType: "default",
                 actions: [
@@ -45,7 +40,7 @@ export default {
                         modalId: 'termination-type-modal',
                         url: TERMINATION_TYPES,
                         name: 'edit',
-                        modifier: row => this.$can('update_termination_types')
+                        modifier: () => this.$have('PERMISSION_UPDATE_TERMINATION_TYPE')
                     },
                     {
                         title: this.$t('delete'),
@@ -53,10 +48,21 @@ export default {
                         icon: 'trash-2',
                         modalClass: 'warning',
                         url: TERMINATION_TYPES,
-                        modifier: row => this.$can('delete_termination_types')
+                        modifier: () => this.$have('PERMISSION_DELETE_TERMINATION_TYPE')
                     },
                 ],
-            }
+            },
+            isTerminationTypeAddEditModalActive: false,
+            isTerminationTypeDeleteModalActive: false,
         }
-    }
+    },
+
+    beforeMount() {
+        if (this.$have('PERMISSION_UPDATE_TERMINATION_TYPE') || this.$have('PERMISSION_DELETE_TERMINATION_TYPE')) {
+            this.options.columns.push({
+                title: this.$t('actions'),
+                type: 'action'
+            })
+        }
+    },
 }
