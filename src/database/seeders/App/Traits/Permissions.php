@@ -598,6 +598,17 @@ trait Permissions
                 'type_id' => $tenant,
                 'group_name' => 'master_settings'
             ],
+
+            [
+                'name' => 'export_attendance_summery',
+                'type_id' => $tenant,
+                'group_name' => 'export'
+            ],
+            [
+                'name' => 'export_attendance_daily_log',
+                'type_id' => $tenant,
+                'group_name' => 'export'
+            ],
         ];
     }
 }

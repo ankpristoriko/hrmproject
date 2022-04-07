@@ -417,6 +417,12 @@ return array_merge([
     'update_employee_beneficiary' => 'Can update employee beneficiary',
     //import
     'import_employees' => 'Can import employees',
+    'import_attendances' => 'Can import attendances',
+
+    //Export
+    'export_attendance_summery' => 'Can export attendance summery',
+    'export_attendance_daily_log' => 'Can export attendance daily log',
+    'export_attendance' => 'Export attendance',
 
 
     // Add and all labels
