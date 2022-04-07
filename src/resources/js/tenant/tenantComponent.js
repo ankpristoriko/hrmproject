@@ -146,7 +146,6 @@ Vue.component('app-leave-period-create-edit', require('./Components/View/Leave/C
 //ImportDatabase
 Vue.component('app-import-database', require('./Components/View/Setting/Import/ImportDatabase').default);
 Vue.component('app-import-loading-modal', require('./Components/View/Setting/Import/ImportLoadingModal').default);
-Vue.component('app-import-attendances', require('./Components/View/Setting/Import/ImportAttendances').default);
 
 //update
 Vue.component('app-update', require('./Components/View/Setting/Update/Update').default)
@@ -188,7 +187,7 @@ Vue.component('app-payroll-summery', require('./Components/View/Payroll/PayrollS
 //Import
 Vue.component('app-import-employees', require('./Components/View/Setting/Import/ImportEmployees').default);
 Vue.component('app-import-layout', require('./Components/View/Setting/ImportLayout').default);
-
+Vue.component('app-import-attendances', require('./Components/View/Setting/Import/ImportAttendances').default);
 
 // Promotion
 Vue.component('promotion-view-table', require('./Components/View/CoreHR/Promotion/Promotion').default);

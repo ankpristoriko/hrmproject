@@ -32,7 +32,11 @@ window.axios.interceptors.response.use(function (response) {
 }, function (error) {
     const code = error.response.status;
     if (404 === code || 401 === code) {
-        swal(error.response, code === 401);
+        if (error.response.data?.status == false || error.response.data?.status == 'false'){
+            return Promise.reject(error);
+        } else {
+            swal(error.response, code === 401);
+        }
     } else {
         return Promise.reject(error);
     }

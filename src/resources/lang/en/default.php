@@ -405,7 +405,7 @@ return array_merge([
     'update_payruns' => 'Can update payruns',
     'delete_payruns' => 'Can delete payruns',
     'send_payrun_payslips' => 'Can send payrun payslips',
-    'view_payroll_summery' => 'Can view payroll summery',
+    'view_payroll_summery' => 'Can view payroll summary',
     'view_default_payrun' => 'Can view default payrun',
     'update_payrun_audience' => 'Can update payrun audience setting',
     'update_payrun_beneficiary' => 'Can update payrun beneficiary setting',
@@ -420,7 +420,7 @@ return array_merge([
     'import_attendances' => 'Can import attendances',
 
     //Export
-    'export_attendance_summery' => 'Can export attendance summery',
+    'export_attendance_summery' => 'Can export attendance summary',
     'export_attendance_daily_log' => 'Can export attendance daily log',
     'export_attendance' => 'Export attendance',
 
@@ -844,6 +844,7 @@ return array_merge([
     'availability' => 'Availability',
     'taken' => 'Taken',
     'earned' => 'Earned',
+    'leave_allowance' => 'Leave allowance',
 
     'punch_in' => 'Punch In',
     'punch_out' => 'Punch Out',
@@ -1093,6 +1094,7 @@ return array_merge([
     'leave_attachment_allowed_file_types' => 'Allowed file types: jpeg, jpg, gif, png, pdf, zip. (Max file size is 2MB)',
     'response_log' => 'Response log',
     'applied_by' => 'Applied by',
+    'assigned_by' => 'Assigned by',
     'apply_date' => 'Apply date',
     'apply_between' => 'Apply between',
     'see_leave_requests' => 'See leave requests',
@@ -1295,7 +1297,7 @@ return array_merge([
     'show_conflicted_payslip' => 'Show Conflicted Payslip',
     'send_last_month_payslip' => 'Send last month payslip.',
     'payrun_audience' => 'Payrun Audience',
-    'payroll_summery' => 'Payroll Summery',
+    'payroll_summery' => 'Payroll Summary',
     'view_pdf' => 'View PDF',
     'download_pdf' => 'Download PDF',
     'filter_data_which_are_conflicted' => 'Filter data which are conflicted.',
@@ -1453,6 +1455,14 @@ return array_merge([
     'maximum_execution_time_exceeded' => 'Maximum execution time exceeded!',
     'maximum_row_exceeded_message' => 'CSV file can not contain more than 500 rows(employee) at a time!',
 
+    'import_attendance' => 'Import attendance',
+    'download_sample_file' => 'Download sample file',
+    'csv_required_field_guide_attendance' => "Required field's (employee_id, in_time, out_time) column cell must not be empty.",
+    'csv_column_data_format_attendance' => 'The column : employee_id value must be the same value that exists on the application and the in_time and out_time columns must be the date format of \'Y-m-d H:m:s\' (the hour should be 24hour format)',
+    'after_attendance_import_message' => 'You will find all imported data in attendance module.',
+    'please_filter_the_attendance_data_first' => 'Please filter the attendance data first.',
+    'no_attendance_data_found' => 'No attendance data found.',
+    'this_employee_does_not_belongs_to_your_department' => 'This employee does not belongs to your department.',
     //Common
     'action_not_allowed_in_demo' => 'Action not allowed in demo version',
     'login_as' => 'Login as',

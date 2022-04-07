@@ -32,17 +32,23 @@ class AttendanceExport implements FromArray, WithHeadings
             __t('name'),
             __t('department'),
             __t('punch_in'),
+            __t('in_note'),
             __t('punch_out'),
+            __t('out_note'),
             __t('total_hours'),
             __t('behavior'),
             __t('type'),
+            __t('request_note'),
         ] : [
             __t('date'),
             __t('punch_in'),
+            __t('in_note'),
             __t('punch_out'),
+            __t('out_note'),
             __t('total_hours'),
             __t('behavior'),
             __t('type'),
+            __t('request_note'),
         ];
     }
 
@@ -69,19 +75,32 @@ class AttendanceExport implements FromArray, WithHeadings
                 $attendance->user->full_name,
                 $attendance->user->department->name,
                 $in_time,
+                $this->getNote($attendanceDetails->comments, 'in-note'),
                 $out_time,
+                $this->getNote($attendanceDetails->comments, 'out-note'),
                 $total_hours,
                 $attendance->behavior,
-                $attendanceDetails->review_by || $attendanceDetails->added_by ? __t('manual') : __t('auto')
+                $attendanceDetails->review_by || $attendanceDetails->added_by ? __t('manual') : __t('auto'),
+                $this->getNote($attendanceDetails->comments, 'request'),
             ] : [
                 $this->carbon($attendance->in_date)->parse()->setTimezone(request('timeZone'))->format('d-m-Y'),
                 $in_time,
+                $this->getNote($attendanceDetails->comments, 'in-note'),
                 $out_time,
+                $this->getNote($attendanceDetails->comments, 'out-note'),
                 $total_hours,
                 $attendance->behavior,
-                $attendanceDetails->review_by || $attendanceDetails->added_by ? __t('manual') : __t('auto')
+                $attendanceDetails->review_by || $attendanceDetails->added_by ? __t('manual') : __t('auto'),
+                $this->getNote($attendanceDetails->comments, 'request'),
             ];
         })->toArray();
 
+    }
+
+    private function getNote(Collection $comments, $type)
+    {
+        if (!$comments->count()) return null;
+
+        return optional($comments->where('type', $type)->sortByDesc('parent_id')->first())->comment;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 return [
     /* Application version */
-    'app_version' => '1.2',
+    'app_version' => '1.3',
 
     /* Application update url */
     'update_url' => 'https://marketplace.gainhq.com',
@@ -13,5 +13,4 @@ return [
     "installed" => env('APP_INSTALLED', false),
 
     'use_update_route' => 'v2',
-
 ];

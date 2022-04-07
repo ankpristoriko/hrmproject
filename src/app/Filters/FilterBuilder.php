@@ -61,30 +61,30 @@ class FilterBuilder
         });
     }
 
-    public function groupSearch($value, array $params, \Closure $callback = null)
-    {
-        return $this->builder->when($value, function (Builder $builder) use ($params, $value, $callback) {
-            $whereClause = 'where';
-            foreach ($params as $param) {
-                $builder->{$whereClause}($param, 'LIKE', "%{$value}%");
-                $whereClause = 'orWhere';
-            }
-            if ($callback) $callback($builder);
-        });
-    }
+    // public function groupSearch($value, array $params, \Closure $callback = null)
+    // {
+    //     return $this->builder->when($value, function (Builder $builder) use ($params, $value, $callback) {
+    //         $whereClause = 'where';
+    //         foreach ($params as $param) {
+    //             $builder->{$whereClause}($param, 'LIKE', "%{$value}%");
+    //             $whereClause = 'orWhere';
+    //         }
+    //         if ($callback) $callback($builder);
+    //     });
+    // }
 
-    public function whereInClause($field, array $values)
-    {
-        return $this->builder->when($values, function(Builder $builder) use ($field, $values) {
-            $builder->whereIn($field, $values);
-        });
-    }
+    // public function whereInClause($field, array $values)
+    // {
+    //     return $this->builder->when($values, function(Builder $builder) use ($field, $values) {
+    //         $builder->whereIn($field, $values);
+    //     });
+    // }
 
-    public function singleSearch($value, $param, \Closure $callback = null)
-    {
-        return $this->builder->when($value, function (Builder $builder) use ($param, $value, $callback) {
-            $builder->where($param, 'LIKE', "%{$value}%");
-            if ($callback) $callback($builder);
-        });
-    }
+    // public function singleSearch($value, $param, \Closure $callback = null)
+    // {
+    //     return $this->builder->when($value, function (Builder $builder) use ($param, $value, $callback) {
+    //         $builder->where($param, 'LIKE', "%{$value}%");
+    //         if ($callback) $callback($builder);
+    //     });
+    // }
 }

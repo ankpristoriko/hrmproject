@@ -59,7 +59,7 @@ Vue.component('tenant-store-update-custom-fields', require('./Components/Setting
 Vue.component('app-auth-login', require('./Components/Auth/Login').default);
 
 //Setup
-Vue.component('app-environment-wizard', require('./Components/Install/Env/Environment').default);
+// Vue.component('app-environment-wizard', require('./Components/Install/Env/Environment').default);
 // Vue.component('app-install-wizard', require('./Components/Install/Layout').default);
 // Vue.component('app-server-requirements', require('./Components/Install/Server/Requirements').default);
 // Vue.component('app-server-permissions', require('./Components/Install/Server/Permissions').default);
