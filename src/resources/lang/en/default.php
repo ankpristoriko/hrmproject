@@ -1497,6 +1497,9 @@ return array_merge([
     'cron_job_setting_suggestion' => 'We are providing the cron job command and highly recommend to run it every minute(once per minute ****). Copy the command and insert it to your hosted server\'s crontab. For more help you can see the documentation.',
     'cron_job_setting_warning' => 'You must setup the cron job in your hosted server for assigning work shift, generating payslip, sending bulk emails, assigning leaves and renew holidays.',
     'export' => 'Export',
+    'in_note' => 'In note',
+    'out_note' => 'Out note',
+    'request_note' => 'Request note',
 
     'document_no' => 'Document No',
     'valid_from' => 'Valid From',
