@@ -146,6 +146,7 @@ Vue.component('app-leave-period-create-edit', require('./Components/View/Leave/C
 //ImportDatabase
 Vue.component('app-import-database', require('./Components/View/Setting/Import/ImportDatabase').default);
 Vue.component('app-import-loading-modal', require('./Components/View/Setting/Import/ImportLoadingModal').default);
+Vue.component('app-import-attendances', require('./Components/View/Setting/Import/ImportAttendances').default);
 
 //update
 Vue.component('app-update', require('./Components/View/Setting/Update/Update').default)

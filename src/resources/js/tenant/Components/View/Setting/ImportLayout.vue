@@ -20,6 +20,12 @@ export default {
                     component: "app-import-employees",
                     permission: this.$can('import_employees')
                 },
+                {
+                    name: this.$t('attendance'),
+                    title: this.$t('import_attendance'),
+                    component: "app-import-attendances",
+                    permission: this.$can('import_attendances')
+                },
             ]
         }
     }
