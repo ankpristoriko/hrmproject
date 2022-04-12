@@ -14,6 +14,10 @@ export default {
                     'name': this.$t('system_parameter'),
                     'title': this.$t('system_parameter'),
                     'component': 'app-system-parameter-settings',
+                    'headerButton': {
+                            'label': this.$addLabel('system_parameter'),
+                            'class': 'btn btn-primary'
+                            }
                 },
                 {
                     'name': this.$t('bpjs_parameter'),

@@ -81,3 +81,8 @@ export const PERMISSION_VIEW_BANKS = 'can_view_banks';
 export const PERMISSION_CREATE_BANKS = 'can_create_banks';
 export const PERMISSION_UPDATE_BANK = 'can_update_bank';
 export const PERMISSION_DELETE_BANK = 'can_delete_bank';
+
+export const PERMISSION_VIEW_SYSTEM_PARAMETERS = 'can_view_system_parameters';
+export const PERMISSION_CREATE_SYSTEM_PARAMETERS = 'can_create_system_parameters';
+export const PERMISSION_UPDATE_SYSTEM_PARAMETER = 'can_update_system_parameter';
+export const PERMISSION_DELETE_SYSTEM_PARAMETER = 'can_delete_system_parameter';

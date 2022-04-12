@@ -1633,4 +1633,7 @@ return array_merge([
     'can_update_stage' => 'Can update stage',
     'can_delete_stage' => 'Can delete stage',
 
+    'you_cant_update_system_parameter_if_the_type_already_has_system_parameter_applied' => 'You cant update system parameter if the type already has system parameter applied',
+    'parameter_code' => 'Parameter Code',
+    'parameter_value' => 'Value',
 ], include 'custom.php');

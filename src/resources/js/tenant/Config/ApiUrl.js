@@ -167,3 +167,6 @@ export const CLEAR_CACHE= `${TENANT_BASE_URL}app/clear-cache`;
 
 //Training
 export const TRAINING_INSTITUTIONS = `${TENANT_BASE_URL}app/training-institutions`;
+
+// System Parameter
+export const SYSTEM_PARAMETERS = `${TENANT_BASE_URL}app/system-parameters`;

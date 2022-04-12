@@ -247,7 +247,7 @@ Vue.component('app-relationships', require('./Components/View/Master/Relationshi
 Vue.component('app-relationship-create-edit', require('./Components/View/Master/Components/RelationshipCreateEditModal').default);
 
 // License
-Vue.component('app-licenses', require('./Components/View/Master/license/Licenses').default);
+Vue.component('app-licenses', require('./Components/View/Master/License/Licenses').default);
 Vue.component('app-license-create-edit', require('./Components/View/Master/Components/LicenseCreateEditModal').default);
 
 // Religion
@@ -277,6 +277,9 @@ Vue.component('app-event-type-create-edit', require('./Components/View/Recruitme
 // Stage
 Vue.component('app-stages', require('./Components/View/Recruitment/Stage/Stages').default);
 Vue.component('app-stage-create-edit', require('./Components/View/Recruitment/Components/StageCreateEditModal').default);
+
+// System Parameter
+Vue.component('app-system-parameter-settings', require('./Components/View/Setting/Component/Payroll/SystemParameter/SystemParameters').default);
 
 Vue.component('application-form-setting', require('./Components/View/Recruitment/ApplyForm/ApplyForm').default);
 Vue.component('personal-info-modal', require('./Components/View/Recruitment/Components/PersonalInfoModal').default);

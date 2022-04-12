@@ -6,9 +6,10 @@ use App\Http\Controllers\Tenant\Payroll\PayrollSettingController;
 use App\Http\Controllers\Tenant\Payroll\PayrunController;
 use App\Http\Controllers\Tenant\Payroll\PayslipController;
 use App\Http\Controllers\Tenant\Payroll\RunDefaultPayrun;
+use App\Http\Controllers\Tenant\Payroll\SystemParameterController;
 use Illuminate\Routing\Router;
 
-Route::group(['prefix' => 'app', ], function (Router $router) {
+Route::group(['prefix' => 'app', 'as' => 'app_permission.', 'middleware' => ['permission']], function (Router $router) {
 
     $router->get('settings/payrun', [PayrollSettingController::class, 'index'])
         ->name('payroll-settings.index');
@@ -62,5 +63,8 @@ Route::group(['prefix' => 'app', ], function (Router $router) {
 
     $router->get('payruns/{payrun}/send-payslip', [PayrunController::class, 'sendPayslips'])
         ->name('payrun-payslips.send');
+
+    $router->apiResource('system-parameters', SystemParameterController::class);
+    
 
 });

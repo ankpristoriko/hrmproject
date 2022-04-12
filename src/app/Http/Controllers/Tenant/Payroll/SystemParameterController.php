@@ -1,55 +1,65 @@
 <?php
 
-namespace App\Http\Controllers\Tenant\Employee;
+namespace App\Http\Controllers\Tenant\Payroll;
 
+use App\Exceptions\GeneralException;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Tenant\Employee\EmployeeWorkExperienceRequest;
-use App\Models\Core\Auth\User;
-use App\Models\Tenant\Employee\UserWorkExperience;
-use App\Services\Tenant\Employee\EmployeeWorkExperienceService;
+use Illuminate\Http\Request;
+use App\Models\Tenant\Payroll\SystemParameter;
+use App\Filters\Tenant\Payroll\SystemParameterFilter;
+use App\Services\Tenant\Payroll\SystemParameterService;
 
 class SystemParameterController extends Controller
 {
-    public function __construct(EmployeeWorkExperienceService $service)
+    public function __construct(SystemParameterService $service, SystemParameterFilter $filter)
     {
         $this->service = $service;
+        $this->filter = $filter;
     }
 
-    public function index(User $employee)
+    public function index()
     {
-        return $employee->workExperiences->sortBy(function (UserWorkExperience $workExperience) {
-            return $workExperience->id;
-        });
-    }
-
-    public function store(User $employee, EmployeeWorkExperienceRequest $request)
-    {
-        $employee->workExperiences()->save(new UserWorkExperience([
-            'key' => 'employee_work_experiences',
-            'value' => json_encode($request->only('company_name', 'job_title', 'location', 'start_date', 'end_date', 'job_description', 'last_salary', 'reason_of_leaving', 'company_description'))
-        ]));
-
-        return created_responses('employee_work_experiences');
-    }
-
-    public function show(User $employee, UserWorkExperience $workExperience)
-    {
-        return $workExperience;
+        return SystemParameter::filters($this->filter)
+            ->where('key','system_parameter')
+            ->latest()
+            ->paginate(request()->get('per_page', 10));
     }
     
-    public function update(User $employee,UserWorkExperience $workExperience, EmployeeWorkExperienceRequest $request)
+    public function show(SystemParameter $systemParameter)
     {
-        $workExperience->update([
-            'value' => $request->only('company_name', 'job_title', 'location', 'start_date', 'end_date', 'job_description', 'last_salary', 'reason_of_leaving', 'company_description')
-        ]);
-
-        return updated_responses('employee_work_experiences');
+        return $systemParameter;
     }
 
-    public function destroy(User $employee, UserWorkExperience $workExperience)
+    public function store(Request $request)
     {
-        $workExperience->delete();
+        $this->service
+            ->setAttributes($request->only('parameter_code'))
+            ->validate()
+            ->save();
 
-        return deleted_responses('employee_work_experiences');
+        return created_responses('system_parameter');
+    }
+
+    public function update(Request $request, SystemParameter $systemParameter)
+    {
+        $this->service
+            ->setModel($systemParameter)
+            ->setAttributes($request->only('parameter_code'))
+            ->validate()
+            ->validateDocuments()
+            ->save();
+
+        return updated_responses('system_parameter');
+    }
+
+    public function destroy(SystemParameter $systemParameter)
+    {
+        try {
+            $systemParameter->delete();
+        } catch (\Exception $e) {
+            throw new GeneralException(__t('can_not_delete_used_system_parameter'));
+        }
+
+        return deleted_responses('document_type');       
     }
 }

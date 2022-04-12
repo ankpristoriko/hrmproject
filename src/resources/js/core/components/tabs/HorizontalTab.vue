@@ -12,9 +12,30 @@
                     </a>
                 </div>
             </nav>
-            <div class="tab-content p-primary">
+            <!-- <div class="tab-content p-primary">
                 <div class="tab-pane fade show active" :id="componentId">
                     <component :is="componentName" :props="componentProps"></component>
+                </div>
+            </div> -->
+            <div class="card border-0">
+                <div class="tab-content px-primary">
+                    <div class="tab-pane fade active show" :id="componentId">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="d-flex align-items-center text-capitalize mb-0 title tab-content-header">
+                                </h5>
+                            <div class="d-flex align-items-center mb-0">
+                                <button v-if="!isUndefined(componentButton.label)"
+                                        :class="componentButton.class?componentButton.class:'btn btn-primary'"
+                                        @click.prevent="headerBtnClicked">
+                                    {{componentButton.label}}
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="content py-primary">
+                            <component :is="componentName" :props="componentProps" :id="componentId"></component>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
