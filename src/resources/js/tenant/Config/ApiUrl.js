@@ -170,3 +170,8 @@ export const TRAINING_INSTITUTIONS = `${TENANT_BASE_URL}app/training-institution
 
 // System Parameter
 export const SYSTEM_PARAMETERS = `${TENANT_BASE_URL}app/system-parameters`;
+export const BPJS_PARAMETERS = `${TENANT_BASE_URL}app/bpjs-parameters`;
+export const TAX_BRACKETS = `${TENANT_BASE_URL}app/tax-brackets`;
+export const SEVERANCE_PAY_TAX_BRACKETS = `${TENANT_BASE_URL}app/severance-pay-tax-brackets`;
+export const PENSION_TAX_BRACKETS = `${TENANT_BASE_URL}app/pension-tax-brackets`;
+export const NON_NPWP_TAX_BRACKETS = `${TENANT_BASE_URL}app/non-npwp-tax-brackets`;

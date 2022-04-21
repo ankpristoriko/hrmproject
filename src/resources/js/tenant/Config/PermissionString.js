@@ -86,3 +86,28 @@ export const PERMISSION_VIEW_SYSTEM_PARAMETERS = 'can_view_system_parameters';
 export const PERMISSION_CREATE_SYSTEM_PARAMETERS = 'can_create_system_parameters';
 export const PERMISSION_UPDATE_SYSTEM_PARAMETER = 'can_update_system_parameter';
 export const PERMISSION_DELETE_SYSTEM_PARAMETER = 'can_delete_system_parameter';
+
+export const PERMISSION_VIEW_BPJS_PARAMETERS = 'can_view_bpjs_parameters';
+export const PERMISSION_CREATE_BPJS_PARAMETERS = 'can_create_bpjs_parameters';
+export const PERMISSION_UPDATE_BPJS_PARAMETER = 'can_update_bpjs_parameter';
+export const PERMISSION_DELETE_BPJS_PARAMETER = 'can_delete_bpjs_parameter';
+
+export const PERMISSION_VIEW_TAX_BRACKETS = 'can_view_tax_brackets';
+export const PERMISSION_CREATE_TAX_BRACKETS = 'can_create_tax_brackets';
+export const PERMISSION_UPDATE_TAX_BRACKET = 'can_update_tax_bracket';
+export const PERMISSION_DELETE_TAX_BRACKET = 'can_delete_tax_bracket';
+
+export const PERMISSION_VIEW_NON_NPWP_TAX_BRACKETS = 'can_view_non_npwp_tax_brackets';
+export const PERMISSION_CREATE_NON_NPWP_TAX_BRACKETS = 'can_create_non_npwp_tax_brackets';
+export const PERMISSION_UPDATE_NON_NPWP_TAX_BRACKET = 'can_update_non_npwp_tax_bracket';
+export const PERMISSION_DELETE_NON_NPWP_TAX_BRACKET = 'can_delete_non_npwp_tax_bracket';
+
+export const PERMISSION_VIEW_PENSION_TAX_BRACKETS = 'can_view_pension_tax_brackets';
+export const PERMISSION_CREATE_PENSION_TAX_BRACKETS = 'can_create_pension_tax_brackets';
+export const PERMISSION_UPDATE_PENSION_TAX_BRACKET = 'can_update_pension_tax_bracket';
+export const PERMISSION_DELETE_PENSION_TAX_BRACKET = 'can_delete_pension_tax_bracket';
+
+export const PERMISSION_VIEW_SEVERANCE_PAY_TAX_BRACKETS = 'can_view_severance_pay_tax_brackets';
+export const PERMISSION_CREATE_SEVERANCE_PAY_TAX_BRACKETS = 'can_create_severance_pay_tax_brackets';
+export const PERMISSION_UPDATE_SEVERANCE_PAY_TAX_BRACKET = 'can_update_severance_pay_tax_bracket';
+export const PERMISSION_DELETE_SEVERANCE_PAY_TAX_BRACKET = 'can_delete_severance_pay_tax_bracket';

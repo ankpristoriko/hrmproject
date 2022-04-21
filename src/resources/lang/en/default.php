@@ -1636,4 +1636,9 @@ return array_merge([
     'you_cant_update_system_parameter_if_the_type_already_has_system_parameter_applied' => 'You cant update system parameter if the type already has system parameter applied',
     'parameter_code' => 'Parameter Code',
     'parameter_value' => 'Value',
+
+    'lower_gross_annual_income' => 'Lower Gross Annual Income',
+    'upper_gross_annual_income' => 'Upper Gross Annual Income',
+    'tax_deducted_rate' => 'Tax Deducted Rate',
+    'currency' => 'Currency',
 ], include 'custom.php');

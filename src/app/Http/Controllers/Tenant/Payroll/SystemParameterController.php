@@ -46,7 +46,7 @@ class SystemParameterController extends Controller
             ->setModel($systemParameter)
             ->setAttributes($request->only('parameter_code'))
             ->validate()
-            ->validateDocuments()
+            ->validateSystemParameters()
             ->save();
 
         return updated_responses('system_parameter');
@@ -60,6 +60,6 @@ class SystemParameterController extends Controller
             throw new GeneralException(__t('can_not_delete_used_system_parameter'));
         }
 
-        return deleted_responses('document_type');       
+        return deleted_responses('system_parameter');       
     }
 }

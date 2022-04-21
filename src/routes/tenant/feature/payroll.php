@@ -7,6 +7,11 @@ use App\Http\Controllers\Tenant\Payroll\PayrunController;
 use App\Http\Controllers\Tenant\Payroll\PayslipController;
 use App\Http\Controllers\Tenant\Payroll\RunDefaultPayrun;
 use App\Http\Controllers\Tenant\Payroll\SystemParameterController;
+use App\Http\Controllers\Tenant\Payroll\BpjsParameterController;
+use App\Http\Controllers\Tenant\Payroll\TaxBracketController;
+use App\Http\Controllers\Tenant\Payroll\SeverancePayTaxBracketController;
+use App\Http\Controllers\Tenant\Payroll\NonNpwpTaxBracketController;
+use App\Http\Controllers\Tenant\Payroll\PensionTaxBracketController;
 use Illuminate\Routing\Router;
 
 Route::group(['prefix' => 'app', 'as' => 'app_permission.', 'middleware' => ['permission']], function (Router $router) {
@@ -65,6 +70,11 @@ Route::group(['prefix' => 'app', 'as' => 'app_permission.', 'middleware' => ['pe
         ->name('payrun-payslips.send');
 
     $router->apiResource('system-parameters', SystemParameterController::class);
+    $router->apiResource('bpjs-parameters', BpjsParameterController::class);
+    $router->apiResource('tax-brackets', TaxBracketController::class);
+    $router->apiResource('severance-pay-tax-brackets', SeverancePayTaxBracketController::class);
+    $router->apiResource('non-npwp-tax-brackets', NonNpwpTaxBracketController::class);
+    $router->apiResource('pension-tax-brackets', PensionTaxBracketController::class);
     
 
 });

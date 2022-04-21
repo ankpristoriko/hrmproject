@@ -280,6 +280,11 @@ Vue.component('app-stage-create-edit', require('./Components/View/Recruitment/Co
 
 // System Parameter
 Vue.component('app-system-parameter-settings', require('./Components/View/Setting/Component/Payroll/SystemParameter/SystemParameters').default);
+Vue.component('app-bpjs-parameter-settings', require('./Components/View/Setting/Component/Payroll/BpjsParameter/BpjsParameters').default);
+Vue.component('app-tax-bracket-settings', require('./Components/View/Setting/Component/Payroll/TaxBracket/TaxBrackets').default);
+Vue.component('app-severance-pay-tax-bracket-settings', require('./Components/View/Setting/Component/Payroll/SeverancePayTaxBracket/SeverancePayTaxBrackets').default);
+Vue.component('app-non-npwp-tax-bracket-settings', require('./Components/View/Setting/Component/Payroll/NonNpwpTaxBracket/NonNpwpTaxBrackets').default);
+Vue.component('app-pension-tax-bracket-settings', require('./Components/View/Setting/Component/Payroll/PensionTaxBracket/PensionTaxBrackets').default);
 
 Vue.component('application-form-setting', require('./Components/View/Recruitment/ApplyForm/ApplyForm').default);
 Vue.component('personal-info-modal', require('./Components/View/Recruitment/Components/PersonalInfoModal').default);
