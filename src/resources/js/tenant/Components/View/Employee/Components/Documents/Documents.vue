@@ -29,6 +29,13 @@
                             @edit="openModal"
                             @delete="getConfirmations"
             />
+            
+            <single-document :document="employeeDocument.passport"
+                            type="passport"
+                            @add="openModal"
+                            @edit="openModal"
+                            @delete="getConfirmations"
+            />
         </template>
 
         <app-employee-document-modal
@@ -112,6 +119,7 @@ export default {
                 npwp: this.getDocument('npwp'),
                 bpjs_ketenagakerjaan: this.getDocument('bpjs_ketenagakerjaan'),
                 bpjs_kesehatan: this.getDocument('bpjs_kesehatan'),
+                passport: this.getDocument('passport'),
             };
         },
         url() {

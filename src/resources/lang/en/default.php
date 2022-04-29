@@ -1508,6 +1508,7 @@ return array_merge([
     'npwp' => 'NPWP',
     'bpjs_ketenagakerjaan' => 'BPJS Ketenagakerjaan',
     'bpjs_kesehatan' => 'BPJS Kesehatan',
+    'passport' => 'Passport',
     'note' => 'Note',
 
     'you_can_add_multiple_dependents' => 'You can add multiple dependents',

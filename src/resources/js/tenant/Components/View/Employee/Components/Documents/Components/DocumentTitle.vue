@@ -13,7 +13,8 @@
         
         {{ identifier === 'ktp' ? $t('ktp') : 
             ( identifier === 'npwp' ? $t('npwp') : 
-            ( identifier === 'bpjs_ketenagakerjaan' ? $t('bpjs_ketenagakerjaan') : $t('bpjs_kesehatan' ) ) ) }}
+            ( identifier === 'bpjs_ketenagakerjaan' ? $t('bpjs_ketenagakerjaan') :
+            ( identifier === 'bpjs_kesehatan' ? $t('bpjs_kesehatan') : $t('passport' )))) }}
     </div>
 </template>
 

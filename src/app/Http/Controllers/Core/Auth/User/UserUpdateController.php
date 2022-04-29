@@ -33,7 +33,7 @@ class UserUpdateController extends Controller
             'user_id' => auth()->id()
         ], array_merge(
             ['user_id' => auth()->id()],
-            $request->only('gender', 'date_of_birth', 'marital_status', 'religion_id', 'ethnicity_id', 'address', 'contact')
+            $request->only('gender', 'date_of_birth', 'marital_status', 'number_of_children', 'religion_id', 'ethnicity_id', 'address', 'contact')
         ));
 
         return updated_responses('profile');

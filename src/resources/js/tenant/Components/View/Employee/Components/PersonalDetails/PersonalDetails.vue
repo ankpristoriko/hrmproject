@@ -69,6 +69,16 @@
                 :error-message="$errorMessage(errors, 'marital_status')"
             />
 
+            <app-form-group
+                page="page"
+                :label="$t('number_of_children')"
+                type="text"
+                :required="true"
+                v-model="formData.number_of_children"
+                :placeholder="$placeholder('number_of_children','')"
+                :error-message="$errorMessage(errors, 'number_of_children', true, true)"
+            />
+
             <app-form-group-selectable
                 page="page"
                 type="search-select"
@@ -177,6 +187,7 @@ export default {
                     about_me: employee.profile ? employee.profile.about_me : '',
                     phone_number: employee.profile ? employee.profile.phone_number : '',
                     marital_status: employee.profile ? employee.profile.marital_status : '',
+                    number_of_children: employee.profile ? employee.profile.number_of_children : '',
                     religion_id: employee.profile ? employee.profile.religion_id : '',
                     ethnicity_id: employee.profile ? employee.profile.ethnicity_id : '',
                     date_of_birth: optional(employee, 'profile', 'date_of_birth') ? new Date(employee.profile.date_of_birth) : ''

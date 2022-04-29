@@ -114,7 +114,7 @@ class UserService extends BaseService
         $this->setModel($user ?? auth()->user());
 
         $this->attachSettings(
-            request()->only('gender', 'marital_status', 'religion_id', 'ethnicity_id', 'date_of_birth', 'address', 'contact')
+            request()->only('gender', 'marital_status', 'number_of_children', 'religion_id', 'ethnicity_id', 'date_of_birth', 'address', 'contact')
         );
 
         return true;

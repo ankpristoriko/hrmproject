@@ -9,6 +9,6 @@ class AuthenticateUserController extends Controller
 {
     public function show()
     {
-        return auth()->user()->load('roles:id,name', 'profile:id,user_id,gender,marital_status,religion_id,ethnicity_id,date_of_birth,address,contact', 'profilePicture', 'status:id,name,class');
+        return auth()->user()->load('roles:id,name', 'profile:id,user_id,gender,marital_status,number_of_children,religion_id,ethnicity_id,date_of_birth,address,contact', 'profilePicture', 'status:id,name,class');
     }
 }

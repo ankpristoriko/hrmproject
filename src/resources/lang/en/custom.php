@@ -24,6 +24,7 @@ return [
     'married' => 'Married',
     'widowed' => 'Widowed',
     'divorced' => 'Divorced / Separated',
+    'number_of_children' => 'Number of Children',
 
     'variable_type' => 'Variable Type',
     'document_type' => 'Document Type',

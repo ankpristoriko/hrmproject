@@ -60,6 +60,17 @@
             :error-message="$errorMessage(errors, 'marital_status')"
         />
 
+        <app-form-group
+            :disabled="!editField"
+            page="page"
+            :label="$t('number_of_children')"
+            type="text"
+            id="input-text-number-of-children"
+            :placeholder="$placeholder('number_of_children', '')"
+            v-model="userProfileInfo.number_of_children"
+            :error-message="$errorMessage(errors, 'number_of_children')"
+        />
+
         <app-form-group-selectable
             page="page"
             type="search-select"
@@ -153,6 +164,7 @@
                 this.loading = true;
                 profile.gender = this.userProfileInfo.profile.gender;
                 profile.marital_status = this.userProfileInfo.profile.marital_status;
+                profile.number_of_children = this.userProfileInfo.profile.number_of_children;
                 profile.religion_id =  this.userProfileInfo.profile.religion_id;
                 profile.ethnicity_id =  this.userProfileInfo.profile.ethnicity_id;
                 profile.contact = this.userProfileInfo.profile.contact;

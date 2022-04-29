@@ -7,6 +7,7 @@ return [
         ['name' => 'address', 'value' => '', 'context' => 'user'],
         ['name' => 'date_of_birth', 'value' => '', 'context' => 'user'],
         ['name' => 'marital_status', 'value' => '', 'context' => 'user'],
+        ['name' => 'number_of_children', 'value' => '', 'context' => 'user'],
         ['name' => 'religion_id', 'value' => '', 'context' => 'user'],
         ['name' => 'ethnicity_id', 'value' => '', 'context' => 'user'],
     ],
