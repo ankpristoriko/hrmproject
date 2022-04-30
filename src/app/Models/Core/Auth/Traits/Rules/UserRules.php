@@ -37,6 +37,7 @@ trait UserRules
             'gender' => 'required|in:male,female,other',
             'date_of_birth' => 'nullable|date',
             'number_of_children' => 'nullable',
+            'nationality' => 'nullable',
             'marital_status' => 'nullable',
             'religion_id' => 'nullable',
             'ethnicity_id' => 'nullable',

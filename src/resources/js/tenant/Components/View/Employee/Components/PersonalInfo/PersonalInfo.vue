@@ -35,6 +35,14 @@ export default {
                     }
                 },
                 {
+                    'name': this.$t('work_permits'),
+                    'title': this.$t('work_permits'),
+                    'component': 'app-employee-work-permit',
+                    'props': {
+                        id: this.props.id
+                    }
+                },
+                {
                     'name': this.$t('dependents'),
                     'title': this.$t('dependents'),
                     'component': 'app-employee-dependent',

@@ -34,7 +34,7 @@ class EmployeeProfileController extends Controller
             ['user_id' => $employee->id],
             array_merge(
                 ['user_id' => $employee->id],
-                $request->only('employee_id', 'gender', 'marital_status', 'number_of_children', 'religion_id', 'ethnicity_id', 'date_of_birth', 'about_me', 'phone_number')
+                $request->only('employee_id', 'gender', 'marital_status', 'number_of_children', 'nationality', 'religion_id', 'ethnicity_id', 'date_of_birth', 'about_me', 'phone_number')
             )
         );
 

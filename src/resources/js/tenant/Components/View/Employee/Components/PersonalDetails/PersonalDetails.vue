@@ -78,6 +78,17 @@
                 :placeholder="$placeholder('number_of_children','')"
                 :error-message="$errorMessage(errors, 'number_of_children', true, true)"
             />
+                    
+            <app-form-group
+                page="page"
+                type="search-select"
+                list-value-field="value"
+                :label="$t('nationality')"
+                :chooseLabel="$t('nationality')"
+                v-model="formData.nationality"
+                :list="countries"
+                :error-message="$errorMessage(errors, 'nationality')"
+            />
 
             <app-form-group-selectable
                 page="page"
@@ -130,8 +141,9 @@ import {formatDateForServer} from "../../../../../../common/Helper/Support/DateT
 import {mapState} from "vuex";
 import {EMPLOYEES} from "../../../../../Config/ApiUrl";
 import optional from "../../../../../../common/Helper/Support/Optional";
-import {addSelectInSelectArray} from "../../../../../../common/Helper/Support/FormHelper";
+import {addSelectInSelectArray, addChooseInSelectArray} from "../../../../../../common/Helper/Support/FormHelper";
 import {TENANT_SELECTABLE_RELIGION, TENANT_SELECTABLE_ETHNICITY} from "../../../../../../common/Config/apiUrl";
+import countries from "../../Helper/countries";
 
 export default {
     name: "EmployeePersonalDetails",
@@ -170,6 +182,9 @@ export default {
                 {id: 'widowed', value: this.$t('widowed')},
                 {id: 'divorced', value: this.$t('divorced')},
             ], 'value', 'marital_status');
+        },
+        countries() {
+            return addChooseInSelectArray(countries, 'value', this.$t('country'))
         }
     },
 
@@ -188,6 +203,7 @@ export default {
                     phone_number: employee.profile ? employee.profile.phone_number : '',
                     marital_status: employee.profile ? employee.profile.marital_status : '',
                     number_of_children: employee.profile ? employee.profile.number_of_children : '',
+                    nationality: employee.profile ? employee.profile.nationality : '',
                     religion_id: employee.profile ? employee.profile.religion_id : '',
                     ethnicity_id: employee.profile ? employee.profile.ethnicity_id : '',
                     date_of_birth: optional(employee, 'profile', 'date_of_birth') ? new Date(employee.profile.date_of_birth) : ''

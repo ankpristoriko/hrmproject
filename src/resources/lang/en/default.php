@@ -845,6 +845,7 @@ return array_merge([
     'taken' => 'Taken',
     'earned' => 'Earned',
     'leave_allowance' => 'Leave allowance',
+    'work_permits' => 'Work Permits',
 
     'punch_in' => 'Punch In',
     'punch_out' => 'Punch Out',

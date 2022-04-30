@@ -71,6 +71,17 @@
             :error-message="$errorMessage(errors, 'number_of_children')"
         />
 
+        <app-form-group
+            page="page"
+            type="search-select"
+            list-value-field="value"
+            :label="$t('nationality')"
+            :chooseLabel="$t('nationality')"
+            v-model="formData.nationality"
+            :list="countries"
+            :error-message="$errorMessage(errors, 'nationality')"
+        />
+
         <app-form-group-selectable
             page="page"
             type="search-select"
@@ -139,8 +150,10 @@
 <script>
     import moment from 'moment'
     import FormHelperMixins from "../../../Mixin/Global/FormHelperMixins";
-    import {addSelectInSelectArray} from "../../../../common/Helper/Support/FormHelper";
+    import {addSelectInSelectArray, addChooseInSelectArray} from "../../../../common/Helper/Support/FormHelper";
     import {TENANT_SELECTABLE_RELIGION, TENANT_SELECTABLE_ETHNICITY} from "../../../../common/Config/apiUrl";
+    import countries from "../../../../tenant/Components/View/Employee/Helper/countries";
+
 
     export default {
         name: "ProfilePersonalInfo",
@@ -165,6 +178,7 @@
                 profile.gender = this.userProfileInfo.profile.gender;
                 profile.marital_status = this.userProfileInfo.profile.marital_status;
                 profile.number_of_children = this.userProfileInfo.profile.number_of_children;
+                profile.nationality = this.userProfileInfo.profile.nationality;
                 profile.religion_id =  this.userProfileInfo.profile.religion_id;
                 profile.ethnicity_id =  this.userProfileInfo.profile.ethnicity_id;
                 profile.contact = this.userProfileInfo.profile.contact;
@@ -199,6 +213,9 @@
                     {id: 'widowed', value: this.$t('widowed')},
                     {id: 'divorced', value: this.$t('divorced')},
                 ], 'value', 'marital_status');
+            },
+            countries() {
+                return addChooseInSelectArray(countries, 'value', this.$t('country'))
             }
         },
         mounted() {
